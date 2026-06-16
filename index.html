@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MYGV — The Pinnacle of Golf Visa</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0A2D4A;
+      --navy-light: #164863;
+      --gold: #C9A84C;
+      --gold-light: #DFC66A;
+      --green: #1B6B3A;
+      --green-light: #228B4A;
+      --white: #FFFFFF;
+      --cream: #FAF8F5;
+      --gray-light: #F3F1ED;
+      --gray: #8B8B8B;
+      --text-dark: #1A1A1A;
+      --text-muted: #6B7280;
+      --transition: 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--white);
+      color: var(--text-dark);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── TYPOGRAPHY ─── */
+    h1, h2, h3, h4, h5 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .heading-serif {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+
+    .section-tag {
+      font-weight: 600;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 12px;
+      line-height: 1.15;
+    }
+
+    .section-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      line-height: 1.7;
+    }
+
+    /* ─── NAVBAR ─── */
+    .navbar {
+      padding: 14px 0;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      transition: padding var(--transition);
+      z-index: 1050;
+    }
+
+    .navbar.scrolled {
+      padding: 8px 0;
+      box-shadow: 0 1px 30px rgba(0,0,0,0.06);
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.35rem;
+      letter-spacing: 0.04em;
+      color: var(--navy) !important;
+      text-decoration: none;
+    }
+
+    .navbar-brand .leaf-icon {
+      width: 34px;
+      height: 34px;
+      background: linear-gradient(135deg, #B53030, #D94444);
+      border-radius: 6px 2px 14px 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+
+    .navbar-brand .brand-sub {
+      font-size: 0.45rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      text-transform: uppercase;
+      display: block;
+      line-height: 1;
+      margin-top: -2px;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      color: var(--text-muted) !important;
+      padding: 6px 14px !important;
+      border-radius: 6px;
+      transition: color var(--transition), background var(--transition);
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--navy) !important;
+      background: rgba(10,45,74,0.04);
+    }
+
+    .btn-elite {
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      padding: 9px 22px;
+      border-radius: 100px;
+      border: 1.5px solid var(--gold);
+      background: transparent;
+      color: var(--gold);
+      text-transform: uppercase;
+      transition: all var(--transition);
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-elite:hover {
+      background: var(--gold);
+      color: #fff;
+      box-shadow: 0 6px 24px rgba(201,168,76,0.3);
+      transform: translateY(-1px);
+    }
+
+    .navbar-toggler {
+      border: none;
+      padding: 6px 8px;
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: 0 0 0 2px rgba(201,168,76,0.3);
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      background: var(--cream);
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      min-height: 92vh;
+    }
+
+    .hero-text-col {
+      flex: 0 0 50%;
+      padding: 60px 40px 60px 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-text-col .eyebrow {
+      font-weight: 600;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .hero-text-col h1 {
+      font-size: clamp(2.2rem, 4.2vw, 3.6rem);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.08;
+      margin-bottom: 16px;
+    }
+
+    .hero-text-col h1 .gold {
+      color: var(--gold);
+    }
+
+    .hero-text-col .hero-sub {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    .hero-text-col .launch {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--navy-light);
+      margin-bottom: 28px;
+    }
+
+    .hero-text-col .launch i {
+      color: var(--gold);
+      margin-right: 6px;
+    }
+
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      padding: 14px 32px;
+      border-radius: 100px;
+      background: var(--gold);
+      color: #fff;
+      border: none;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all var(--transition);
+      box-shadow: 0 8px 28px rgba(201,168,76,0.25);
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+      color: #fff;
+      box-shadow: 0 12px 40px rgba(201,168,76,0.35);
+      transform: translateY(-2px);
+    }
+
+    .hero-image-col {
+      flex: 0 0 50%;
+      height: 92vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-image-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+
+    .hero-image-col::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(250,248,245,0.5) 0%, transparent 30%);
+      pointer-events: none;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: var(--gray);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+
+    .hero-scroll .line {
+      width: 1px;
+      height: 24px;
+      background: var(--gold);
+      animation: scrollPulse 2s infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(0.5); }
+      50% { opacity: 1; transform: scaleY(1); }
+    }
+
+    /* ─── MAIN LAYOUT ─── */
+    .main-layout {
+      display: flex;
+      gap: 40px;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .content-area {
+      flex: 1 1 68%;
+      min-width: 0;
+    }
+
+    .sidebar-area {
+      flex: 0 0 300px;
+      position: sticky;
+      top: 100px;
+      align-self: flex-start;
+      height: fit-content;
+    }
+
+    /* ─── PROVINCE CARDS ─── */
+    .section-province {
+      padding: 60px 0 40px;
+    }
+
+    .card-province {
+      border: none;
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+      transition: all var(--transition);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .card-province:hover {
+      box-shadow: 0 12px 48px rgba(10,45,74,0.08);
+      transform: translateY(-4px);
+    }
+
+    .card-province .img-wrap {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .card-province .img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+      display: block;
+    }
+
+    .card-province:hover .img-wrap img {
+      transform: scale(1.05);
+    }
+
+    .card-province .img-wrap .badge-province {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(6px);
+      padding: 5px 16px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .card-province .card-body {
+      padding: 22px 22px 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-province .card-body .loc {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+
+    .card-province .card-body h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .card-province .card-body p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      flex: 1;
+    }
+
+    .btn-explore {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      color: var(--green);
+      text-decoration: none;
+      transition: gap var(--transition);
+      align-self: flex-start;
+    }
+
+    .btn-explore:hover {
+      gap: 12px;
+      color: var(--green-light);
+    }
+
+    .btn-explore i {
+      font-size: 0.65rem;
+      transition: transform var(--transition);
+    }
+
+    .btn-explore:hover i {
+      transform: translateX(3px);
+    }
+
+    /* ─── SIDEBAR ─── */
+    .sidebar-label {
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .sidebar-card {
+      background: var(--white);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+      margin-bottom: 20px;
+      transition: all var(--transition);
+      cursor: pointer;
+    }
+
+    .sidebar-card:hover {
+      box-shadow: 0 10px 40px rgba(10,45,74,0.08);
+      transform: translateY(-3px);
+    }
+
+    .sidebar-card .side-img {
+      position: relative;
+      height: 160px;
+      overflow: hidden;
+    }
+
+    .sidebar-card .side-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+      display: block;
+    }
+
+    .sidebar-card:hover .side-img img {
+      transform: scale(1.05);
+    }
+
+    .sidebar-card .side-img .side-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      font-weight: 700;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      padding: 4px 12px;
+      border-radius: 100px;
+      text-transform: uppercase;
+    }
+
+    .sidebar-card .side-img .side-tag.featured {
+      background: var(--gold);
+      color: #fff;
+    }
+
+    .sidebar-card .side-img .side-tag.gold {
+      background: var(--navy);
+      color: var(--gold);
+    }
+
+    .sidebar-card .side-body {
+      padding: 16px 18px 18px;
+    }
+
+    .sidebar-card .side-body h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 3px;
+    }
+
+    .sidebar-card .side-body p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .btn-buy {
+      font-weight: 700;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      padding: 8px 20px;
+      border-radius: 100px;
+      background: var(--green);
+      color: #fff;
+      border: none;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      transition: all var(--transition);
+    }
+
+    .btn-buy:hover {
+      background: var(--green-light);
+      color: #fff;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(27,107,58,0.25);
+    }
+
+    /* ─── CORPORATE ─── */
+    .corporate-wrap {
+      padding: 30px 0 50px;
+    }
+
+    .corporate-card {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 2px 30px rgba(0,0,0,0.04);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+
+    .corporate-text {
+      flex: 1 1 50%;
+      padding: 48px 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .corporate-text h2 {
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .corporate-text p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+
+    .btn-access {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      padding: 12px 28px;
+      border-radius: 100px;
+      background: var(--navy);
+      color: #fff;
+      border: none;
+      text-transform: uppercase;
+      text-decoration: none;
+      align-self: flex-start;
+      transition: all var(--transition);
+    }
+
+    .btn-access:hover {
+      background: var(--navy-light);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(10,45,74,0.25);
+    }
+
+    .corporate-image {
+      flex: 1 1 50%;
+      min-height: 320px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .corporate-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+      transition: transform 0.7s ease;
+    }
+
+    .corporate-card:hover .corporate-image img {
+      transform: scale(1.04);
+    }
+
+    /* ─── MEMBERSHIPS ─── */
+    .section-membership {
+      padding: 20px 0 50px;
+    }
+
+    .member-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 28px 26px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+      border: 1px solid rgba(0,0,0,0.03);
+      transition: all var(--transition);
+      height: 100%;
+    }
+
+    .member-card:hover {
+      box-shadow: 0 12px 48px rgba(10,45,74,0.07);
+      transform: translateY(-4px);
+    }
+
+    .member-card .tier {
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 100px;
+    }
+
+    .member-card .tier.silver {
+      background: rgba(192,192,192,0.15);
+      color: #777;
+    }
+
+    .member-card .tier.gold {
+      background: rgba(201,168,76,0.12);
+      color: var(--gold);
+    }
+
+    .member-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .member-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .member-card .price {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 0;
+    }
+
+    .member-card .price span {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .member-card .btn-member {
+      margin-top: 16px;
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      padding: 10px 24px;
+      border-radius: 100px;
+      border: 1.5px solid var(--gold);
+      background: transparent;
+      color: var(--gold);
+      text-transform: uppercase;
+      transition: all var(--transition);
+      cursor: pointer;
+    }
+
+    .member-card .btn-member:hover {
+      background: var(--gold);
+      color: #fff;
+    }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      background: #0A1219;
+      padding: 56px 0 0;
+      margin-top: 20px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: #fff;
+      text-decoration: none;
+      margin-bottom: 14px;
+    }
+
+    .footer-brand .leaf-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #B53030, #D94444);
+      border-radius: 5px 2px 12px 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.85rem;
+    }
+
+    .footer p {
+      color: rgba(255,255,255,0.4);
+      font-size: 0.82rem;
+      line-height: 1.7;
+      max-width: 280px;
+    }
+
+    .footer h6 {
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .footer a {
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color var(--transition);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .footer a:hover {
+      color: var(--gold-light);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 10px;
+    }
+
+    .footer-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.4);
+      font-size: 0.9rem;
+      transition: all var(--transition);
+      margin-bottom: 0;
+    }
+
+    .footer-social a:hover {
+      background: var(--gold);
+      color: var(--navy);
+      transform: translateY(-2px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 20px 0;
+      margin-top: 40px;
+      text-align: center;
+      color: rgba(255,255,255,0.2);
+      font-size: 0.75rem;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    .anim {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .anim.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .anim-d1 { transition-delay: 0.08s; }
+    .anim-d2 { transition-delay: 0.16s; }
+    .anim-d3 { transition-delay: 0.24s; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1199.98px) {
+      .sidebar-area { flex: 0 0 260px; }
+    }
+
+    @media (max-width: 991.98px) {
+      .hero-inner {
+        flex-direction: column;
+        min-height: auto;
+      }
+
+      .hero-text-col {
+        flex: 1 1 100%;
+        padding: 80px 24px 40px;
+        text-align: center;
+      }
+
+      .hero-text-col .section-desc {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-image-col {
+        flex: 1 1 100%;
+        height: 60vh;
+        width: 100%;
+        border-radius: 0;
+      }
+
+      .hero-image-col::after {
+        background: linear-gradient(180deg, rgba(250,248,245,0.4) 0%, transparent 25%);
+      }
+
+      .hero-scroll { display: none; }
+
+      .main-layout {
+        flex-direction: column;
+        padding: 0 20px;
+      }
+
+      .content-area { flex: 1 1 100%; }
+
+      .sidebar-area {
+        position: static;
+        flex: 1 1 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .sidebar-area .sidebar-label {
+        width: 100%;
+        flex-basis: 100%;
+        margin-bottom: 0;
+      }
+
+      .sidebar-area .sidebar-card {
+        flex: 1 1 220px;
+        margin-bottom: 0;
+      }
+
+      .corporate-card { flex-direction: column; }
+
+      .corporate-image {
+        min-height: 260px;
+        order: -1;
+      }
+
+      .corporate-text { padding: 32px 28px; }
+
+      .navbar .btn-elite {
+        margin-top: 6px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .navbar-collapse {
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(16px);
+        padding: 16px;
+        border-radius: 12px;
+        margin-top: 8px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-text-col { padding: 70px 16px 30px; }
+      .hero-image-col { height: 40vh; }
+      .sidebar-area { flex-direction: column; }
+      .sidebar-area .sidebar-card { flex: 1 1 100%; }
+      .corporate-text { padding: 24px 20px; }
+      .corporate-image { min-height: 200px; }
+      .card-province .img-wrap { height: 180px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════════════ NAVBAR ════════════════════ -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <span class="leaf-icon"><i class="fa-brands fa-canadian-maple-leaf"></i></span>
+        <span>
+          MYGV
+          <span class="brand-sub">Golf Visa</span>
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+        aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+          <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#memberships">Memberships</a></li>
+          <li class="nav-item"><a class="nav-link" href="#courses">Partner Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="#corporate">Corporate</a></li>
+          <li class="nav-item"><a class="nav-link" href="#shop">Shop</a></li>
+          <li class="nav-item ms-lg-2">
+            <button class="btn-elite">Join Elite</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ════════════════════ HERO ════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <div class="hero-text-col">
+        <div class="eyebrow">Exclusive Golf Visa Program</div>
+        <h1>
+          THE PINNACLE OF<br>
+          <span class="gold">MYGV</span> GOLF.
+        </h1>
+        <p class="hero-sub">Unlock exclusive value. Join our elite community of golf enthusiasts.</p>
+        <p class="launch"><i class="fa-regular fa-calendar"></i> Launching July 2027</p>
+        <a href="#courses" class="btn-gold">
+          Explore 2027 GV Card
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="hero-image-col">
+        <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=1200&q=80"
+          alt="Golfer at sunset" loading="lazy">
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="line"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ MAIN LAYOUT ════════════════════ -->
+  <div class="main-layout">
+
+    <!-- ─── CONTENT ─── -->
+    <div class="content-area">
+
+      <!-- Province Cards -->
+      <div class="section-province anim" id="courses">
+        <p class="section-tag">Destinations</p>
+        <h2 class="section-title">Explore Our Premier Golf Provinces</h2>
+        <p class="section-desc" style="margin-bottom:32px;">
+          Discover world-class courses across Canada's most prestigious regions.
+        </p>
+        <div class="row g-4">
+          <div class="col-md-6 anim anim-d1">
+            <div class="card-province">
+              <div class="img-wrap">
+                <img src="https://images.unsplash.com/photo-1593111774240-c25f7e3cbabc?w=800&q=80"
+                  alt="British Columbia golf" loading="lazy">
+                <div class="badge-province">British Columbia</div>
+              </div>
+              <div class="card-body">
+                <div class="loc">West Coast</div>
+                <h3>GOLF VISA British Columbia</h3>
+                <p>World-class courses between ocean and mountains. Experience the finest fairways Canada has to offer.</p>
+                <a href="#" class="btn-explore">Explore BC <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 anim anim-d2">
+            <div class="card-province">
+              <div class="img-wrap">
+                <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=800&q=80"
+                  alt="Ontario golf" loading="lazy">
+                <div class="badge-province">Ontario</div>
+              </div>
+              <div class="card-body">
+                <div class="loc">Central Canada</div>
+                <h3>GOLF VISA Ontario</h3>
+                <p>Legendary courses nestled in the heart of Canada's vibrant landscapes and lush greenery.</p>
+                <a href="#" class="btn-explore">Explore Ontario <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Corporate -->
+      <div class="corporate-wrap anim anim-d2" id="corporate">
+        <div class="corporate-card">
+          <div class="corporate-text">
+            <p class="section-tag">Corporate Partnerships</p>
+            <h2>Elevate Your Business<br>with MYGV</h2>
+            <p>Access premium golf experiences tailored for executives and corporate teams. Build relationships on the world's most prestigious fairways.</p>
+            <a href="#" class="btn-access">Access GV <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="corporate-image">
+            <img src="https://images.unsplash.com/photo-1552675742-1eb38a5d56fb?w=900&q=80"
+              alt="Corporate golf" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <!-- Memberships -->
+      <div class="section-membership anim anim-d3" id="memberships">
+        <p class="section-tag">Memberships</p>
+        <h2 class="section-title">Choose Your Elite Tier</h2>
+        <p class="section-desc" style="margin-bottom:28px;">
+          Select the membership that fits your lifestyle and unlock exclusive privileges.
+        </p>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="member-card">
+              <span class="tier silver">Silver</span>
+              <h3>Silver GV Card</h3>
+              <p>Access to 20+ partner courses across Canada with standard benefits and preferred tee times.</p>
+              <p class="price">$499 <span>/ year</span></p>
+              <button class="btn-member">Get Started</button>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="member-card">
+              <span class="tier gold">Gold</span>
+              <h3>Gold GV Card</h3>
+              <p>Unlimited access, VIP tee times, exclusive events, and luxury perks at premier courses.</p>
+              <p class="price">$999 <span>/ year</span></p>
+              <button class="btn-member">Get Started</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ─── SIDEBAR ─── -->
+    <aside class="sidebar-area">
+      <p class="sidebar-label">Featured Courses</p>
+
+      <div class="sidebar-card anim anim-d1">
+        <div class="side-img">
+          <img src="https://images.unsplash.com/photo-1604543009019-95bfcdeb7c3c?w=600&q=80"
+            alt="Featured course" loading="lazy">
+          <span class="side-tag featured">Featured</span>
+        </div>
+        <div class="side-body">
+          <h4>Oceanview Greens</h4>
+          <p>Signature 18-hole course perched above the Pacific.</p>
+          <a href="#" class="btn-buy">Buy Now</a>
+        </div>
+      </div>
+
+      <div class="sidebar-card anim anim-d2">
+        <div class="side-img">
+          <img src="https://images.unsplash.com/photo-1591492118307-8e7b0e5b0e5e?w=600&q=80"
+            alt="Gold course" loading="lazy">
+          <span class="side-tag gold">Gold Course</span>
+        </div>
+        <div class="side-body">
+          <h4>The Golden Fairway</h4>
+          <p>Exclusive access — ranked Top 10 in Canada.</p>
+          <a href="#" class="btn-buy">Buy Now</a>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- ════════════════════ FOOTER ════════════════════ -->
+  <footer class="footer" id="shop">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <a class="footer-brand" href="#">
+            <span class="leaf-icon"><i class="fa-brands fa-canadian-maple-leaf"></i></span>
+            MYGV
+          </a>
+          <p>The pinnacle of golf visa experiences. Unlocking Canada's most prestigious courses for the discerning golfer.</p>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6>Company</h6>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6>Support</h6>
+          <a href="#">FAQ</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Accessibility</a>
+        </div>
+        <div class="col-lg-3">
+          <h6>Connect</h6>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2027 MYGV — Golf Visa. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ════════════════════ SCRIPTS ════════════════════ -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    (function() {
+      // Navbar scroll
+      const nav = document.getElementById('mainNav');
+      window.addEventListener('scroll', function() {
+        nav.classList.toggle('scrolled', window.scrollY > 60);
+      });
+
+      // Scroll reveal
+      const els = document.querySelectorAll('.anim');
+      const obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+      els.forEach(function(el) { obs.observe(el); });
+
+      // Active nav link
+      const sections = document.querySelectorAll('section[id]');
+      const links = document.querySelectorAll('.nav-link');
+      window.addEventListener('scroll', function() {
+        let cur = '';
+        sections.forEach(function(s) {
+          if (window.scrollY >= s.offsetTop - 150) cur = s.getAttribute('id');
+        });
+        links.forEach(function(l) {
+          l.classList.toggle('active', l.getAttribute('href') === '#' + cur);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
