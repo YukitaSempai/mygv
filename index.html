@@ -177,29 +177,30 @@
     }
 
     .nav-link {
-      font-weight: 500;
+      font-weight: 600;
       font-size: .82rem;
-      letter-spacing: .03em;
-      color: rgba(255, 255, 255, .9) !important;
+      letter-spacing: .04em;
+      color: var(--gold) !important;
       padding: 7px 14px !important;
       border-radius: 7px;
       transition: all var(--t-fast) var(--ease);
-      text-shadow: 0 1px 4px rgba(0, 0, 0, .15);
+      text-shadow: 0 1px 6px rgba(0, 0, 0, .2);
     }
 
-    .nav-link:hover {
-      color: #fff !important;
-      background: rgba(255, 255, 255, .12);
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--gold-light) !important;
+      background: rgba(255, 255, 255, .1);
     }
 
     #mainNav.scrolled .nav-link {
-      color: var(--txt-muted) !important;
+      color: var(--gold) !important;
     }
 
     #mainNav.scrolled .nav-link:hover,
     #mainNav.scrolled .nav-link.active {
-      color: var(--navy) !important;
-      background: rgba(10, 45, 74, .05);
+      color: var(--gold-light) !important;
+      background: rgba(201, 168, 76, .1);
     }
 
     .navbar-toggler {
