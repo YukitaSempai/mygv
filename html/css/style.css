@@ -1513,3 +1513,463 @@
         height: 280px;
       }
     }
+
+    /* ═══════════════════════════════════════
+       TOURNAMENT PAGE
+    ═══════════════════════════════════════ */
+    /* ─── base sections ─── */
+    .t-section {
+      padding: 5rem 0;
+    }
+    .t-section-alt {
+      background: #f8f6f2;
+    }
+    .t-section-label {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #c9a96e;
+      margin-bottom: 0.5rem;
+    }
+    .t-section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: #0e1b1f;
+      margin-bottom: 1.2rem;
+    }
+    .t-section-text {
+      color: #555;
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .t-btn-primary {
+      background: #c9a96e;
+      color: #0e1b1f;
+      font-weight: 700;
+      border: none;
+      border-radius: 50px;
+      padding: 0.7rem 2rem;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .t-btn-primary:hover {
+      background: #dbb97e;
+      color: #0e1b1f;
+      transform: translateY(-2px);
+    }
+
+    /* ─── hero ─── */
+    .t-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding-top: 76px;
+    }
+    .t-hero-bg {
+      position: absolute;
+      inset: 0;
+    }
+    .t-hero-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .t-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(14,27,31,0.85) 0%, rgba(14,27,31,0.4) 100%);
+    }
+    .t-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #fff;
+    }
+    .t-hero-badge {
+      display: inline-block;
+      background: #c9a96e;
+      color: #0e1b1f;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      padding: 0.4rem 1.2rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+    }
+    .t-hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    .t-hero-date,
+    .t-hero-venue {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-bottom: 0.3rem;
+    }
+    .t-hero-date i,
+    .t-hero-venue i {
+      margin-right: 0.4rem;
+      color: #c9a96e;
+    }
+    .t-hero-content .t-btn-primary {
+      margin-top: 2rem;
+      font-size: 1rem;
+      padding: 0.9rem 3rem;
+    }
+
+    /* ─── details cards ─── */
+    .t-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      transition: transform 0.3s, box-shadow 0.3s;
+      height: 100%;
+    }
+    .t-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+    .t-card-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(201, 169, 110, 0.12);
+      color: #c9a96e;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+    .t-card-title {
+      font-family: 'Playfair Display', serif;
+      color: #0e1b1f;
+      margin-bottom: 0.5rem;
+    }
+    .t-card-text {
+      color: #666;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    /* ─── timeline ─── */
+    .t-timeline {
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+      padding-left: 2rem;
+    }
+    .t-timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #e0d8cc;
+    }
+    .t-timeline-item {
+      position: relative;
+      padding-bottom: 2rem;
+    }
+    .t-timeline-item:last-child {
+      padding-bottom: 0;
+    }
+    .t-timeline-dot {
+      position: absolute;
+      left: -2rem;
+      top: 4px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #c9a96e;
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 2px #c9a96e;
+    }
+    .t-timeline-time {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #c9a96e;
+      margin-bottom: 0.25rem;
+    }
+    .t-timeline-body h5 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0e1b1f;
+      margin-bottom: 0.15rem;
+    }
+    .t-timeline-body p {
+      font-size: 0.85rem;
+      color: #666;
+      margin: 0;
+    }
+
+    /* ─── pricing cards ─── */
+    .t-price-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      transition: transform 0.3s, box-shadow 0.3s;
+      height: 100%;
+    }
+    .t-price-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+    .t-price-featured {
+      border: 2px solid #c9a96e;
+      position: relative;
+      transform: scale(1.03);
+    }
+    .t-price-featured:hover {
+      transform: scale(1.03) translateY(-4px);
+    }
+    .t-price-badge {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      background: #c9a96e;
+      color: #0e1b1f;
+      font-size: 0.65rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.2rem 0.7rem;
+      border-radius: 50px;
+    }
+    .t-price-header {
+      background: #0e1b1f;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+    }
+    .t-price-header h5 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .t-price-amount {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #c9a96e;
+    }
+    .t-price-header p {
+      font-size: 0.8rem;
+      opacity: 0.6;
+      margin: 0;
+    }
+    .t-price-body {
+      padding: 1.5rem;
+    }
+    .t-price-body ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem;
+    }
+    .t-price-body ul li {
+      font-size: 0.85rem;
+      color: #555;
+      padding: 0.3rem 0;
+    }
+    .t-price-body ul li i {
+      margin-right: 0.4rem;
+    }
+
+    /* ─── form ─── */
+    .t-form-wrap {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      border: 1px solid #f0ede8;
+    }
+    .t-form-wrap .form-label {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #0e1b1f;
+    }
+    .t-form-wrap .form-control,
+    .t-form-wrap .form-select {
+      border: 1px solid #d4cfc8;
+      border-radius: 8px;
+      padding: 0.6rem 0.9rem;
+      font-size: 0.9rem;
+    }
+    .t-form-wrap .form-control:focus,
+    .t-form-wrap .form-select:focus {
+      border-color: #c9a96e;
+      box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.15);
+    }
+    .t-total-bar {
+      background: #f8f6f2;
+      border-radius: 8px;
+      padding: 0.75rem 1.25rem;
+      font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .t-total-bar strong {
+      font-size: 1.3rem;
+      color: #0e1b1f;
+    }
+
+    /* ─── sponsors ─── */
+    .t-sponsor-logo {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .t-sponsor-logo:hover {
+      opacity: 0.7;
+      transform: scale(1.05);
+    }
+    .t-sponsor-logo img {
+      max-width: 100%;
+      max-height: 60px;
+      object-fit: contain;
+    }
+
+    /* ─── FAQ accordion ─── */
+    .t-section .accordion-item {
+      border: 1px solid #e8e0d4;
+      border-radius: 12px !important;
+      margin-bottom: 0.5rem;
+      overflow: hidden;
+    }
+    .t-section .accordion-button {
+      font-weight: 600;
+      color: #0e1b1f;
+      background: #fff;
+      box-shadow: none;
+      padding: 1rem 1.25rem;
+    }
+    .t-section .accordion-button:not(.collapsed) {
+      color: #c9a96e;
+      background: #fdf9f0;
+    }
+    .t-section .accordion-button:focus {
+      box-shadow: none;
+    }
+    .t-section .accordion-body {
+      color: #555;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* ─── contact ─── */
+    .t-contact-info h5 {
+      font-family: 'Playfair Display', serif;
+      color: #0e1b1f;
+      margin-bottom: 0.5rem;
+    }
+    .t-contact-info h5 i {
+      color: #c9a96e;
+    }
+    .t-contact-info p {
+      color: #555;
+    }
+    .t-contact-link {
+      color: #c9a96e;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .t-contact-link:hover {
+      color: #dbb97e;
+    }
+
+    /* ─── footer ─── */
+    .t-footer {
+      background: #0e1b1f;
+      color: #fff;
+      padding: 3rem 0 1.5rem;
+    }
+    .t-footer-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #c9a96e;
+      text-decoration: none;
+    }
+    .t-footer-brand:hover {
+      color: #dbb97e;
+    }
+    .t-footer-desc {
+      font-size: 0.8rem;
+      opacity: 0.6;
+    }
+    .t-footer-link {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+    .t-footer-link:hover {
+      color: #c9a96e;
+    }
+    .t-footer-social {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .t-footer-social:hover {
+      background: #c9a96e;
+      color: #0e1b1f;
+    }
+    .t-footer-copy {
+      text-align: center;
+      font-size: 0.8rem;
+      opacity: 0.5;
+      margin: 0;
+    }
+
+    /* ─── tournament responsive ─── */
+    @media (max-width: 767.98px) {
+      .t-section {
+        padding: 3rem 0;
+      }
+      .t-section-title {
+        font-size: 1.6rem;
+      }
+      .t-timeline {
+        padding-left: 1.5rem;
+      }
+      .t-timeline-dot {
+        left: -1.5rem;
+        width: 12px;
+        height: 12px;
+      }
+      .t-form-wrap {
+        padding: 1.5rem;
+      }
+      .t-price-featured {
+        transform: none;
+      }
+      .t-price-featured:hover {
+        transform: translateY(-4px);
+      }
+      .t-hero-title {
+        font-size: clamp(2rem, 10vw, 3rem);
+      }
+    }
