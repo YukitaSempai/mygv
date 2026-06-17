@@ -13,23 +13,21 @@
 
     /* ─── NAVBAR ─── */
     #mainNav {
-      background: transparent;
+      background: #fff;
       padding: 0.75rem 0;
-      transition: background 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease;
+      transition: box-shadow 0.35s ease, padding 0.35s ease;
     }
 
     #mainNav.scrolled {
-      background: rgba(14, 27, 31, 0.97);
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
       padding: 0.4rem 0;
-      backdrop-filter: blur(6px);
     }
 
     #mainNav .navbar-brand {
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      color: #fff;
+      color: #c9a96e;
       font-weight: 700;
       text-decoration: none;
       padding: 0;
@@ -50,13 +48,14 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.2rem;
       letter-spacing: 0.02em;
+      color: #0e1b1f;
     }
 
     #mainNav .brand-sub {
       font-size: 0.6rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      color: rgba(255, 255, 255, 0.6);
+      color: #c9a96e;
     }
 
     #mainNav .navbar-nav {
@@ -64,7 +63,7 @@
     }
 
     #mainNav .nav-link {
-      color: rgba(255, 255, 255, 0.8);
+      color: #0e1b1f;
       font-size: 0.85rem;
       font-weight: 500;
       padding: 0.5rem 0.9rem;
@@ -80,7 +79,7 @@
     #mainNav .nav-link:hover,
     #mainNav .nav-link.active {
       color: #c9a96e;
-      background: rgba(201, 169, 110, 0.08);
+      background: rgba(201, 169, 110, 0.1);
     }
 
     #mainNav .nav-link .link-arrow {
@@ -88,6 +87,7 @@
       margin-left: 0.3rem;
       font-size: 0.65rem;
       transition: transform 0.25s;
+      color: #c9a96e;
     }
 
     #mainNav .nav-link.show .link-arrow {
@@ -95,17 +95,16 @@
     }
 
     #mainNav .dropdown-menu {
-      background: rgba(20, 33, 38, 0.98);
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: #fff;
+      border: 1px solid #e8e0d4;
       border-radius: 12px;
       padding: 0.5rem;
       margin-top: 0.4rem;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(8px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
     }
 
     #mainNav .dropdown-menu .dropdown-item {
-      color: rgba(255, 255, 255, 0.75);
+      color: #0e1b1f;
       font-size: 0.85rem;
       padding: 0.55rem 1rem;
       border-radius: 8px;
@@ -123,19 +122,19 @@
     }
 
     #mainNav .dropdown-menu .dropdown-item:hover {
-      color: #fff;
-      background: rgba(201, 169, 110, 0.12);
+      color: #c9a96e;
+      background: rgba(201, 169, 110, 0.1);
     }
 
     #mainNav .dropdown-menu .dropdown-item .dd-sub {
       display: block;
       font-size: 0.7rem;
-      color: rgba(255, 255, 255, 0.4);
+      color: #b0a89a;
       margin-top: 0.1rem;
     }
 
     #mainNav .dropdown-menu .dropdown-divider {
-      border-color: rgba(255, 255, 255, 0.06);
+      border-color: #e8e0d4;
       margin: 0.3rem 0;
     }
 
