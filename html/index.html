@@ -2,27 +2,936 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MYGV — The Pinnacle of Golf Visa</title>
-  <link rel="icon" type="image/png" href="../img/04.png">
+  <link rel="icon" type="image/png" href="img/04.png" />
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" />
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="../css/style.css" />
 
-  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ─── quick inline fallback (if external CSS fails) ─── */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8f6f2;
+      color: #1e1e2a;
+    }
+
+    .nav-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+      background: #0e1b1f;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 3rem;
+    }
+
+    .hero-text-inner {
+      max-width: 600px;
+    }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #c9a96e;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .hero-h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-h1 em {
+      font-style: italic;
+      color: #c9a96e;
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 1.75rem;
+      line-height: 1.6;
+    }
+
+    .hero-launch {
+      font-size: 0.9rem;
+      color: #c9a96e;
+      margin-bottom: 2rem;
+    }
+
+    .hero-launch i {
+      margin-right: 0.5rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn-gold {
+      background: #c9a96e;
+      color: #0e1b1f;
+      padding: 0.85rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: 0.3s;
+      border: none;
+    }
+
+    .btn-gold:hover {
+      background: #dbb97e;
+      color: #0e1b1f;
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+      padding: 0.85rem 2rem;
+      border-radius: 50px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+    }
+
+    .h-stat-num {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #c9a96e;
+    }
+
+    .h-stat-lbl {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-photo {
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .scroll-mouse {
+      width: 20px;
+      height: 32px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+      margin: 0.5rem auto 0;
+      position: relative;
+    }
+
+    .scroll-mouse::after {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 8px;
+      background: #c9a96e;
+      border-radius: 2px;
+      animation: scrollBounce 1.8s infinite;
+    }
+
+    @keyframes scrollBounce {
+
+      0%,
+      100% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+      }
+
+      50% {
+        transform: translateX(-50%) translateY(12px);
+        opacity: 0.3;
+      }
+    }
+
+    /* ─── page wrap ─── */
+    .page-wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+    }
+
+    .sec {
+      margin-bottom: 4rem;
+    }
+
+    .sec:last-child {
+      margin-bottom: 0;
+    }
+
+    .sec-hd {
+      margin-bottom: 2.5rem;
+    }
+
+    .sec-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #0e1b1f;
+    }
+
+    .sec-desc {
+      color: #555;
+      max-width: 560px;
+      font-size: 1.05rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Province Cards */
+    .card-prov {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+      transition: 0.3s;
+      height: 100%;
+    }
+
+    .card-prov:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.10);
+    }
+
+    .cp-img {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+    }
+
+    .cp-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cp-badge {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      background: rgba(14, 27, 31, 0.8);
+      backdrop-filter: blur(4px);
+      color: #fff;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .cp-badge i {
+      margin-right: 0.4rem;
+      color: #c9a96e;
+    }
+
+    .cp-body {
+      padding: 1.75rem;
+    }
+
+    .cp-region {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #c9a96e;
+      font-weight: 600;
+    }
+
+    .cp-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      margin: 0.25rem 0 0.75rem;
+      color: #0e1b1f;
+    }
+
+    .cp-body p {
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+    }
+
+    .link-arr {
+      color: #0e1b1f;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: 0.3s;
+    }
+
+    .link-arr:hover {
+      color: #c9a96e;
+      gap: 0.75rem;
+    }
+
+    /* Corporate */
+    .corp-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: #0e1b1f;
+      border-radius: 20px;
+      overflow: hidden;
+      color: #fff;
+    }
+
+    .corp-text {
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .corp-text .eyebrow {
+      color: #c9a96e;
+    }
+
+    .corp-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .corp-text p {
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.6;
+      margin-bottom: 1.75rem;
+    }
+
+    .btn-navy {
+      background: #c9a96e;
+      color: #0e1b1f;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: 0.3s;
+      align-self: flex-start;
+      border: none;
+    }
+
+    .btn-navy:hover {
+      background: #dbb97e;
+      color: #0e1b1f;
+    }
+
+    .corp-photo {
+      height: 100%;
+      min-height: 280px;
+    }
+
+    .corp-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Memberships */
+    .member-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+      height: 100%;
+      transition: 0.3s;
+      border: 1px solid #eee;
+      position: relative;
+    }
+
+    .member-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+    }
+
+    .member-card.is-gold {
+      border-color: #c9a96e;
+      background: linear-gradient(145deg, #fff, #fdf9f0);
+    }
+
+    .tier-chip {
+      display: inline-block;
+      padding: 0.2rem 1rem;
+      border-radius: 50px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.75rem;
+    }
+
+    .tier-chip.silver {
+      background: #e8e8e8;
+      color: #555;
+    }
+
+    .tier-chip.gold {
+      background: #c9a96e;
+      color: #0e1b1f;
+    }
+
+    .member-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #0e1b1f;
+    }
+
+    .m-desc {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin: 0.5rem 0 1.25rem;
+    }
+
+    .price-row {
+      margin-bottom: 1.25rem;
+    }
+
+    .price-main {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #0e1b1f;
+    }
+
+    .price-sfx {
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    .feat-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.75rem;
+    }
+
+    .feat-list li {
+      padding: 0.4rem 0;
+      color: #444;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .feat-list li i {
+      color: #c9a96e;
+      font-size: 0.85rem;
+      width: 1.2rem;
+      text-align: center;
+    }
+
+    .btn-member {
+      background: #eee;
+      border: none;
+      color: #0e1b1f;
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: 0.3s;
+      width: 100%;
+    }
+
+    .btn-member:hover {
+      background: #ddd;
+    }
+
+    .btn-member.filled {
+      background: #c9a96e;
+      color: #0e1b1f;
+    }
+
+    .btn-member.filled:hover {
+      background: #dbb97e;
+    }
+
+    /* ─── SIDEBAR ─── */
+    .sidebar-inner {
+      position: sticky;
+      top: 100px;
+    }
+
+    .sb-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #999;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    .side-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+      margin-bottom: 1.5rem;
+      transition: 0.3s;
+    }
+
+    .side-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.10);
+    }
+
+    .side-img {
+      position: relative;
+      height: 160px;
+      overflow: hidden;
+    }
+
+    .side-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .side-chip {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      padding: 0.2rem 0.8rem;
+      border-radius: 50px;
+      font-size: 0.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .side-chip.featured {
+      background: #c9a96e;
+      color: #0e1b1f;
+    }
+
+    .side-chip.gold-course {
+      background: #0e1b1f;
+      color: #c9a96e;
+    }
+
+    .side-body {
+      padding: 1.25rem;
+    }
+
+    .side-body h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0e1b1f;
+      margin-bottom: 0.25rem;
+    }
+
+    .side-body p {
+      color: #666;
+      font-size: 0.85rem;
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
+    }
+
+    .btn-green {
+      background: #0e1b1f;
+      color: #fff;
+      padding: 0.4rem 1.5rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.3s;
+      border: none;
+    }
+
+    .btn-green:hover {
+      background: #1a2e35;
+      color: #fff;
+    }
+
+    /* ─── MISSING SECTIONS (added) ─── */
+    .section-block {
+      padding: 3rem 0 4rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .section-block:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-block .sec-hd {
+      margin-bottom: 2rem;
+    }
+
+    .section-block .sec-hd .sec-title {
+      font-size: 2rem;
+    }
+
+    .section-block ul {
+      padding-left: 1.25rem;
+      color: #444;
+      line-height: 1.8;
+    }
+
+    .section-block ul li {
+      margin-bottom: 0.3rem;
+    }
+
+    .section-block .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .section-block .card-grid .mini-card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      border: 1px solid #f0ede8;
+      text-align: center;
+    }
+
+    .section-block .card-grid .mini-card i {
+      font-size: 1.8rem;
+      color: #c9a96e;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-block .card-grid .mini-card h5 {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #0e1b1f;
+    }
+
+    .section-block .card-grid .mini-card p {
+      font-size: 0.85rem;
+      color: #777;
+      margin-bottom: 0;
+    }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      background: #0e1b1f;
+      color: rgba(255, 255, 255, 0.7);
+      padding: 4rem 0 2rem;
+    }
+
+    .footer-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-brand .brand-icon {
+      color: #c9a96e;
+    }
+
+    .f-desc {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .f-col-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .f-link {
+      display: block;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 0.3rem 0;
+      transition: 0.3s;
+    }
+
+    .f-link:hover {
+      color: #c9a96e;
+    }
+
+    .socials {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .social-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      color: rgba(255, 255, 255, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: 0.3s;
+      font-size: 1rem;
+    }
+
+    .social-btn:hover {
+      background: #c9a96e;
+      color: #0e1b1f;
+    }
+
+    .f-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      margin-top: 3rem;
+      padding-top: 2rem;
+      font-size: 0.8rem;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    /* ─── responsive ─── */
+    @media (max-width: 992px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-text {
+        padding: 3rem 1.5rem;
+        order: 2;
+      }
+
+      .hero-photo {
+        height: 50vh;
+        order: 1;
+      }
+
+      .hero-h1 {
+        font-size: 2.8rem;
+      }
+
+      .page-wrap {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem 1rem;
+      }
+
+      .sidebar-inner {
+        position: static;
+      }
+
+      .corp-card {
+        grid-template-columns: 1fr;
+      }
+
+      .corp-text {
+        padding: 2rem;
+      }
+
+      .corp-photo {
+        min-height: 200px;
+      }
+
+      .sec-title {
+        font-size: 2rem;
+      }
+
+      .member-card {
+        padding: 1.5rem;
+      }
+
+      .hero-stats {
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+      }
+
+      .hero-ctas a {
+        text-align: center;
+        justify-content: center;
+      }
+
+      .hero-stats {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .sec-title {
+        font-size: 1.6rem;
+      }
+
+      .card-prov .cp-body h3 {
+        font-size: 1.2rem;
+      }
+
+      .member-card h3 {
+        font-size: 1.3rem;
+      }
+
+      .price-main {
+        font-size: 1.8rem;
+      }
+    }
+
+    .anim {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.7s ease forwards;
+    }
+
+    .anim.d1 {
+      animation-delay: 0.1s;
+    }
+
+    .anim.d2 {
+      animation-delay: 0.2s;
+    }
+
+    .anim.d3 {
+      animation-delay: 0.3s;
+    }
+
+    .anim.d4 {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* missing sections spacing */
+    .missing-section {
+      scroll-margin-top: 80px;
+    }
+
+    .badge-gold {
+      background: #c9a96e;
+      color: #0e1b1f;
+      padding: 0.2rem 0.8rem;
+      border-radius: 50px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: inline-block;
+    }
+
+    .inline-icon {
+      color: #c9a96e;
+      width: 1.6rem;
+      text-align: center;
+    }
+
+    .divider-light {
+      border: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.06), transparent);
+      margin: 2rem 0;
+    }
+  </style>
 </head>
 
 <body>
 
   <!-- ══════════════════════════════════════════
-     NAVBAR  —  Premium multi-level
-  ══════════════════════════════════════════ -->
-  <nav class="navbar navbar-expand-xl fixed-top" id="mainNav"
-       role="navigation" aria-label="Main navigation">
+    NAVBAR
+    ══════════════════════════════════════════ -->
+  <nav class="navbar navbar-expand-xl fixed-top" id="mainNav" role="navigation" aria-label="Main navigation">
     <div class="container nav-inner">
 
       <a class="navbar-brand" href="#hero" aria-label="MYGV Home">
@@ -33,9 +942,8 @@
         </span>
       </a>
 
-      <button class="navbar-toggler" type="button"
-              aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation"
-              data-bs-toggle="collapse" data-bs-target="#navMain">
+      <button class="navbar-toggler" type="button" aria-controls="navMain" aria-expanded="false"
+        aria-label="Toggle navigation" data-bs-toggle="collapse" data-bs-target="#navMain">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -51,154 +959,142 @@
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button"
-               data-bs-toggle="dropdown" data-bs-auto-close="outside"
-               aria-expanded="false" data-i18n="golf_visas">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              data-bs-auto-close="outside" aria-expanded="false" data-i18n="golf_visas">
               Golf Visas <span class="link-arrow"><i class="fa-solid fa-chevron-down"></i></span>
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#gvnb">
-                <i class="fa-solid fa-map-pin"></i>
-                <span><span data-i18n="gvnb">GVNB 2027</span><span class="dd-sub" data-i18n="gvnb_sub">New Brunswick</span></span>
-              </a></li>
+                  <i class="fa-solid fa-map-pin"></i>
+                  <span><span data-i18n="gvnb">GVNB 2027</span><span class="dd-sub" data-i18n="gvnb_sub">New
+                      Brunswick</span></span>
+                </a></li>
               <li><a class="dropdown-item" href="#gvns">
-                <i class="fa-solid fa-map-pin"></i>
-                <span><span data-i18n="gvns">GVNS 2027</span><span class="dd-sub" data-i18n="gvns_sub">Nova Scotia</span></span>
-              </a></li>
-              <li><hr class="dropdown-divider"></li>
+                  <i class="fa-solid fa-map-pin"></i>
+                  <span><span data-i18n="gvns">GVNS 2027</span><span class="dd-sub" data-i18n="gvns_sub">Nova
+                      Scotia</span></span>
+                </a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
               <li><a class="dropdown-item" href="#packages">
-                <i class="fa-solid fa-box"></i>
-                <span data-i18n="packages">Packages</span>
-              </a></li>
+                  <i class="fa-solid fa-box"></i>
+                  <span data-i18n="packages">Packages</span>
+                </a></li>
             </ul>
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button"
-               data-bs-toggle="dropdown" data-bs-auto-close="outside"
-               aria-expanded="false" data-i18n="courses">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              data-bs-auto-close="outside" aria-expanded="false" data-i18n="courses">
               Courses <span class="link-arrow"><i class="fa-solid fa-chevron-down"></i></span>
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#participating-courses">
-                <i class="fa-solid fa-flag-checkered"></i>
-                <span data-i18n="part_courses">Participating Courses</span>
-              </a></li>
+                  <i class="fa-solid fa-flag-checkered"></i>
+                  <span data-i18n="part_courses">Participating Courses</span>
+                </a></li>
               <li><a class="dropdown-item" href="#course-map">
-                <i class="fa-solid fa-map"></i>
-                <span data-i18n="course_map">Course Map</span>
-              </a></li>
+                  <i class="fa-solid fa-map"></i>
+                  <span data-i18n="course_map">Course Map</span>
+                </a></li>
             </ul>
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button"
-               data-bs-toggle="dropdown" data-bs-auto-close="outside"
-               aria-expanded="false" data-i18n="tournaments">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              data-bs-auto-close="outside" aria-expanded="false" data-i18n="tournaments">
               Tournaments <span class="link-arrow"><i class="fa-solid fa-chevron-down"></i></span>
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#gv-tournament">
-                <i class="fa-solid fa-trophy"></i>
-                <span data-i18n="gv_tournament">Golf Visa Tournament</span>
-              </a></li>
+                  <i class="fa-solid fa-trophy"></i>
+                  <span data-i18n="gv_tournament">Golf Visa Tournament</span>
+                </a></li>
               <li><a class="dropdown-item" href="#tournament-program">
-                <i class="fa-solid fa-calendar-check"></i>
-                <span data-i18n="tournament_program">Tournament Program</span>
-              </a></li>
+                  <i class="fa-solid fa-calendar-check"></i>
+                  <span data-i18n="tournament_program">Tournament Program</span>
+                </a></li>
             </ul>
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button"
-               data-bs-toggle="dropdown" data-bs-auto-close="outside"
-               aria-expanded="false" data-i18n="corporate">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              data-bs-auto-close="outside" aria-expanded="false" data-i18n="corporate">
               Corporate <span class="link-arrow"><i class="fa-solid fa-chevron-down"></i></span>
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#personalized-gv">
-                <i class="fa-solid fa-building"></i>
-                <span data-i18n="personalized_gv">Personalized Golf Visa</span>
-              </a></li>
+                  <i class="fa-solid fa-building"></i>
+                  <span data-i18n="personalized_gv">Personalized Golf Visa</span>
+                </a></li>
               <li><a class="dropdown-item" href="#organizations">
-                <i class="fa-solid fa-users"></i>
-                <span data-i18n="organizations">Organizations</span>
-              </a></li>
+                  <i class="fa-solid fa-users"></i>
+                  <span data-i18n="organizations">Organizations</span>
+                </a></li>
             </ul>
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button"
-               data-bs-toggle="dropdown" data-bs-auto-close="outside"
-               aria-expanded="false" data-i18n="about">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              data-bs-auto-close="outside" aria-expanded="false" data-i18n="about">
               About <span class="link-arrow"><i class="fa-solid fa-chevron-down"></i></span>
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#mission">
-                <i class="fa-solid fa-bullseye"></i>
-                <span data-i18n="mission">Mission Statement</span>
-              </a></li>
+                  <i class="fa-solid fa-bullseye"></i>
+                  <span data-i18n="mission">Mission Statement</span>
+                </a></li>
               <li><a class="dropdown-item" href="#conditions">
-                <i class="fa-solid fa-file-lines"></i>
-                <span data-i18n="conditions">Conditions</span>
-              </a></li>
+                  <i class="fa-solid fa-file-lines"></i>
+                  <span data-i18n="conditions">Conditions</span>
+                </a></li>
             </ul>
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button"
-               data-bs-toggle="dropdown" data-bs-auto-close="outside"
-               aria-expanded="false" data-i18n="contact">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              data-bs-auto-close="outside" aria-expanded="false" data-i18n="contact">
               Contact <span class="link-arrow"><i class="fa-solid fa-chevron-down"></i></span>
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#contact-us">
-                <i class="fa-solid fa-envelope"></i>
-                <span data-i18n="contact_us">Contact Us</span>
-              </a></li>
+                  <i class="fa-solid fa-envelope"></i>
+                  <span data-i18n="contact_us">Contact Us</span>
+                </a></li>
               <li><a class="dropdown-item" href="#etransfer">
-                <i class="fa-solid fa-money-bill-transfer"></i>
-                <span data-i18n="etransfer">E-Transfer Payment</span>
-              </a></li>
+                  <i class="fa-solid fa-money-bill-transfer"></i>
+                  <span data-i18n="etransfer">E-Transfer Payment</span>
+                </a></li>
             </ul>
           </li>
 
         </ul>
 
         <div class="nav-actions">
-
           <a href="#buy" class="btn-buy-gv" data-i18n="buy_cta">
             <i class="fa-solid fa-crown"></i> Buy Golf Visa
           </a>
 
           <div class="lang-switcher dropdown">
-            <button class="lang-btn dropdown-toggle" type="button"
-                    data-bs-toggle="dropdown" aria-expanded="false"
-                    aria-label="Select language" id="langDropdown">
+            <button class="lang-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+              aria-label="Select language" id="langDropdown">
               <span class="lang-flag" id="currentFlag">🇨🇦</span>
               <span class="lang-code" id="currentLang">EN</span>
               <span class="lang-caret"><i class="fa-solid fa-chevron-down"></i></span>
             </button>
-            <ul class="dropdown-menu lang-dropdown dropdown-menu-end"
-                aria-labelledby="langDropdown">
-              <li>
-                <a class="dropdown-item active-lang" href="#" data-lang="en">
+            <ul class="dropdown-menu lang-dropdown dropdown-menu-end" aria-labelledby="langDropdown">
+              <li><a class="dropdown-item active-lang" href="#" data-lang="en">
                   <span class="lang-flag">🇨🇦</span> English
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#" data-lang="fr">
+                </a></li>
+              <li><a class="dropdown-item" href="#" data-lang="fr">
                   <span class="lang-flag">🇫🇷</span> Français
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#" data-lang="es">
+                </a></li>
+              <li><a class="dropdown-item" href="#" data-lang="es">
                   <span class="lang-flag">🇪🇸</span> Español
-                </a>
-              </li>
+                </a></li>
             </ul>
           </div>
-
         </div>
       </div>
     </div>
@@ -206,8 +1102,8 @@
 
 
   <!-- ══════════════════════════════════════════
-     HERO
-  ══════════════════════════════════════════ -->
+HERO
+══════════════════════════════════════════ -->
   <section class="hero" id="hero">
 
     <div class="hero-text">
@@ -267,13 +1163,13 @@
 
 
   <!-- ══════════════════════════════════════════
-     MAIN — content col + sidebar col
-  ══════════════════════════════════════════ -->
+MAIN — content col + sidebar col
+══════════════════════════════════════════ -->
   <div class="page-wrap">
 
-    <div>
+    <main>
 
-      <!-- Province Cards -->
+      <!-- ─── Province Cards (existing) ─── -->
       <section class="sec" id="courses">
         <div class="sec-hd anim">
           <div class="eyebrow">Destinations</div>
@@ -288,7 +1184,8 @@
           <div class="col-md-6 anim d1">
             <div class="card-prov">
               <div class="cp-img">
-                <img src="https://images.unsplash.com/photo-1593111774240-c25f7e3cbabc?w=800&q=80" alt="Golf British Columbia" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1593111774240-c25f7e3cbabc?w=800&q=80"
+                  alt="Golf British Columbia" loading="lazy">
                 <div class="cp-badge">
                   <i class="fa-solid fa-location-dot"></i> British Columbia
                 </div>
@@ -310,7 +1207,8 @@
           <div class="col-md-6 anim d2">
             <div class="card-prov">
               <div class="cp-img">
-                <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=800&q=80" alt="Golf Ontario" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=800&q=80" alt="Golf Ontario"
+                  loading="lazy">
                 <div class="cp-badge">
                   <i class="fa-solid fa-location-dot"></i> Ontario
                 </div>
@@ -331,8 +1229,201 @@
         </div>
       </section>
 
+      <!-- ─── GVNB 2027 (new) ─── -->
+      <section class="section-block missing-section" id="gvnb">
+        <div class="sec-hd anim">
+          <div class="eyebrow">Golf Visa</div>
+          <h2 class="sec-title">GVNB 2027 — New Brunswick</h2>
+          <p class="sec-desc">
+            Experience the rugged beauty and world‑class fairways of New Brunswick.
+            From the Bay of Fundy to the Acadian coast, GVNB brings you the best of
+            Atlantic Canada.
+          </p>
+        </div>
+        <div class="card-grid anim d1">
+          <div class="mini-card">
+            <i class="fa-solid fa-flag"></i>
+            <h5>6 Partner Courses</h5>
+            <p>Including Algonquin, Kingswood, and more</p>
+          </div>
+          <div class="mini-card">
+            <i class="fa-solid fa-calendar-days"></i>
+            <h5>May – October 2027</h5>
+            <p>Full season access</p>
+          </div>
+          <div class="mini-card">
+            <i class="fa-solid fa-users"></i>
+            <h5>Exclusive Events</h5>
+            <p>Member tournaments &amp; clinics</p>
+          </div>
+          <div class="mini-card">
+            <i class="fa-solid fa-tag"></i>
+            <h5>From $349</h5>
+            <p>Early‑bird pricing available</p>
+          </div>
+        </div>
+      </section>
 
-      <!-- Corporate -->
+      <!-- ─── GVNS 2027 (new) ─── -->
+      <section class="section-block missing-section" id="gvns">
+        <div class="sec-hd anim">
+          <div class="eyebrow">Golf Visa</div>
+          <h2 class="sec-title">GVNS 2027 — Nova Scotia</h2>
+          <p class="sec-desc">
+            Discover the links‑style gems of Nova Scotia. With dramatic ocean views
+            and championship layouts, GVNS is the ultimate East Coast golf experience.
+          </p>
+        </div>
+        <div class="card-grid anim d1">
+          <div class="mini-card">
+            <i class="fa-solid fa-flag"></i>
+            <h5>8 Partner Courses</h5>
+            <p>Cabot Links, Fox Harb'r, and more</p>
+          </div>
+          <div class="mini-card">
+            <i class="fa-solid fa-calendar-days"></i>
+            <h5>June – October 2027</h5>
+            <p>Peak season access</p>
+          </div>
+          <div class="mini-card">
+            <i class="fa-solid fa-ship"></i>
+            <h5>Coastal Experience</h5>
+            <p>Ocean‑view fairways &amp; seaside dining</p>
+          </div>
+          <div class="mini-card">
+            <i class="fa-solid fa-tag"></i>
+            <h5>From $399</h5>
+            <p>Early‑bird pricing available</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Packages (new) ─── -->
+      <section class="section-block missing-section" id="packages">
+        <div class="sec-hd anim">
+          <div class="eyebrow">Choose Your Experience</div>
+          <h2 class="sec-title">Golf Visa Packages</h2>
+          <p class="sec-desc">
+            Tailored packages that combine premium golf, luxury accommodation, and
+            unforgettable experiences.
+          </p>
+        </div>
+        <div class="card-grid anim d1">
+          <div class="mini-card">
+            <i class="fa-solid fa-gem"></i>
+            <h5>Premier Package</h5>
+            <p>5 rounds + 2 nights at partner resorts</p>
+            <span class="badge-gold" style="margin-top:0.5rem;">$1,299</span>
+          </div>
+          <div class="mini-card">
+            <i class="fa-solid fa-star"></i>
+            <h5>Signature Package</h5>
+            <p>3 rounds + 1 night + spa credit</p>
+            <span class="badge-gold" style="margin-top:0.5rem;">$799</span>
+          </div>
+          <div class="mini-card">
+            <i class="fa-solid fa-play"></i>
+            <h5>Weekender</h5>
+            <p>2 rounds + preferred tee times</p>
+            <span class="badge-gold" style="margin-top:0.5rem;">$499</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Participating Courses (new) ─── -->
+      <section class="section-block missing-section" id="participating-courses">
+        <div class="sec-hd anim">
+          <div class="eyebrow">Our Network</div>
+          <h2 class="sec-title">Participating Courses</h2>
+          <p class="sec-desc">
+            From coast to coast, MYGV partners with Canada's most distinguished
+            golf clubs.
+          </p>
+        </div>
+        <ul class="anim d1">
+          <li><i class="fa-solid fa-circle-check inline-icon"></i> <strong>British Columbia</strong> — Capilano,
+            Shaughnessy, Nicklaus North</li>
+          <li><i class="fa-solid fa-circle-check inline-icon"></i> <strong>Ontario</strong> — Glen Abbey, St. George's,
+            Hamilton</li>
+          <li><i class="fa-solid fa-circle-check inline-icon"></i> <strong>Quebec</strong> — Le Mirage, Royal Québec, La
+            Vallée</li>
+          <li><i class="fa-solid fa-circle-check inline-icon"></i> <strong>Nova Scotia</strong> — Cabot Links, Fox
+            Harb'r, Highland Links</li>
+          <li><i class="fa-solid fa-circle-check inline-icon"></i> <strong>New Brunswick</strong> — Algonquin,
+            Kingswood, Rockwood</li>
+        </ul>
+      </section>
+
+      <!-- ─── Course Map (new) ─── -->
+      <section class="section-block missing-section" id="course-map">
+        <div class="sec-hd anim">
+          <div class="eyebrow">Explore</div>
+          <h2 class="sec-title">Course Map</h2>
+          <p class="sec-desc">
+            Interactive map of all MYGV partner courses across Canada.
+            <br><em>Interactive map coming soon.</em>
+          </p>
+        </div>
+        <div class="anim d1"
+          style="background:#eae7e0; border-radius:16px; padding:3rem 2rem; text-align:center; color:#777;">
+          <i class="fa-solid fa-map-location-dot"
+            style="font-size:2.4rem; color:#c9a96e; margin-bottom:0.5rem; display:block;"></i>
+          <p style="margin-bottom:0;">Map of 50+ courses loading …</p>
+        </div>
+      </section>
+
+      <!-- ─── GV Tournament (new) ─── -->
+      <section class="section-block missing-section" id="gv-tournament">
+        <div class="sec-hd anim">
+          <div class="eyebrow">Competition</div>
+          <h2 class="sec-title">Golf Visa Tournament</h2>
+          <p class="sec-desc">
+            The annual MYGV Championship — an exclusive event for our elite members.
+          </p>
+        </div>
+        <div class="row g-4 anim d1">
+          <div class="col-md-6">
+            <div style="background:#fff; border-radius:16px; padding:1.5rem; box-shadow:0 4px 16px rgba(0,0,0,0.04);">
+              <i class="fa-solid fa-trophy" style="color:#c9a96e; font-size:2rem;"></i>
+              <h5 style="margin:0.5rem 0 0.25rem;">2027 Championship</h5>
+              <p style="color:#666; font-size:0.9rem;">August 21–23, 2027 · Cabot Links, NS</p>
+              <span class="badge-gold">Register Now</span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div style="background:#fff; border-radius:16px; padding:1.5rem; box-shadow:0 4px 16px rgba(0,0,0,0.04);">
+              <i class="fa-solid fa-medal" style="color:#c9a96e; font-size:2rem;"></i>
+              <h5 style="margin:0.5rem 0 0.25rem;">Qualifier Series</h5>
+              <p style="color:#666; font-size:0.9rem;">June – July 2027 · Multiple venues</p>
+              <span class="badge-gold">View Schedule</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Tournament Program (new) ─── -->
+      <section class="section-block missing-section" id="tournament-program">
+        <div class="sec-hd anim">
+          <div class="eyebrow">Program</div>
+          <h2 class="sec-title">Tournament Program</h2>
+          <p class="sec-desc">
+            A structured pathway from amateur to champion — with coaching,
+            clinics, and competitive play.
+          </p>
+        </div>
+        <ul class="anim d1">
+          <li><i class="fa-solid fa-flag inline-icon"></i> <strong>Spring Training</strong> — April–May: clinics &amp;
+            practice rounds</li>
+          <li><i class="fa-solid fa-flag inline-icon"></i> <strong>Summer Series</strong> — June–July: 4 regional
+            qualifiers</li>
+          <li><i class="fa-solid fa-flag inline-icon"></i> <strong>Championship</strong> — August: finals at Cabot Links
+          </li>
+          <li><i class="fa-solid fa-flag inline-icon"></i> <strong>Autumn Classic</strong> — September: season‑closing
+            event</li>
+        </ul>
+      </section>
+
+      <!-- ─── Corporate ─── (existing) -->
       <section class="sec anim" id="corporate">
         <div class="corp-card">
           <div class="corp-text">
@@ -348,13 +1439,62 @@
             </a>
           </div>
           <div class="corp-photo">
-            <img src="https://images.unsplash.com/photo-1552675742-1eb38a5d56fb?w=900&q=80" alt="Corporate golf" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1552675742-1eb38a5d56fb?w=900&q=80" alt="Corporate golf"
+              loading="lazy">
           </div>
         </div>
       </section>
 
+      <!-- ─── Personalized GV (new) ─── -->
+      <section class="section-block missing-section" id="personalized-gv">
+        <div class="sec-hd anim">
+          <div class="eyebrow">Bespoke</div>
+          <h2 class="sec-title">Personalized Golf Visa</h2>
+          <p class="sec-desc">
+            A custom‑tailored golf experience designed around your schedule,
+            preferences, and goals.
+          </p>
+        </div>
+        <div class="card-grid anim d1">
+          <div class="mini-card">
+            <i class="fa-solid fa-calendar-plus"></i>
+            <h5>Flexible Dates</h5>
+            <p>Choose your own tee times and travel windows</p>
+          </div>
+          <div class="mini-card">
+            <i class="fa-solid fa-location-dot"></i>
+            <h5>Course Selection</h5>
+            <p>Hand‑pick your preferred courses</p>
+          </div>
+          <div class="mini-card">
+            <i class="fa-solid fa-champagne-glasses"></i>
+            <h5>Concierge Service</h5>
+            <p>Dining, accommodation &amp; transport arranged</p>
+          </div>
+        </div>
+      </section>
 
-      <!-- Memberships -->
+      <!-- ─── Organizations (new) ─── -->
+      <section class="section-block missing-section" id="organizations">
+        <div class="sec-hd anim">
+          <div class="eyebrow">Groups</div>
+          <h2 class="sec-title">Organizations &amp; Groups</h2>
+          <p class="sec-desc">
+            Corporate teams, golf societies, and private groups — we offer
+            tailored programs for every organization.
+          </p>
+        </div>
+        <ul class="anim d1">
+          <li><i class="fa-solid fa-building inline-icon"></i> <strong>Corporate Memberships</strong> — 10+ employees:
+            group rates &amp; events</li>
+          <li><i class="fa-solid fa-people-group inline-icon"></i> <strong>Society Packages</strong> — 20+ members:
+            dedicated tournament days</li>
+          <li><i class="fa-solid fa-handshake inline-icon"></i> <strong>Partner Program</strong> — exclusive benefits
+            for affiliated clubs</li>
+        </ul>
+      </section>
+
+      <!-- ─── Memberships (existing) ─── -->
       <section class="sec" id="memberships">
         <div class="sec-hd anim">
           <div class="eyebrow">Memberships</div>
@@ -382,7 +1522,7 @@
                 <li><i class="fa-solid fa-check"></i> Access to 20+ partner courses</li>
                 <li><i class="fa-solid fa-check"></i> Preferred tee time booking</li>
                 <li><i class="fa-solid fa-check"></i> Digital GV Card</li>
-                <li><i class="fa-solid fa-check"></i> Newsletter & updates</li>
+                <li><i class="fa-solid fa-check"></i> Newsletter &amp; updates</li>
               </ul>
               <button class="btn-member">Get Started</button>
             </div>
@@ -402,9 +1542,9 @@
               </div>
               <ul class="feat-list">
                 <li><i class="fa-solid fa-check"></i> Unlimited access to all courses</li>
-                <li><i class="fa-solid fa-check"></i> VIP tee times & priority booking</li>
+                <li><i class="fa-solid fa-check"></i> VIP tee times &amp; priority booking</li>
                 <li><i class="fa-solid fa-check"></i> Exclusive member events</li>
-                <li><i class="fa-solid fa-check"></i> Luxury perks & rewards</li>
+                <li><i class="fa-solid fa-check"></i> Luxury perks &amp; rewards</li>
               </ul>
               <button class="btn-member filled">Get Started</button>
             </div>
@@ -412,7 +1552,170 @@
         </div>
       </section>
 
-    </div>
+      <!-- ─── Mission (new) ─── -->
+      <section class="section-block missing-section" id="mission">
+        <div class="sec-hd anim">
+          <div class="eyebrow">About</div>
+          <h2 class="sec-title">Mission Statement</h2>
+          <p class="sec-desc">
+            To connect discerning golfers with Canada's most extraordinary
+            courses through a seamless, premium membership experience.
+          </p>
+        </div>
+        <div style="max-width:720px;" class="anim d1">
+          <p style="color:#444; line-height:1.8;">
+            <i class="fa-solid fa-quote-left"
+              style="color:#c9a96e; font-size:1.4rem; opacity:0.5; display:block; margin-bottom:0.5rem;"></i>
+            MYGV was founded with a single purpose: to elevate the golf experience
+            by removing barriers, curating excellence, and building a community
+            of passionate players. We believe that every round should be memorable,
+            every fairway should inspire, and every member should feel valued.
+          </p>
+          <p style="color:#444; line-height:1.8; margin-top:1rem;">
+            <strong>Our values:</strong> Integrity, Excellence, Community, and
+            a deep respect for the game and the land it's played on.
+          </p>
+        </div>
+      </section>
+
+      <!-- ─── Conditions (new) ─── -->
+      <section class="section-block missing-section" id="conditions">
+        <div class="sec-hd anim">
+          <div class="eyebrow">Legal</div>
+          <h2 class="sec-title">Terms &amp; Conditions</h2>
+          <p class="sec-desc">
+            Important information about your Golf Visa membership.
+          </p>
+        </div>
+        <div style="max-width:720px;" class="anim d1">
+          <ul style="color:#444; line-height:1.9;">
+            <li><i class="fa-solid fa-check inline-icon"></i> Membership is valid for the calendar year indicated.</li>
+            <li><i class="fa-solid fa-check inline-icon"></i> Tee times are subject to course availability.</li>
+            <li><i class="fa-solid fa-check inline-icon"></i> Cancellations must be made 48 hours in advance.</li>
+            <li><i class="fa-solid fa-check inline-icon"></i> GV Card is non‑transferable and for personal use only.
+            </li>
+            <li><i class="fa-solid fa-check inline-icon"></i> All members must adhere to course dress codes and
+              etiquette.</li>
+            <li><i class="fa-solid fa-check inline-icon"></i> MYGV reserves the right to update terms with 30 days'
+              notice.</li>
+          </ul>
+          <p style="color:#888; font-size:0.85rem; margin-top:1rem;">
+            Full terms available upon request. <a href="#" style="color:#c9a96e;">Download PDF</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- ─── Contact Us (new) ─── -->
+      <section class="section-block missing-section" id="contact-us">
+        <div class="sec-hd anim">
+          <div class="eyebrow">Get in Touch</div>
+          <h2 class="sec-title">Contact Us</h2>
+          <p class="sec-desc">
+            We're here to help. Reach out for membership inquiries,
+            partnership opportunities, or general questions.
+          </p>
+        </div>
+        <div class="row g-4 anim d1">
+          <div class="col-md-4">
+            <div
+              style="background:#fff; border-radius:16px; padding:1.5rem; text-align:center; box-shadow:0 4px 16px rgba(0,0,0,0.04); height:100%;">
+              <i class="fa-solid fa-envelope" style="font-size:2rem; color:#c9a96e;"></i>
+              <h5 style="margin:0.75rem 0 0.25rem;">Email</h5>
+              <p style="color:#666; font-size:0.9rem;">info@mygv.ca</p>
+              <p style="color:#999; font-size:0.8rem;">Response within 24h</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div
+              style="background:#fff; border-radius:16px; padding:1.5rem; text-align:center; box-shadow:0 4px 16px rgba(0,0,0,0.04); height:100%;">
+              <i class="fa-solid fa-phone" style="font-size:2rem; color:#c9a96e;"></i>
+              <h5 style="margin:0.75rem 0 0.25rem;">Phone</h5>
+              <p style="color:#666; font-size:0.9rem;">+1 (800) 555‑GOLF</p>
+              <p style="color:#999; font-size:0.8rem;">Mon–Fri 9am–6pm EST</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div
+              style="background:#fff; border-radius:16px; padding:1.5rem; text-align:center; box-shadow:0 4px 16px rgba(0,0,0,0.04); height:100%;">
+              <i class="fa-solid fa-location-dot" style="font-size:2rem; color:#c9a96e;"></i>
+              <h5 style="margin:0.75rem 0 0.25rem;">Headquarters</h5>
+              <p style="color:#666; font-size:0.9rem;">Toronto, ON</p>
+              <p style="color:#999; font-size:0.8rem;">By appointment only</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── E-Transfer (new) ─── -->
+      <section class="section-block missing-section" id="etransfer">
+        <div class="sec-hd anim">
+          <div class="eyebrow">Payments</div>
+          <h2 class="sec-title">E-Transfer Payment</h2>
+          <p class="sec-desc">
+            Secure and convenient Interac e‑Transfer for your Golf Visa purchase.
+          </p>
+        </div>
+        <div style="max-width:600px;" class="anim d1">
+          <div style="background:#fff; border-radius:16px; padding:2rem; box-shadow:0 4px 16px rgba(0,0,0,0.04);">
+            <p style="display:flex; align-items:center; gap:0.75rem; font-weight:600;">
+              <i class="fa-solid fa-circle-info" style="color:#c9a96e;"></i>
+              How to pay via e‑Transfer
+            </p>
+            <ol style="color:#444; line-height:2.2; padding-left:1.25rem;">
+              <li>Log in to your online banking</li>
+              <li>Select <strong>Interac e‑Transfer</strong></li>
+              <li>Send to: <strong>payments@mygv.ca</strong></li>
+              <li>Include your <strong>full name</strong> and <strong>GV Card tier</strong> in the message</li>
+              <li>You'll receive confirmation within 2 business hours</li>
+            </ol>
+            <div style="background:#f5f2ec; border-radius:8px; padding:1rem; margin-top:1rem;">
+              <p style="margin:0; font-size:0.9rem; color:#555;">
+                <i class="fa-solid fa-lock" style="color:#c9a96e;"></i>
+                <strong>Secure:</strong> All transactions are encrypted and monitored.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Buy (new) ─── -->
+      <section class="section-block missing-section" id="buy">
+        <div class="sec-hd anim">
+          <div class="eyebrow">Purchase</div>
+          <h2 class="sec-title">Buy Your Golf Visa</h2>
+          <p class="sec-desc">
+            Choose your membership tier and start your MYGV journey today.
+          </p>
+        </div>
+        <div class="row g-4 anim d1">
+          <div class="col-md-6">
+            <div
+              style="background:#fff; border-radius:16px; padding:2rem; box-shadow:0 4px 16px rgba(0,0,0,0.04); text-align:center; height:100%;">
+              <span class="tier-chip silver">Silver</span>
+              <h4 style="font-family:'Playfair Display',serif; margin:0.5rem 0;">Silver GV Card</h4>
+              <p style="color:#666;">$499 / year</p>
+              <a href="#" class="btn-gold" style="display:inline-flex;">Buy Now</a>
+              <p style="color:#999; font-size:0.8rem; margin-top:0.75rem;">Includes 20+ courses</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div
+              style="background:#fdf9f0; border-radius:16px; padding:2rem; box-shadow:0 4px 16px rgba(0,0,0,0.04); text-align:center; border:1px solid #c9a96e; height:100%;">
+              <span class="tier-chip gold">Gold</span>
+              <h4 style="font-family:'Playfair Display',serif; margin:0.5rem 0;">Gold GV Card</h4>
+              <p style="color:#666;">$999 / year</p>
+              <a href="#" class="btn-gold" style="display:inline-flex;">Buy Now</a>
+              <p style="color:#999; font-size:0.8rem; margin-top:0.75rem;">Unlimited access + VIP perks</p>
+            </div>
+          </div>
+        </div>
+        <p class="anim d2" style="margin-top:1.5rem; color:#888; font-size:0.9rem; text-align:center;">
+          <i class="fa-solid fa-shield-halved" style="color:#c9a96e;"></i>
+          Secure checkout · Instant digital delivery · 30‑day money‑back guarantee
+        </p>
+      </section>
+
+    </main>
 
 
     <!-- ─── SIDEBAR ─── -->
@@ -422,7 +1725,8 @@
 
         <div class="side-card anim d1">
           <div class="side-img">
-            <img src="https://images.unsplash.com/photo-1604543009019-95bfcdeb7c3c?w=600&q=80" alt="Oceanview Greens" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1604543009019-95bfcdeb7c3c?w=600&q=80" alt="Oceanview Greens"
+              loading="lazy">
             <span class="side-chip featured">Featured</span>
           </div>
           <div class="side-body">
@@ -434,12 +1738,26 @@
 
         <div class="side-card anim d2">
           <div class="side-img">
-            <img src="https://images.unsplash.com/photo-1591492118307-8e7b0e5b0e5e?w=600&q=80" alt="The Golden Fairway" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1591492118307-8e7b0e5b0e5e?w=600&q=80" alt="The Golden Fairway"
+              loading="lazy">
             <span class="side-chip gold-course">Gold Course</span>
           </div>
           <div class="side-body">
             <h4>The Golden Fairway</h4>
             <p>Exclusive access — Top 10 in Canada.</p>
+            <a href="#" class="btn-green">Book Now</a>
+          </div>
+        </div>
+
+        <div class="side-card anim d3">
+          <div class="side-img">
+            <img src="https://images.unsplash.com/photo-1563534620-5a2c9b6f5b0b?w=600&q=80" alt="Mountain Ridge"
+              loading="lazy">
+            <span class="side-chip" style="background:#0e1b1f; color:#c9a96e;">Mountain</span>
+          </div>
+          <div class="side-body">
+            <h4>Mountain Ridge</h4>
+            <p>Alpine fairways with 360° views.</p>
             <a href="#" class="btn-green">Book Now</a>
           </div>
         </div>
@@ -450,14 +1768,14 @@
 
 
   <!-- ══════════════════════════════════════════
-     FOOTER
-  ══════════════════════════════════════════ -->
+FOOTER
+══════════════════════════════════════════ -->
   <footer class="footer" id="shop">
     <div class="container">
       <div class="row g-5">
 
         <div class="col-lg-4">
-          <a class="footer-brand" href="#">
+          <a class="footer-brand" href="#hero">
             <span class="brand-icon"><i class="fa-brands fa-canadian-maple-leaf"></i></span>
             MYGV
           </a>
@@ -469,8 +1787,8 @@
 
         <div class="col-6 col-lg-2">
           <p class="f-col-title">Company</p>
-          <a href="#" class="f-link">About</a>
-          <a href="#" class="f-link">Contact</a>
+          <a href="#mission" class="f-link">About</a>
+          <a href="#contact-us" class="f-link">Contact</a>
           <a href="#" class="f-link">Careers</a>
           <a href="#" class="f-link">Press</a>
         </div>
@@ -479,7 +1797,7 @@
           <p class="f-col-title">Support</p>
           <a href="#" class="f-link">FAQ</a>
           <a href="#" class="f-link">Privacy</a>
-          <a href="#" class="f-link">Terms</a>
+          <a href="#conditions" class="f-link">Terms</a>
           <a href="#" class="f-link">Accessibility</a>
         </div>
 
@@ -511,11 +1829,14 @@
 
 
   <!-- ══════════════════════════════════════════
-     SCRIPTS
-  ══════════════════════════════════════════ -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../js/i18n.js"></script>
-  <script src="../js/main.js"></script>
+SCRIPTS
+══════════════════════════════════════════ -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <script src="js/i18n.js">
+  </script>
+  <script src="js/main.js">
+  </script>
 
 </body>
 
