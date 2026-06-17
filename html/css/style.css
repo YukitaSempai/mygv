@@ -15,12 +15,13 @@
     #mainNav {
       background: #fff;
       padding: 0.75rem 0;
-      transition: box-shadow 0.35s ease, padding 0.35s ease;
+      transition: box-shadow 0.4s ease, padding 0.4s ease, backdrop-filter 0.4s ease;
     }
 
     #mainNav.scrolled {
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
       padding: 0.4rem 0;
+      backdrop-filter: blur(6px);
     }
 
     #mainNav .navbar-brand {
@@ -170,8 +171,8 @@
 
     .lang-switcher .lang-btn {
       background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #fff;
+      border: 1px solid #d4cfc8;
+      color: #0e1b1f;
       padding: 0.35rem 0.75rem;
       border-radius: 8px;
       font-size: 0.8rem;
@@ -203,13 +204,21 @@
     .lang-switcher .lang-code {
       font-size: 0.75rem;
       font-weight: 600;
+      color: #0e1b1f;
     }
 
     .lang-switcher .lang-caret {
       font-size: 0.55rem;
-      color: rgba(255, 255, 255, 0.5);
+      color: #c9a96e;
     }
 
+    .lang-dropdown .dropdown-item {
+      color: #0e1b1f;
+    }
+    .lang-dropdown .dropdown-item:hover {
+      color: #c9a96e;
+      background: rgba(201, 169, 110, 0.1);
+    }
     .lang-dropdown .dropdown-item.active-lang {
       color: #c9a96e;
       background: rgba(201, 169, 110, 0.1);
@@ -269,6 +278,12 @@
       #mainNav .nav-link {
         font-size: 1rem;
         padding: 0.65rem 0.8rem;
+        color: rgba(255, 255, 255, 0.85);
+      }
+      #mainNav .nav-link:hover,
+      #mainNav .nav-link.active {
+        color: #c9a96e;
+        background: rgba(201, 169, 110, 0.1);
       }
 
       #mainNav .dropdown-menu {
@@ -284,6 +299,11 @@
       #mainNav .dropdown-menu .dropdown-item {
         padding: 0.45rem 0.8rem;
         font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.7);
+      }
+      #mainNav .dropdown-menu .dropdown-item:hover {
+        color: #c9a96e;
+        background: rgba(201, 169, 110, 0.1);
       }
 
       #mainNav .nav-actions {
@@ -308,6 +328,14 @@
 
       .lang-switcher .lang-btn {
         padding: 0.5rem 1rem;
+        border-color: rgba(255, 255, 255, 0.2);
+        color: #fff;
+      }
+      .lang-switcher .lang-btn .lang-code {
+        color: #fff;
+      }
+      .lang-switcher .lang-btn .lang-caret {
+        color: rgba(255, 255, 255, 0.5);
       }
 
       .lang-switcher .dropdown-menu {
@@ -317,6 +345,12 @@
         border-radius: 12px !important;
         padding: 0.5rem !important;
         box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3) !important;
+      }
+      .lang-switcher .dropdown-menu .dropdown-item {
+        color: rgba(255, 255, 255, 0.75) !important;
+      }
+      .lang-switcher .dropdown-menu .dropdown-item:hover {
+        color: #c9a96e !important;
       }
     }
 
