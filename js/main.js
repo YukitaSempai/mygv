@@ -96,6 +96,7 @@
   }
 
   let currentLang = getInitialLang();
+  window.currentLang = currentLang;
 
   function applyTranslation(lang) {
     const dict = i18n[lang];
@@ -104,7 +105,17 @@
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (dict[key] !== undefined) {
-        el.textContent = dict[key];
+        if (el.tagName === 'IMG') {
+          el.setAttribute('alt', dict[key]);
+        } else {
+          el.textContent = dict[key];
+        }
+      }
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (dict[key] !== undefined) {
+        el.setAttribute('placeholder', dict[key]);
       }
     });
 
@@ -123,21 +134,25 @@
     document.documentElement.lang = lang;
     localStorage.setItem('mygv_lang', lang);
     currentLang = lang;
+    window.currentLang = lang;
+    if (typeof window.applyMapTranslations === 'function') {
+      window.applyMapTranslations();
+    }
   }
 
-  document.querySelectorAll('.lang-dropdown .dropdown-item').forEach(item => {
-    item.addEventListener('click', function (e) {
-      e.preventDefault();
-      const lang = this.dataset.lang;
-      if (lang && lang !== currentLang) {
-        applyTranslation(lang);
-      }
-      const btn = document.querySelector('.lang-btn');
-      if (btn && window.innerWidth >= 1200) {
-        const bsDD = bootstrap.Dropdown.getInstance(btn);
-        if (bsDD) bsDD.hide();
-      }
-    });
+  document.querySelector('.lang-dropdown').addEventListener('click', function (e) {
+    const item = e.target.closest('.dropdown-item');
+    if (!item) return;
+    e.preventDefault();
+    const lang = item.dataset.lang;
+    if (lang && lang !== currentLang) {
+      applyTranslation(lang);
+    }
+    const btn = document.querySelector('.lang-btn');
+    if (btn && window.innerWidth >= 1200) {
+      const bsDD = bootstrap.Dropdown.getInstance(btn);
+      if (bsDD) bsDD.hide();
+    }
   });
 
   applyTranslation(currentLang);
