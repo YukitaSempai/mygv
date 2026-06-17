@@ -14,53 +14,21 @@
   syncNav();
 
   /* ════════════════════════════════════════
-     BOOTSTRAP DROPDOWN HOVER (desktop only)
+     MOBILE DROPDOWN CLICK TOGGLE
   ════════════════════════════════════════ */
-  if (window.innerWidth >= 1200) {
-    const allNavDds = document.querySelectorAll('.navbar-nav .dropdown-toggle');
-    allNavDds.forEach(toggle => {
-      const dd = toggle.closest('.dropdown');
-      if (!dd) return;
+  if (window.innerWidth < 1200) {
+    const navDds = document.querySelectorAll('.navbar-nav .dropdown');
+    navDds.forEach(dd => {
+      const toggle = dd.querySelector('.dropdown-toggle');
       const menu = dd.querySelector('.dropdown-menu');
-      if (!menu) return;
-
-      let hideTimer = null;
-
-      function closeAllNavDropdowns() {
-        allNavDds.forEach(otherToggle => {
-          if (otherToggle !== toggle) {
-            const otherDd = otherToggle.closest('.dropdown');
-            if (otherDd && otherDd.classList.contains('show')) {
-              const inst = bootstrap.Dropdown.getInstance(otherToggle);
-              if (inst) inst.hide();
-            }
-          }
-        });
-      }
-
-      function showDropdown() {
-        clearTimeout(hideTimer);
-        closeAllNavDropdowns();
-        if (!dd.classList.contains('show')) {
-          const bsDD = bootstrap.Dropdown.getOrCreateInstance(toggle);
-          bsDD.show();
-        }
-      }
-
-      function scheduleHide() {
-        clearTimeout(hideTimer);
-        hideTimer = setTimeout(() => {
-          if (dd.classList.contains('show')) {
-            const bsDD = bootstrap.Dropdown.getInstance(toggle);
-            if (bsDD) bsDD.hide();
-          }
-        }, 180);
-      }
-
-      dd.addEventListener('mouseenter', showDropdown);
-      dd.addEventListener('mouseleave', scheduleHide);
-      menu.addEventListener('mouseenter', showDropdown);
-      menu.addEventListener('mouseleave', scheduleHide);
+      if (!toggle || !menu) return;
+      toggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        const isOpen = dd.classList.toggle('show');
+        toggle.classList.toggle('show', isOpen);
+        menu.classList.toggle('show', isOpen);
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
     });
   }
 

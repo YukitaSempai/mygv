@@ -321,6 +321,23 @@
       }
     }
 
+    /* ─── desktop dropdown hover ─── */
+    @media (min-width: 1200px) {
+      .navbar-nav .dropdown:hover > .dropdown-menu {
+        display: block !important;
+        margin-top: 0.25rem;
+        opacity: 1;
+        visibility: visible;
+      }
+      .navbar-nav .dropdown:hover > .dropdown-toggle {
+        color: #c9a96e;
+        background: rgba(201, 169, 110, 0.08);
+      }
+      .navbar-nav .dropdown:hover > .dropdown-toggle .link-arrow {
+        transform: rotate(180deg);
+      }
+    }
+
     .nav-inner {
       max-width: 1400px;
       margin: 0 auto;
