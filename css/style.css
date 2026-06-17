@@ -73,6 +73,10 @@
       white-space: nowrap;
     }
 
+    #mainNav .dropdown-toggle::after {
+      display: none !important;
+    }
+
     #mainNav .nav-link:hover,
     #mainNav .nav-link.active {
       color: #c9a96e;
@@ -187,6 +191,14 @@
     .lang-switcher .lang-flag {
       font-size: 1rem;
       line-height: 1;
+    }
+
+    .flag-img {
+      width: 20px;
+      height: 15px;
+      vertical-align: middle;
+      border-radius: 2px;
+      display: inline-block;
     }
 
     .lang-switcher .lang-code {

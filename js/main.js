@@ -17,8 +17,8 @@
      BOOTSTRAP DROPDOWN HOVER (desktop only)
   ════════════════════════════════════════ */
   if (window.innerWidth >= 1200) {
-    const ddToggles = document.querySelectorAll('.navbar-nav .dropdown-toggle');
-    ddToggles.forEach(toggle => {
+    const allNavDds = document.querySelectorAll('.navbar-nav .dropdown-toggle');
+    allNavDds.forEach(toggle => {
       const dd = toggle.closest('.dropdown');
       if (!dd) return;
       const menu = dd.querySelector('.dropdown-menu');
@@ -26,8 +26,21 @@
 
       let hideTimer = null;
 
+      function closeAllNavDropdowns() {
+        allNavDds.forEach(otherToggle => {
+          if (otherToggle !== toggle) {
+            const otherDd = otherToggle.closest('.dropdown');
+            if (otherDd && otherDd.classList.contains('show')) {
+              const inst = bootstrap.Dropdown.getInstance(otherToggle);
+              if (inst) inst.hide();
+            }
+          }
+        });
+      }
+
       function showDropdown() {
         clearTimeout(hideTimer);
+        closeAllNavDropdowns();
         if (!dd.classList.contains('show')) {
           const bsDD = bootstrap.Dropdown.getOrCreateInstance(toggle);
           bsDD.show();
@@ -35,12 +48,13 @@
       }
 
       function scheduleHide() {
+        clearTimeout(hideTimer);
         hideTimer = setTimeout(() => {
           if (dd.classList.contains('show')) {
             const bsDD = bootstrap.Dropdown.getInstance(toggle);
             if (bsDD) bsDD.hide();
           }
-        }, 120);
+        }, 180);
       }
 
       dd.addEventListener('mouseenter', showDropdown);
@@ -126,12 +140,12 @@
       }
     });
 
-    const flagMap = { en: '\uD83C\uDDE8\uD83C\uDDE6', fr: '\uD83C\uDDEB\uD83C\uDDF7', es: '\uD83C\uDDEA\uD83C\uDDF8' };
+    const flagMap = { en: '<img src="https://flagcdn.com/w20/ca.png" alt="EN" class="flag-img">', fr: '<img src="https://flagcdn.com/w20/fr.png" alt="FR" class="flag-img">', es: '<img src="https://flagcdn.com/w20/es.png" alt="ES" class="flag-img">' };
     const codeMap = { en: 'EN', fr: 'FR', es: 'ES' };
 
     const flagEl = document.getElementById('currentFlag');
     const codeEl = document.getElementById('currentLang');
-    if (flagEl) flagEl.textContent = flagMap[lang] || '\uD83C\uDDE8\uD83C\uDDE6';
+    if (flagEl) flagEl.innerHTML = flagMap[lang] || flagMap['en'];
     if (codeEl) codeEl.textContent = codeMap[lang] || 'EN';
 
     document.querySelectorAll('.lang-dropdown .dropdown-item').forEach(item => {
