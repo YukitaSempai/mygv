@@ -19,10 +19,10 @@
   const navCollapse = document.getElementById('navMain');
   if (navCollapse) {
     const closeLinks = navCollapse.querySelectorAll('.nav-link');
-    closeLinks.forEach(link => {
-      link.addEventListener('click', () => {
+    closeLinks.forEach(function (link) {
+      link.addEventListener('click', function () {
         if (window.innerWidth < 1200 && navCollapse.classList.contains('show')) {
-          const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
+          var bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
           if (bsCollapse) bsCollapse.hide();
         }
       });
@@ -30,21 +30,70 @@
   }
 
   /* ════════════════════════════════════════
-     SCROLL-REVEAL
+     ENHANCED SCROLL-REVEAL
   ════════════════════════════════════════ */
-  const animEls = document.querySelectorAll('.anim');
   if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('in');
-          io.unobserve(e.target);
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
-    animEls.forEach(el => io.observe(el));
+    }, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
+
+    document.querySelectorAll('.reveal, .reveal-l, .reveal-r, .reveal-scale, .anim').forEach(function (el) {
+      revealObserver.observe(el);
+    });
   } else {
-    animEls.forEach(el => el.classList.add('in'));
+    document.querySelectorAll('.reveal, .reveal-l, .reveal-r, .reveal-scale, .anim').forEach(function (el) {
+      el.classList.add('in');
+    });
+  }
+
+  /* ─── stagger children helper ─── */
+  document.querySelectorAll('[data-stagger]').forEach(function (parent) {
+    var delay = parseFloat(parent.getAttribute('data-stagger')) || 0.1;
+    var children = parent.children;
+    for (var i = 0; i < children.length; i++) {
+      var child = children[i];
+      if (child.classList.contains('reveal') || child.classList.contains('reveal-l') || child.classList.contains('reveal-r') || child.classList.contains('reveal-scale') || child.classList.contains('anim')) {
+        child.style.transitionDelay = (i * delay) + 's';
+      }
+    }
+  });
+
+  /* ════════════════════════════════════════
+     COUNTER ANIMATION
+  ════════════════════════════════════════ */
+  var counters = document.querySelectorAll('.counter');
+  if (counters.length && 'IntersectionObserver' in window) {
+    var counterObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          var target = parseInt(el.getAttribute('data-target'), 10);
+          if (isNaN(target)) target = parseInt(el.textContent.replace(/[^0-9]/g, ''), 10);
+          if (isNaN(target)) return;
+          var duration = 1500;
+          var startTime = null;
+          function animateCounter(time) {
+            if (!startTime) startTime = time;
+            var progress = Math.min((time - startTime) / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.floor(eased * target);
+            if (progress < 1) {
+              requestAnimationFrame(animateCounter);
+            } else {
+              el.textContent = target;
+            }
+          }
+          requestAnimationFrame(animateCounter);
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(function (c) { counterObserver.observe(c); });
   }
 
   /* ════════════════════════════════════════
@@ -64,22 +113,22 @@
      LANGUAGE SWITCHER
   ════════════════════════════════════════ */
   function getInitialLang() {
-    const saved = localStorage.getItem('mygv_lang');
+    var saved = localStorage.getItem('mygv_lang');
     if (saved && i18n[saved]) return saved;
-    const navLang = (navigator.language || navigator.userLanguage || 'en').slice(0, 2);
+    var navLang = (navigator.language || navigator.userLanguage || 'en').slice(0, 2);
     if (i18n[navLang]) return navLang;
     return 'en';
   }
 
-  let currentLang = getInitialLang();
+  var currentLang = getInitialLang();
   window.currentLang = currentLang;
 
   function applyTranslation(lang) {
-    const dict = i18n[lang];
+    var dict = i18n[lang];
     if (!dict) return;
 
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
       if (dict[key] !== undefined) {
         if (el.tagName === 'IMG') {
           el.setAttribute('alt', dict[key]);
@@ -88,22 +137,22 @@
         }
       }
     });
-    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-      const key = el.getAttribute('data-i18n-placeholder');
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-placeholder');
       if (dict[key] !== undefined) {
         el.setAttribute('placeholder', dict[key]);
       }
     });
 
-    const flagMap = { en: '<img src="https://flagcdn.com/w20/ca.png" alt="EN" class="flag-img">', fr: '<img src="https://flagcdn.com/w20/fr.png" alt="FR" class="flag-img">', es: '<img src="https://flagcdn.com/w20/es.png" alt="ES" class="flag-img">' };
-    const codeMap = { en: 'EN', fr: 'FR', es: 'ES' };
+    var flagMap = { en: '<img src="https://flagcdn.com/w20/ca.png" alt="EN" class="flag-img">', fr: '<img src="https://flagcdn.com/w20/fr.png" alt="FR" class="flag-img">', es: '<img src="https://flagcdn.com/w20/es.png" alt="ES" class="flag-img">' };
+    var codeMap = { en: 'EN', fr: 'FR', es: 'ES' };
 
-    const flagEl = document.getElementById('currentFlag');
-    const codeEl = document.getElementById('currentLang');
-    if (flagEl) flagEl.innerHTML = flagMap[lang] || flagMap['en'];
+    var flagEl = document.getElementById('currentFlag');
+    var codeEl = document.getElementById('currentLang');
+    if (flagEl) flagEl.innerHTML = flagMap[lang] || flagMap.en;
     if (codeEl) codeEl.textContent = codeMap[lang] || 'EN';
 
-    document.querySelectorAll('.lang-dropdown .dropdown-item').forEach(item => {
+    document.querySelectorAll('.lang-dropdown .dropdown-item').forEach(function (item) {
       item.classList.toggle('active-lang', item.dataset.lang === lang);
     });
 
@@ -116,20 +165,23 @@
     }
   }
 
-  document.querySelector('.lang-dropdown').addEventListener('click', function (e) {
-    const item = e.target.closest('.dropdown-item');
-    if (!item) return;
-    e.preventDefault();
-    const lang = item.dataset.lang;
-    if (lang && lang !== currentLang) {
-      applyTranslation(lang);
-    }
-    const btn = document.querySelector('.lang-btn');
-    if (btn && window.innerWidth >= 1200) {
-      const bsDD = bootstrap.Dropdown.getInstance(btn);
-      if (bsDD) bsDD.hide();
-    }
-  });
+  var langDropdown = document.querySelector('.lang-dropdown');
+  if (langDropdown) {
+    langDropdown.addEventListener('click', function (e) {
+      var item = e.target.closest('.dropdown-item');
+      if (!item) return;
+      e.preventDefault();
+      var lang = item.dataset.lang;
+      if (lang && lang !== currentLang) {
+        applyTranslation(lang);
+      }
+      var btn = document.querySelector('.lang-btn');
+      if (btn && window.innerWidth >= 1200) {
+        var bsDD = bootstrap.Dropdown.getInstance(btn);
+        if (bsDD) bsDD.hide();
+      }
+    });
+  }
 
   applyTranslation(currentLang);
 

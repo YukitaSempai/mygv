@@ -117,242 +117,147 @@
 <div class="page-wrap">
   <main>
 
-      <style>
-        .t-section {
-          padding: 4rem 0;
-        }
-        .t-section-alt {
-          background: #f8f6f2;
-        }
-        .t-section-label {
-          font-size: 0.75rem;
-          letter-spacing: 0.2em;
-          text-transform: uppercase;
-          color: #c9a96e;
-          font-weight: 600;
-          margin-bottom: 0.5rem;
-        }
-        .t-section-title {
-          font-family: 'Playfair Display', serif;
-          font-size: 2.5rem;
-          font-weight: 700;
-          color: #0e1b1f;
-        }
-        .t-form-wrap {
-          background: #fff;
-          border-radius: 16px;
-          padding: 2.5rem;
-          box-shadow: 0 8px 40px rgba(0,0,0,0.06);
-        }
-        .t-total-bar {
-          background: #0e1b1f;
-          color: #fff;
-          border-radius: 12px;
-          padding: 1rem 1.5rem;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          font-size: 1.1rem;
-          flex-wrap: wrap;
-          gap: 0.5rem;
-        }
-        .t-total-bar strong {
-          font-size: 1.5rem;
-          color: #c9a96e;
-        }
-        .t-btn-primary {
-          background: #c9a96e;
-          border: none;
-          color: #0e1b1f;
-          font-weight: 600;
-          border-radius: 50px;
-          padding: 0.75rem 2rem;
-          transition: 0.3s;
-        }
-        .t-btn-primary:hover {
-          background: #b8943e;
-          color: #0e1b1f;
-        }
-        .t-hero-mini {
-          background: linear-gradient(135deg, #0e1b1f 0%, #1a2f35 100%);
-          padding: 4rem 0 3rem;
-          text-align: center;
-        }
-        .t-hero-mini h1 {
-          font-family: 'Playfair Display', serif;
-          font-size: 2.8rem;
-          font-weight: 700;
-          color: #fff;
-          margin-bottom: 0.5rem;
-        }
-        .t-hero-mini p {
-          color: rgba(255,255,255,0.7);
-          font-size: 1.1rem;
-          margin-bottom: 0;
-        }
-        .form-label {
-          font-weight: 600;
-          color: #0e1b1f;
-          margin-bottom: 0.35rem;
-        }
-        .form-control, .form-select {
-          border-radius: 10px;
-          border: 1.5px solid #e0ddd5;
-          padding: 0.65rem 1rem;
-        }
-        .form-control:focus, .form-select:focus {
-          border-color: #c9a96e;
-          box-shadow: 0 0 0 3px rgba(201,169,110,0.15);
-        }
-        hr {
-          border-color: #e0ddd5;
-          opacity: 0.6;
-        }
-        @media (max-width: 768px) {
-          .t-section-title { font-size: 1.8rem; }
-          .t-form-wrap { padding: 1.5rem; }
-          .t-hero-mini h1 { font-size: 2rem; }
-        }
-      </style>
-
-      <div class="t-hero-mini">
-        <div class="container">
-          <div class="t-section-label" style="color:#c9a96e;">GOLF VISA 2026</div>
-          <h1>Tournament Registration</h1>
-          <p>Charity Scramble — May 15, 2026 — Club de Golf XXX, Caracas, VE</p>
-          <a href="tournament.html" class="btn t-btn-primary btn-sm mt-3" style="background:transparent; border:1px solid rgba(255,255,255,0.3); color:#fff;">
-            <i class="fa-solid fa-arrow-left me-1"></i> Back to Tournament
-          </a>
+      <!-- ─── Registration sec-registro ─── -->
+      <div class="sec-registro">
+        <div class="reg-hero-mini">
+          <div class="container">
+            <div class="eyebrow" style="color:#c9a96e;">GOLF VISA 2026</div>
+            <h1 class="reveal">Tournament Registration</h1>
+            <p class="reveal d1" style="max-width:480px; margin:0 auto;">Charity Scramble — May 15, 2026 — Club de Golf XXX, Caracas, VE</p>
+            <a href="tournament.html" class="btn t-btn-primary btn-sm mt-3" style="background:transparent; border:1px solid rgba(255,255,255,0.3); color:#fff;">
+              <i class="fa-solid fa-arrow-left me-1"></i> Back to Tournament
+            </a>
+          </div>
         </div>
-      </div>
 
-      <section class="t-section" id="ts-register">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-8">
-              <div class="t-form-wrap">
+        <section style="padding:4rem 0;">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="form-wrap reveal">
 
-                <div id="formAlert" class="alert d-none" role="alert"></div>
+                  <div id="formAlert" class="alert d-none" role="alert"></div>
 
-                <form id="registrationForm" novalidate>
-                  <div class="row g-3 mb-3">
-                    <div class="col-md-6">
-                      <label for="regName" class="form-label">Full Name <span class="text-danger">*</span></label>
-                      <input type="text" class="form-control" id="regName" required autocomplete="name" />
-                      <div class="invalid-feedback">Please enter your full name.</div>
+                  <form id="registrationForm" novalidate>
+                    <div class="row g-3 mb-3">
+                      <div class="col-md-6">
+                        <label for="regName" class="form-label">Full Name <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="regName" required autocomplete="name" />
+                        <div class="invalid-feedback">Please enter your full name.</div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="regEmail" class="form-label">Email <span class="text-danger">*</span></label>
+                        <input type="email" class="form-control" id="regEmail" required autocomplete="email" />
+                        <div class="invalid-feedback">Please enter a valid email address.</div>
+                      </div>
                     </div>
-                    <div class="col-md-6">
-                      <label for="regEmail" class="form-label">Email <span class="text-danger">*</span></label>
-                      <input type="email" class="form-control" id="regEmail" required autocomplete="email" />
-                      <div class="invalid-feedback">Please enter a valid email address.</div>
-                    </div>
-                  </div>
 
-                  <div class="row g-3 mb-3">
-                    <div class="col-md-6">
-                      <label for="regPhone" class="form-label">Phone <span class="text-danger">*</span></label>
-                      <input type="tel" class="form-control" id="regPhone" required autocomplete="tel" placeholder="5551234567" />
-                      <div class="invalid-feedback">Please enter a valid 10-digit phone number.</div>
+                    <div class="row g-3 mb-3">
+                      <div class="col-md-6">
+                        <label for="regPhone" class="form-label">Phone <span class="text-danger">*</span></label>
+                        <input type="tel" class="form-control" id="regPhone" required autocomplete="tel" placeholder="5551234567" />
+                        <div class="invalid-feedback">Please enter a valid 10-digit phone number.</div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="regPackage" class="form-label">Package <span class="text-danger">*</span></label>
+                        <select class="form-select" id="regPackage" required>
+                          <option value="">Select a package</option>
+                          <option value="Individual">Individual — $150</option>
+                          <option value="Foursome">Foursome — $550</option>
+                          <option value="Sponsor">Sponsor — $1,000</option>
+                        </select>
+                        <div class="invalid-feedback">Please select a package.</div>
+                      </div>
                     </div>
-                    <div class="col-md-6">
-                      <label for="regPackage" class="form-label">Package <span class="text-danger">*</span></label>
-                      <select class="form-select" id="regPackage" required>
-                        <option value="">Select a package</option>
-                        <option value="Individual">Individual — $150</option>
-                        <option value="Foursome">Foursome — $550</option>
-                        <option value="Sponsor">Sponsor — $1,000</option>
-                      </select>
-                      <div class="invalid-feedback">Please select a package.</div>
-                    </div>
-                  </div>
 
-                  <div class="row g-3 mb-3">
-                    <div class="col-md-6">
-                      <label for="regHandicap" class="form-label">Handicap / Average Score <small class="text-muted">(optional)</small></label>
-                      <input type="number" class="form-control" id="regHandicap" min="0" max="54" placeholder="e.g. 18" />
+                    <div class="row g-3 mb-3">
+                      <div class="col-md-6">
+                        <label for="regHandicap" class="form-label">Handicap / Average Score <small class="text-muted">(optional)</small></label>
+                        <input type="number" class="form-control" id="regHandicap" min="0" max="54" placeholder="e.g. 18" />
+                      </div>
+                      <div class="col-md-6" id="partnersGroup" style="display:none;">
+                        <label for="regPartners" class="form-label">Playing Partners <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="regPartners" placeholder="Separate names with commas" autocomplete="off" />
+                        <div class="invalid-feedback">Please enter the names of your playing partners.</div>
+                      </div>
                     </div>
-                    <div class="col-md-6" id="partnersGroup" style="display:none;">
-                      <label for="regPartners" class="form-label">Playing Partners <span class="text-danger">*</span></label>
-                      <input type="text" class="form-control" id="regPartners" placeholder="Separate names with commas" autocomplete="off" />
-                      <div class="invalid-feedback">Please enter the names of your playing partners.</div>
-                    </div>
-                  </div>
 
-                  <hr class="my-4" />
+                    <hr class="my-4" />
 
-                  <h5 class="mb-3">Add-Ons</h5>
-                  <div class="row g-3 mb-3">
-                    <div class="col-md-4">
-                      <label for="regMulligans" class="form-label">Mulligans ($5 each)</label>
-                      <select class="form-select" id="regMulligans">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                      </select>
+                    <h5 class="mb-3">Add-Ons</h5>
+                    <div class="row g-3 mb-3">
+                      <div class="col-md-4">
+                        <label for="regMulligans" class="form-label">Mulligans ($5 each)</label>
+                        <select class="form-select" id="regMulligans">
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                        </select>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="regRaffle" class="form-label">Raffle Tickets ($10 each)</label>
+                        <select class="form-select" id="regRaffle">
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                        </select>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="regDinner" class="form-label">Dinner Guest (+$50)</label>
+                        <select class="form-select" id="regDinner">
+                          <option value="No">No</option>
+                          <option value="Yes">Yes</option>
+                        </select>
+                      </div>
                     </div>
-                    <div class="col-md-4">
-                      <label for="regRaffle" class="form-label">Raffle Tickets ($10 each)</label>
-                      <select class="form-select" id="regRaffle">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                      </select>
-                    </div>
-                    <div class="col-md-4">
-                      <label for="regDinner" class="form-label">Dinner Guest (+$50)</label>
-                      <select class="form-select" id="regDinner">
-                        <option value="No">No</option>
-                        <option value="Yes">Yes</option>
-                      </select>
-                    </div>
-                  </div>
 
-                  <div class="t-total-bar mb-4">
-                    <span>Estimated Total:</span>
-                    <strong id="totalDisplay">$150</strong>
-                  </div>
-
-                  <hr class="my-4" />
-
-                  <h5 class="mb-3">Payment Details</h5>
-                  <div class="row g-3 mb-3">
-                    <div class="col-12">
-                      <label for="cardName" class="form-label">Name on Card <span class="text-danger">*</span></label>
-                      <input type="text" class="form-control" id="cardName" required autocomplete="cc-name" />
-                      <div class="invalid-feedback">Please enter the name on your card.</div>
+                    <div class="total-bar mb-4">
+                      <span>Estimated Total:</span>
+                      <strong id="totalDisplay">$150</strong>
                     </div>
-                  </div>
-                  <div class="row g-3 mb-3">
-                    <div class="col-md-6">
-                      <label for="cardNumber" class="form-label">Card Number <span class="text-danger">*</span></label>
-                      <input type="text" class="form-control" id="cardNumber" required autocomplete="cc-number" maxlength="19" placeholder="0000 0000 0000 0000" />
-                      <div class="invalid-feedback">Please enter a valid 16-digit card number.</div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                      <label for="cardExpiry" class="form-label">Expiry <span class="text-danger">*</span></label>
-                      <input type="text" class="form-control" id="cardExpiry" required placeholder="MM/YY" maxlength="5" autocomplete="cc-exp" />
-                      <div class="invalid-feedback">Please enter a valid expiry (MM/YY).</div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                      <label for="cardCvv" class="form-label">CVV <span class="text-danger">*</span></label>
-                      <input type="text" class="form-control" id="cardCvv" required maxlength="3" placeholder="123" autocomplete="off" />
-                      <div class="invalid-feedback">Please enter a valid 3-digit CVV.</div>
-                    </div>
-                  </div>
 
-                  <button type="submit" class="btn t-btn-primary w-100 btn-lg" id="submitBtn">
-                    <span id="submitText">Submit Registration</span>
-                    <span id="submitSpinner" class="spinner-border spinner-border-sm d-none" role="status"></span>
-                  </button>
-                </form>
+                    <hr class="my-4" />
 
+                    <h5 class="mb-3">Payment Details</h5>
+                    <div class="row g-3 mb-3">
+                      <div class="col-12">
+                        <label for="cardName" class="form-label">Name on Card <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="cardName" required autocomplete="cc-name" />
+                        <div class="invalid-feedback">Please enter the name on your card.</div>
+                      </div>
+                    </div>
+                    <div class="row g-3 mb-3">
+                      <div class="col-md-6">
+                        <label for="cardNumber" class="form-label">Card Number <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="cardNumber" required autocomplete="cc-number" maxlength="19" placeholder="0000 0000 0000 0000" />
+                        <div class="invalid-feedback">Please enter a valid 16-digit card number.</div>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <label for="cardExpiry" class="form-label">Expiry <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="cardExpiry" required placeholder="MM/YY" maxlength="5" autocomplete="cc-exp" />
+                        <div class="invalid-feedback">Please enter a valid expiry (MM/YY).</div>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <label for="cardCvv" class="form-label">CVV <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="cardCvv" required maxlength="3" placeholder="123" autocomplete="off" />
+                        <div class="invalid-feedback">Please enter a valid 3-digit CVV.</div>
+                      </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-gold w-100 btn-lg btn-shine" id="submitBtn">
+                      <span id="submitText">Submit Registration</span>
+                      <span id="submitSpinner" class="spinner-border spinner-border-sm d-none" role="status"></span>
+                    </button>
+                  </form>
+
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <script src="js/tournament.js"></script>
 
