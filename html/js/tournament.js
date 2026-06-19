@@ -3,6 +3,7 @@
 
   /* ─── DOM refs ─── */
   const form = document.getElementById('registrationForm');
+  if (!form) return;
   const nameEl = document.getElementById('regName');
   const emailEl = document.getElementById('regEmail');
   const phoneEl = document.getElementById('regPhone');

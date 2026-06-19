@@ -48,6 +48,7 @@ const PAGES = [
   { template: '_template-page.html',  content: 'page-faq',          output: 'faq.html' },
   { template: '_template-page.html',  content: 'page-privacy',      output: 'privacy.html' },
   { template: '_template-page.html',  content: 'page-accessibility', output: 'accessibility.html' },
+  { template: '_template-page.html',  content: 'page-registro',     output: 'registro.html' },
 ];
 
 PAGES.forEach(function (page) {
