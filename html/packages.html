@@ -26,7 +26,7 @@
 
 </head>
 
-<body>
+<body class="page-packages">
 
   <!-- ══════════════════════════════════════════
     NAVBAR
@@ -118,39 +118,84 @@
   <main>
 
       <!-- ─── Packages — Luxury Tiers ─── -->
-      <section class="section-block sec-luxury sec-pattern-dots sec-py-lg missing-section" id="packages">
+      <section class="section-block sec-packages sec-py-lg" id="packages">
         <div class="container">
-          <div class="sec-hd reveal" style="text-align:center;">
-            <div class="eyebrow" data-i18n="packages_eyebrow">Choose Your Experience</div>
-            <h2 class="sec-title" data-i18n="packages_title">Golf Visa Packages</h2>
-            <p class="sec-desc" style="margin:0 auto;" data-i18n="packages_desc">
-              Tailored packages that combine premium golf, luxury accommodation, and
-              unforgettable experiences.
-            </p>
+          <div class="row justify-content-center text-center reveal">
+            <div class="col-lg-8">
+              <div class="eyebrow" style="color:#c9a96e;" data-i18n="packages_eyebrow">Choose Your Experience</div>
+              <h2 class="sec-title" style="color:#fff;" data-i18n="packages_title">Golf Visa Packages</h2>
+              <p class="sec-desc" style="color:rgba(255,255,255,0.65); margin:0.75rem auto 0; max-width:600px;" data-i18n="packages_desc">
+                Tailored packages that combine premium golf, luxury accommodation, and
+                unforgettable experiences.
+              </p>
+            </div>
           </div>
-          <div class="row g-4 justify-content-center reveal" data-stagger="0.15" style="margin-top:1.5rem;">
-            <div class="col-md-6 col-lg-4">
-              <div class="mini-card p-4 text-center" style="height:100%;">
-                <i class="fa-solid fa-gem" style="font-size:2rem; color:#c9a96e; margin-bottom:0.5rem;"></i>
-                <h5 data-i18n="packages_premier_name">Premier Package</h5>
-                <p style="font-size:0.85rem; color:#777; margin-bottom:0.5rem;" data-i18n="packages_premier_desc">5 rounds + 2 nights at partner resorts</p>
-                <span class="badge-gold" style="font-size:0.9rem; padding:0.3rem 1.2rem;">$1,299</span>
+          <div class="row g-4 justify-content-center" data-stagger="0.15" style="margin-top:2.5rem;">
+            <!-- Premier -->
+            <div class="col-md-6 col-lg-4 reveal">
+              <div class="pkg-card" data-tilt>
+                <div class="pkg-glow"></div>
+                <div class="pkg-card-inner">
+                  <div class="pkg-tier">GOLD</div>
+                  <div class="pkg-icon"><i class="fa-solid fa-gem"></i></div>
+                  <h5 class="pkg-name" data-i18n="packages_premier_name">Premier Package</h5>
+                  <p class="pkg-desc" data-i18n="packages_premier_desc">5 rounds + 2 nights at partner resorts</p>
+                  <ul class="pkg-features">
+                    <li><i class="fa-solid fa-check"></i> 5 championship rounds</li>
+                    <li><i class="fa-solid fa-check"></i> 2 nights luxury resort</li>
+                    <li><i class="fa-solid fa-check"></i> Complimentary cart</li>
+                    <li><i class="fa-solid fa-check"></i> Welcome amenity kit</li>
+                  </ul>
+                  <div class="pkg-price">
+                    <span class="pkg-price-cur">$</span><span class="pkg-price-val" data-target="1299">0</span>
+                  </div>
+                  <a href="buy.html" class="pkg-btn">Select Package</a>
+                </div>
               </div>
             </div>
-            <div class="col-md-6 col-lg-4">
-              <div class="mini-card p-4 text-center" style="height:100%;">
-                <i class="fa-solid fa-star" style="font-size:2rem; color:#c9a96e; margin-bottom:0.5rem;"></i>
-                <h5 data-i18n="packages_signature_name">Signature Package</h5>
-                <p style="font-size:0.85rem; color:#777; margin-bottom:0.5rem;" data-i18n="packages_signature_desc">3 rounds + 1 night + spa credit</p>
-                <span class="badge-gold" style="font-size:0.9rem; padding:0.3rem 1.2rem;">$799</span>
+            <!-- Signature (featured) -->
+            <div class="col-md-6 col-lg-4 reveal">
+              <div class="pkg-card featured" data-tilt>
+                <div class="pkg-glow"></div>
+                <div class="pkg-badge">Most Popular</div>
+                <div class="pkg-card-inner">
+                  <div class="pkg-tier">PLATINUM</div>
+                  <div class="pkg-icon"><i class="fa-solid fa-star"></i></div>
+                  <h5 class="pkg-name" data-i18n="packages_signature_name">Signature Package</h5>
+                  <p class="pkg-desc" data-i18n="packages_signature_desc">3 rounds + 1 night + spa credit</p>
+                  <ul class="pkg-features">
+                    <li><i class="fa-solid fa-check"></i> 3 championship rounds</li>
+                    <li><i class="fa-solid fa-check"></i> 1 night luxury suite</li>
+                    <li><i class="fa-solid fa-check"></i> $100 spa credit</li>
+                    <li><i class="fa-solid fa-check"></i> Preferred tee times</li>
+                  </ul>
+                  <div class="pkg-price">
+                    <span class="pkg-price-cur">$</span><span class="pkg-price-val" data-target="799">0</span>
+                  </div>
+                  <a href="buy.html" class="pkg-btn">Select Package</a>
+                </div>
               </div>
             </div>
-            <div class="col-md-6 col-lg-4">
-              <div class="mini-card p-4 text-center" style="height:100%;">
-                <i class="fa-solid fa-play" style="font-size:2rem; color:#c9a96e; margin-bottom:0.5rem;"></i>
-                <h5 data-i18n="packages_weekender_name">Weekender</h5>
-                <p style="font-size:0.85rem; color:#777; margin-bottom:0.5rem;" data-i18n="packages_weekender_desc">2 rounds + preferred tee times</p>
-                <span class="badge-gold" style="font-size:0.9rem; padding:0.3rem 1.2rem;">$499</span>
+            <!-- Weekender -->
+            <div class="col-md-6 col-lg-4 reveal">
+              <div class="pkg-card" data-tilt>
+                <div class="pkg-glow"></div>
+                <div class="pkg-card-inner">
+                  <div class="pkg-tier">SILVER</div>
+                  <div class="pkg-icon"><i class="fa-solid fa-play"></i></div>
+                  <h5 class="pkg-name" data-i18n="packages_weekender_name">Weekender</h5>
+                  <p class="pkg-desc" data-i18n="packages_weekender_desc">2 rounds + preferred tee times</p>
+                  <ul class="pkg-features">
+                    <li><i class="fa-solid fa-check"></i> 2 championship rounds</li>
+                    <li><i class="fa-solid fa-check"></i> Preferred tee times</li>
+                    <li><i class="fa-solid fa-check"></i> Range balls included</li>
+                    <li><i class="fa-solid fa-check"></i> Digital scorecard</li>
+                  </ul>
+                  <div class="pkg-price">
+                    <span class="pkg-price-cur">$</span><span class="pkg-price-val" data-target="499">0</span>
+                  </div>
+                  <a href="buy.html" class="pkg-btn">Select Package</a>
+                </div>
               </div>
             </div>
           </div>

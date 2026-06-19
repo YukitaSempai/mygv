@@ -93,8 +93,60 @@
         }
       });
     }, { threshold: 0.5 });
-    counters.forEach(function (c) { counterObserver.observe(c); });
+      counters.forEach(function (c) { counterObserver.observe(c); });
   }
+
+  /* ════════════════════════════════════════
+     PACKAGE PRICE COUNTER
+  ════════════════════════════════════════ */
+  var priceVals = document.querySelectorAll('.pkg-price-val');
+  if (priceVals.length && 'IntersectionObserver' in window) {
+    var priceObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          var target = parseInt(el.getAttribute('data-target'), 10);
+          if (isNaN(target)) return;
+          var duration = 1200;
+          var startTime = null;
+          function animPrice(time) {
+            if (!startTime) startTime = time;
+            var p = Math.min((time - startTime) / duration, 1);
+            var e = 1 - Math.pow(1 - p, 3);
+            var cur = Math.floor(e * target);
+            el.textContent = cur.toLocaleString('en-US');
+            if (p < 1) requestAnimationFrame(animPrice);
+            else el.textContent = target.toLocaleString('en-US');
+          }
+          requestAnimationFrame(animPrice);
+          priceObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.4 });
+    priceVals.forEach(function (v) { priceObserver.observe(v); });
+  }
+
+  /* ════════════════════════════════════════
+     CARD TILT ON MOUSE MOVE
+  ════════════════════════════════════════ */
+  document.querySelectorAll('[data-tilt]').forEach(function (card) {
+    card.addEventListener('mousemove', function (e) {
+      var rect = card.getBoundingClientRect();
+      var x = (e.clientX - rect.left) / rect.width - 0.5;
+      var y = (e.clientY - rect.top) / rect.height - 0.5;
+      var inner = card.querySelector('.pkg-card-inner');
+      if (inner) {
+        inner.style.transform =
+          'translateY(-8px) rotateX(' + (-y * 6) + 'deg) rotateY(' + (x * 6) + 'deg)';
+      }
+    });
+    card.addEventListener('mouseleave', function () {
+      var inner = card.querySelector('.pkg-card-inner');
+      if (inner) {
+        inner.style.transform = '';
+      }
+    });
+  });
 
   /* ════════════════════════════════════════
      ACTIVE NAV LINK BY PAGE

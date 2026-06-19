@@ -15,9 +15,12 @@ function readSection(name) {
   }
 }
 
-function buildPage(templateFile, contentSection) {
+function buildPage(templateFile, contentSection, bodyClass) {
   const templatePath = path.join(HTML_DIR, templateFile);
   let template = fs.readFileSync(templatePath, 'utf8');
+
+  // Replace BODY-CLASS marker
+  template = template.replace('<!--BODY-CLASS-->', bodyClass || '');
 
   // Replace SECTION markers (navbar, footer, scripts, body-close, etc.)
   template = template.replace(/<!--SECTION:([\w-]+)-->/g, function (_, name) {
@@ -34,9 +37,9 @@ function buildPage(templateFile, contentSection) {
 
 const PAGES = [
   { template: '_template.html',       output: 'index.html' },
-  { template: '_template-page.html',  content: 'gvnb',              output: 'gvnb.html' },
-  { template: '_template-page.html',  content: 'gvns',              output: 'gvns.html' },
-  { template: '_template-page.html',  content: 'packages',          output: 'packages.html' },
+  { template: '_template-page.html',  content: 'gvnb',              bodyClass: 'page-gvnb',  output: 'gvnb.html' },
+  { template: '_template-page.html',  content: 'gvns',              bodyClass: 'page-gvns',  output: 'gvns.html' },
+  { template: '_template-page.html',  content: 'packages',          bodyClass: 'page-packages',  output: 'packages.html' },
   { template: '_template-page.html',  content: 'page-courses',      output: 'courses.html' },
   { template: '_template-page.html',  content: 'tournament',        output: 'tournament.html' },
   { template: '_template-page.html',  content: 'corporate',         output: 'corporate.html' },
@@ -52,7 +55,7 @@ const PAGES = [
 ];
 
 PAGES.forEach(function (page) {
-  const result = buildPage(page.template, page.content);
+  const result = buildPage(page.template, page.content, page.bodyClass);
   const outputPath = path.join(HTML_DIR, page.output);
   fs.writeFileSync(outputPath, result, 'utf8');
   console.log('Built: ' + page.output);
