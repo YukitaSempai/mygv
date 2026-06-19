@@ -136,7 +136,7 @@
     validateField(packageEl);
     calcTotal();
     checkForm();
-    document.getElementById('register').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.getElementById('ts-register').scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   /* ─── events ─── */

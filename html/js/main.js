@@ -14,30 +14,11 @@
   syncNav();
 
   /* ════════════════════════════════════════
-     MOBILE DROPDOWN CLICK TOGGLE
-  ════════════════════════════════════════ */
-  if (window.innerWidth < 1200) {
-    const navDds = document.querySelectorAll('.navbar-nav .dropdown');
-    navDds.forEach(dd => {
-      const toggle = dd.querySelector('.dropdown-toggle');
-      const menu = dd.querySelector('.dropdown-menu');
-      if (!toggle || !menu) return;
-      toggle.addEventListener('click', function (e) {
-        e.preventDefault();
-        const isOpen = dd.classList.toggle('show');
-        toggle.classList.toggle('show', isOpen);
-        menu.classList.toggle('show', isOpen);
-        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-    });
-  }
-
-  /* ════════════════════════════════════════
      CLOSE MOBILE MENU ON LINK CLICK
   ════════════════════════════════════════ */
   const navCollapse = document.getElementById('navMain');
   if (navCollapse) {
-    const closeLinks = navCollapse.querySelectorAll('.nav-link, .dropdown-item');
+    const closeLinks = navCollapse.querySelectorAll('.nav-link');
     closeLinks.forEach(link => {
       link.addEventListener('click', () => {
         if (window.innerWidth < 1200 && navCollapse.classList.contains('show')) {
@@ -67,22 +48,17 @@
   }
 
   /* ════════════════════════════════════════
-     ACTIVE NAV LINK ON SCROLL
+     ACTIVE NAV LINK BY PAGE
   ════════════════════════════════════════ */
-  const sections = document.querySelectorAll('[id]');
-  const scrollLinks = document.querySelectorAll('.nav-link[href^="#"]');
-
-  function syncActiveLink() {
-    let current = '';
-    sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 160) current = s.id;
+  (function () {
+    var page = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(function (link) {
+      var href = link.getAttribute('href');
+      if (href === page || (page === 'index.html' && href === 'index.html')) {
+        link.classList.add('active');
+      }
     });
-    scrollLinks.forEach(l => {
-      l.classList.toggle('active', l.getAttribute('href') === '#' + current);
-    });
-  }
-  window.addEventListener('scroll', syncActiveLink, { passive: true });
-  syncActiveLink();
+  })();
 
   /* ════════════════════════════════════════
      LANGUAGE SWITCHER

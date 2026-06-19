@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="page_title">MYGV — The Pinnacle of Golf Visa</title>
+  <link rel="icon" type="image/png" href="img/04.png" />
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap"
+    rel="stylesheet" />
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+
+</head>
+
+<body>
+
+  <!-- ══════════════════════════════════════════
+    NAVBAR
+    ══════════════════════════════════════════ -->
+  <nav class="navbar navbar-expand-xl fixed-top" id="mainNav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+
+      <a class="navbar-brand" href="index.html" aria-label="MYGV Home">
+        <span class="brand-icon"><i class="fa-brands fa-canadian-maple-leaf"></i></span>
+        <span class="brand-text">
+          <span class="brand-name" data-i18n="brand_name">MYGV</span>
+          <span class="brand-sub" data-i18n="brand_sub">Golf Visa</span>
+        </span>
+      </a>
+
+      <button class="navbar-toggler" type="button" aria-controls="navMain" aria-expanded="false"
+        aria-label="Toggle navigation" data-bs-toggle="collapse" data-bs-target="#navMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMain">
+        <button class="nav-close" aria-label="Close menu" data-bs-toggle="collapse" data-bs-target="#navMain">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html" data-i18n="home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gvnb.html"><span data-i18n="gvnb">GVNB</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gvns.html"><span data-i18n="gvns">GVNS</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="packages.html"><span data-i18n="packages">Packages</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="courses.html"><span data-i18n="courses">Courses</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="tournament.html"><span data-i18n="tournaments">Tournament</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="corporate.html"><span data-i18n="corporate">Corporate</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html" data-i18n="about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html" data-i18n="contact">Contact</a>
+          </li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="buy.html" class="btn-buy-gv">
+            <i class="fa-solid fa-crown"></i> <span data-i18n="buy_cta">Buy Golf Visa</span>
+          </a>
+
+          <div class="lang-switcher dropdown">
+            <button class="lang-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+              aria-label="Select language" id="langDropdown">
+              <span class="lang-flag" id="currentFlag"><img src="https://flagcdn.com/w20/ca.png" alt="EN" class="flag-img"></span>
+              <span class="lang-code" id="currentLang">EN</span>
+              <span class="lang-caret"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <ul class="dropdown-menu lang-dropdown dropdown-menu-end" aria-labelledby="langDropdown">
+              <li><a class="dropdown-item active-lang" href="#" data-lang="en">
+                  <span class="lang-flag"><img src="https://flagcdn.com/w20/ca.png" alt="EN" class="flag-img"></span>
+                  <span data-i18n="lang_en">English</span>
+                </a></li>
+              <li><a class="dropdown-item" href="#" data-lang="fr">
+                  <span class="lang-flag"><img src="https://flagcdn.com/w20/fr.png" alt="FR" class="flag-img"></span>
+                  <span data-i18n="lang_fr">Français</span>
+                </a></li>
+              <li><a class="dropdown-item" href="#" data-lang="es">
+                  <span class="lang-flag"><img src="https://flagcdn.com/w20/es.png" alt="ES" class="flag-img"></span>
+                  <span data-i18n="lang_es">Español</span>
+                </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+<div class="page-wrap">
+  <main>
+
+      <!-- ─── Province Cards (existing) ─── -->
+      <section class="sec" id="courses">
+        <div class="sec-hd anim">
+          <div class="eyebrow" data-i18n="destinations_eyebrow">Destinations</div>
+          <h2 class="sec-title" data-i18n="destinations_title">Premier Golf Provinces</h2>
+          <p class="sec-desc" data-i18n="destinations_desc">
+            Discover world‑class courses across Canada's most
+            prestigious regions.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 anim d1">
+            <div class="card-prov">
+              <div class="cp-img">
+                <img src="img/02.jpg" alt="Golf British Columbia" loading="lazy" data-i18n="province_bc_img_alt">
+                <div class="cp-badge">
+                  <i class="fa-solid fa-location-dot"></i> <span data-i18n="province_bc_name">British Columbia</span>
+                </div>
+              </div>
+              <div class="cp-body">
+                <div class="cp-region" data-i18n="province_bc_region">West Coast</div>
+                <h3 data-i18n="province_bc_card_title">GOLF VISA British Columbia</h3>
+                <p data-i18n="province_bc_desc">
+                  World‑class courses between ocean and mountains.
+                  Experience the finest fairways Canada has to offer.
+                </p>
+                <a href="#" class="link-arr">
+                  <span data-i18n="province_bc_link">Explore BC</span> <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 anim d2">
+            <div class="card-prov">
+              <div class="cp-img">
+                <img src="img/03.jpg" alt="Golf Ontario" loading="lazy" data-i18n="province_on_img_alt">
+                <div class="cp-badge">
+                  <i class="fa-solid fa-location-dot"></i> <span data-i18n="province_on_name">Ontario</span>
+                </div>
+              </div>
+              <div class="cp-body">
+                <div class="cp-region" data-i18n="province_on_region">Central Canada</div>
+                <h3 data-i18n="province_on_card_title">GOLF VISA Ontario</h3>
+                <p data-i18n="province_on_desc">
+                  Legendary courses in the heart of Canada's most vibrant
+                  landscapes — lush greens and world‑class tradition.
+                </p>
+                <a href="#" class="link-arr">
+                  <span data-i18n="province_on_link">Explore Ontario</span> <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Participating Courses ─── -->
+      <section class="section-block missing-section" id="participating-courses">
+        <div class="sec-hd anim">
+          <div class="eyebrow" data-i18n="part_courses_eyebrow">Our Network</div>
+          <h2 class="sec-title" data-i18n="part_courses_title">Participating Courses</h2>
+          <p class="sec-desc" data-i18n="part_courses_desc">
+            From coast to coast, MYGV partners with Canada's most distinguished
+            golf clubs.
+          </p>
+        </div>
+        <ul class="anim d1">
+          <li><i class="fa-solid fa-circle-check inline-icon"></i> <strong data-i18n="part_courses_bc">British Columbia — Capilano, Shaughnessy, Nicklaus North</strong></li>
+          <li><i class="fa-solid fa-circle-check inline-icon"></i> <strong data-i18n="part_courses_on">Ontario — Glen Abbey, St. George's, Hamilton</strong></li>
+          <li><i class="fa-solid fa-circle-check inline-icon"></i> <strong data-i18n="part_courses_qc">Quebec — Le Mirage, Royal Québec, La Vallée</strong></li>
+          <li><i class="fa-solid fa-circle-check inline-icon"></i> <strong data-i18n="part_courses_ns">Nova Scotia — Cabot Links, Fox Harb'r, Highland Links</strong></li>
+          <li><i class="fa-solid fa-circle-check inline-icon"></i> <strong data-i18n="part_courses_nb">New Brunswick — Algonquin, Kingswood, Rockwood</strong></li>
+        </ul>
+      </section>
+
+      <!-- ─── Course Map ─── -->
+      <section class="section-block missing-section" id="course-map">
+        <div class="sec-hd anim">
+          <div class="eyebrow" data-i18n="course_map_eyebrow">Explore</div>
+          <h2 class="sec-title" data-i18n="course_map">Course Map</h2>
+          <p class="sec-desc" data-i18n="course_map_desc">Interactive map of all MYGV partner courses across Canada.</p>
+        </div>
+        <script id="golfCoursesData" type="application/json">
+[{"id":1,"name":"Cabot Links","city":"Inverness","province":"Nova Scotia","category":"Resort","status":"active","lat":46.2291,"lng":-61.2949,"desc":"World-renowned links course on Cape Breton's western shore.","image":"","url":"https://cabotlinks.com"},{"id":2,"name":"Cabot Cliffs","city":"Inverness","province":"Nova Scotia","category":"Resort","status":"active","lat":46.225,"lng":-61.3,"desc":"Spectacular clifftop course ranked among the world's best.","image":"","url":"https://cabotlinks.com/cliffs"},{"id":3,"name":"Highland Links","city":"Cape Breton","province":"Nova Scotia","category":"Links","status":"active","lat":46.31,"lng":-60.41,"desc":"Championship links with stunning Cape Breton views.","image":"","url":""},{"id":4,"name":"Fox Harb'r Resort","city":"Wallace","province":"Nova Scotia","category":"Resort","status":"active","lat":45.801,"lng":-63.472,"desc":"Luxury golf resort with an award-winning course.","image":"","url":"https://foxharbr.com"},{"id":5,"name":"Links at Brunello","city":"Timberlea","province":"Nova Scotia","category":"Public","status":"active","lat":44.659,"lng":-63.74,"desc":"Modern 18-hole championship course near Halifax.","image":"","url":""},{"id":6,"name":"Lost Creek Golf Club","city":"Waverley","province":"Nova Scotia","category":"Public","status":"active","lat":44.79,"lng":-63.58,"desc":"Scenic parkland course in the Waverley area.","image":"","url":""},{"id":7,"name":"Glen Arbour Golf Course","city":"Halifax","province":"Nova Scotia","category":"Public","status":"active","lat":44.73,"lng":-63.69,"desc":"Residential community course with rolling fairways.","image":"","url":""},{"id":8,"name":"Osprey Ridge Golf Club","city":"Halifax","province":"Nova Scotia","category":"Public","status":"active","lat":44.68,"lng":-63.61,"desc":"Challenging course with elevated tees and ocean views.","image":"","url":""},{"id":9,"name":"Grandview Golf Club","city":"Dartmouth","province":"Nova Scotia","category":"Public","status":"active","lat":44.69,"lng":-63.52,"desc":"Popular course overlooking the Halifax harbour.","image":"","url":""},{"id":10,"name":"Montague Golf Club","city":"Lunenburg","province":"Nova Scotia","category":"Public","status":"active","lat":44.347,"lng":-64.312,"desc":"Seaside links-style course in historic Lunenburg area.","image":"","url":""},{"id":11,"name":"White Point Golf Club","city":"White Point","province":"Nova Scotia","category":"Resort","status":"active","lat":44.066,"lng":-64.603,"desc":"Oceanfront resort course on the South Shore.","image":"","url":""},{"id":12,"name":"Digby Pines Golf Club","city":"Digby","province":"Nova Scotia","category":"Resort","status":"active","lat":44.622,"lng":-65.757,"desc":"Classic resort course overlooking the Annapolis Basin.","image":"","url":""},{"id":13,"name":"Bell Bay Golf Club","city":"Baddeck","province":"Nova Scotia","category":"Public","status":"active","lat":46.1,"lng":-60.753,"desc":"Championship course on the Cabot Trail.","image":"","url":""},{"id":14,"name":"Northumberland Golf Club","city":"Pugwash","province":"Nova Scotia","category":"Public","status":"active","lat":45.85,"lng":-63.668,"desc":"Seaside links course on the Northumberland Strait.","image":"","url":""},{"id":15,"name":"Abercrombie Golf Club","city":"Trenton","province":"Nova Scotia","category":"Public","status":"active","lat":45.619,"lng":-62.635,"desc":"Parkland course in Pictou County.","image":"","url":""},{"id":16,"name":"Dundee Resort & Golf","city":"Cape Breton","province":"Nova Scotia","category":"Resort","status":"active","lat":46.18,"lng":-60.9,"desc":"Resort course with Bras d'Or Lake views.","image":"","url":""},{"id":17,"name":"Lingan Golf Club","city":"Sydney","province":"Nova Scotia","category":"Public","status":"active","lat":46.19,"lng":-60.04,"desc":"Links-style course near Sydney.","image":"","url":""},{"id":18,"name":"Port Morien Golf Club","city":"Port Morien","province":"Nova Scotia","category":"Public","status":"active","lat":46.14,"lng":-59.87,"desc":"Seaside course on Cape Breton's eastern shore.","image":"","url":""},{"id":19,"name":"Seaview Golf Club","city":"North Sydney","province":"Nova Scotia","category":"Public","status":"active","lat":46.22,"lng":-60.27,"desc":"Panoramic ocean views from every hole.","image":"","url":""},{"id":20,"name":"Paragon Golf Club","city":"Kingston","province":"Nova Scotia","category":"Public","status":"active","lat":44.99,"lng":-64.94,"desc":"Championship course in the Annapolis Valley.","image":"","url":""},{"id":21,"name":"Algonquin Golf Club","city":"St. Andrews","province":"New Brunswick","category":"Resort","status":"active","lat":45.075,"lng":-67.05,"desc":"Historic resort course in the seaside town of St. Andrews.","image":"","url":""},{"id":22,"name":"Kingswood Park Golf Course","city":"Fredericton","province":"New Brunswick","category":"Public","status":"active","lat":45.94,"lng":-66.64,"desc":"Popular 18-hole course in Fredericton.","image":"","url":""},{"id":23,"name":"Westfield Golf Club","city":"Westfield","province":"New Brunswick","category":"Public","status":"active","lat":45.35,"lng":-66.22,"desc":"Scenic course along the Saint John River.","image":"","url":""},{"id":24,"name":"Fredericton Golf Club","city":"Fredericton","province":"New Brunswick","category":"Private","status":"active","lat":45.96,"lng":-66.62,"desc":"Established private club in the capital city.","image":"","url":""},{"id":25,"name":"Gowan Brae Golf Club","city":"Bathurst","province":"New Brunswick","category":"Public","status":"active","lat":47.63,"lng":-65.66,"desc":"Championship course in northern New Brunswick.","image":"","url":""},{"id":26,"name":"Miramichi Golf Club","city":"Miramichi","province":"New Brunswick","category":"Public","status":"active","lat":47.01,"lng":-65.48,"desc":"Beautiful course along the Miramichi River.","image":"","url":""},{"id":27,"name":"Bouctouche Golf Club","city":"Bouctouche","province":"New Brunswick","category":"Public","status":"active","lat":46.47,"lng":-64.72,"desc":"Links-style course on the Northumberland Strait.","image":"","url":""},{"id":28,"name":"Royal Oaks Golf Club","city":"Moncton","province":"New Brunswick","category":"Public","status":"active","lat":46.08,"lng":-64.85,"desc":"Top-rated course in the Moncton area.","image":"","url":""},{"id":29,"name":"Hillsborough Golf Club","city":"Edmundston","province":"New Brunswick","category":"Public","status":"active","lat":47.38,"lng":-68.32,"desc":"Scenic course in northwestern New Brunswick.","image":"","url":""},{"id":30,"name":"Aroostook Valley Country Club","city":"Fort Fairfield","province":"New Brunswick","category":"Private","status":"active","lat":46.82,"lng":-67.83,"desc":"Cross-border course near the Maine border.","image":"","url":""},{"id":31,"name":"Pine Needles Golf Club","city":"Grand Falls","province":"New Brunswick","category":"Public","status":"active","lat":47.05,"lng":-67.74,"desc":"River-view course in the Grand Falls area.","image":"","url":""},{"id":32,"name":"Memramcook Valley Golf Club","city":"Memramcook","province":"New Brunswick","category":"Public","status":"active","lat":46,"lng":-64.55,"desc":"Valley course near the Nova Scotia border.","image":"","url":""},{"id":33,"name":"Sackville Golf Club","city":"Sackville","province":"New Brunswick","category":"Public","status":"active","lat":45.9,"lng":-64.37,"desc":"Welcoming course in the Tantramar marshlands.","image":"","url":""},{"id":34,"name":"Riverside Country Club","city":"Rothesay","province":"New Brunswick","category":"Private","status":"active","lat":45.39,"lng":-65.99,"desc":"Premier private club near Saint John.","image":"","url":""},{"id":35,"name":"Hampton Golf Club","city":"Hampton","province":"New Brunswick","category":"Public","status":"active","lat":45.53,"lng":-65.83,"desc":"Scenic course in the Kennebecasis Valley.","image":"","url":""},{"id":36,"name":"Country Meadows","city":"Quispamsis","province":"New Brunswick","category":"Public","status":"active","lat":45.43,"lng":-65.95,"desc":"Family-friendly course near Saint John.","image":"","url":""},{"id":37,"name":"Rockwood Park Golf Club","city":"Saint John","province":"New Brunswick","category":"Public","status":"active","lat":45.28,"lng":-66.06,"desc":"Urban course in Rockwood Park, Saint John.","image":"","url":""},{"id":38,"name":"Green Gables Golf Course","city":"Cavendish","province":"Prince Edward Island","category":"Public","status":"active","lat":46.49,"lng":-63.39,"desc":"Iconic course inspired by Anne of Green Gables.","image":"","url":""},{"id":39,"name":"Crowbush Cove Golf Course","city":"Lakeside","province":"Prince Edward Island","category":"Public","status":"active","lat":46.44,"lng":-62.75,"desc":"Top-ranked PEI course with dramatic dunes.","image":"","url":""},{"id":40,"name":"Brudenell River Golf Course","city":"Brudenell","province":"Prince Edward Island","category":"Resort","status":"active","lat":46.19,"lng":-62.58,"desc":"River and woodland course in eastern PEI.","image":"","url":""},{"id":41,"name":"Dundarave Golf Course","city":"Wood Islands","province":"Prince Edward Island","category":"Public","status":"active","lat":46.16,"lng":-62.73,"desc":"Links-style course with views of the Northumberland Strait.","image":"","url":""},{"id":42,"name":"Mill River Golf Course","city":"Alberton","province":"Prince Edward Island","category":"Public","status":"active","lat":46.81,"lng":-64.05,"desc":"Riverside course on the western tip of PEI.","image":"","url":""},{"id":43,"name":"Eagles Glenn Golf Course","city":"Cavendish","province":"Prince Edward Island","category":"Public","status":"active","lat":46.5,"lng":-63.41,"desc":"Spectacular course with ocean views from every hole.","image":"","url":""},{"id":44,"name":"Glasgow Hills Resort","city":"New Glasgow","province":"Prince Edward Island","category":"Resort","status":"active","lat":46.42,"lng":-63.27,"desc":"Highland-themed resort course in central PEI.","image":"","url":""},{"id":45,"name":"Fox Meadow Golf Club","city":"Stratford","province":"Prince Edward Island","category":"Public","status":"active","lat":46.22,"lng":-63.08,"desc":"Parkland course near Charlottetown.","image":"","url":""},{"id":46,"name":"Belvedere Golf Club","city":"Charlottetown","province":"Prince Edward Island","category":"Public","status":"active","lat":46.25,"lng":-63.13,"desc":"Historic course in the heart of Charlottetown.","image":"","url":""},{"id":47,"name":"Countryview Golf Club","city":"O'Leary","province":"Prince Edward Island","category":"Public","status":"active","lat":46.71,"lng":-64.23,"desc":"Rural course in western PEI.","image":"","url":""},{"id":48,"name":"Chester Golf Club","city":"Chester","province":"Nova Scotia","category":"Private","status":"active","lat":44.547,"lng":-64.243,"desc":"Picturesque private club on the South Shore.","image":"","url":""},{"id":49,"name":"River Oaks Golf Club","city":"Mechanic Settlement","province":"New Brunswick","category":"Public","status":"active","lat":45.72,"lng":-65.2,"desc":"Wooded course in southern New Brunswick.","image":"","url":""},{"id":50,"name":"Lakeview Golf Club","city":"Summerside","province":"Prince Edward Island","category":"Public","status":"active","lat":46.39,"lng":-63.79,"desc":"Scenic course overlooking Bedeque Bay.","image":"","url":""},{"id":51,"name":"Oakfield Golf Club","city":"Oakfield","province":"Nova Scotia","category":"Public","status":"active","lat":44.87,"lng":-63.58,"desc":"Parkland course along the Shubenacadie River.","image":"","url":""},{"id":52,"name":"Truro Golf Club","city":"Truro","province":"Nova Scotia","category":"Public","status":"active","lat":45.36,"lng":-63.3,"desc":"Central Nova Scotia course with rolling terrain.","image":"","url":""},{"id":53,"name":"Ashburn Golf Club","city":"Halifax","province":"Nova Scotia","category":"Private","status":"active","lat":44.63,"lng":-63.66,"desc":"Premier private club in Halifax.","image":"","url":""},{"id":54,"name":"Brightwood Golf Club","city":"Dartmouth","province":"Nova Scotia","category":"Public","status":"active","lat":44.67,"lng":-63.57,"desc":"Popular executive course in Dartmouth.","image":"","url":""},{"id":55,"name":"Sandy Lane Golf Club","city":"Moncton","province":"New Brunswick","category":"Public","status":"active","lat":46.13,"lng":-64.78,"desc":"Challenging course in the Greater Moncton area.","image":"","url":""},{"id":56,"name":"Covered Bridge Golf Club","city":"Hartland","province":"New Brunswick","category":"Public","status":"active","lat":46.3,"lng":-67.53,"desc":"Course near the world's longest covered bridge.","image":"","url":""},{"id":57,"name":"Sussex Golf Club","city":"Sussex","province":"New Brunswick","category":"Public","status":"active","lat":45.72,"lng":-65.52,"desc":"Valley course in southern New Brunswick.","image":"","url":""},{"id":58,"name":"Barrieau's Golf Range","city":"Fredericton","province":"New Brunswick","category":"Practice","status":"inactive","lat":45.93,"lng":-66.59,"desc":"Practice facility in Fredericton.","image":"","url":""},{"id":59,"name":"South Branch Golf Club","city":"South Branch","province":"New Brunswick","category":"Public","status":"inactive","lat":46.56,"lng":-64.86,"desc":"Rural course on the Acadian Peninsula.","image":"","url":""},{"id":60,"name":"Wentworth Golf Club","city":"Wentworth","province":"Nova Scotia","category":"Public","status":"active","lat":45.61,"lng":-63.56,"desc":"Highland course in northern Nova Scotia.","image":"","url":""}]
+</script>
+        <div class="map-wrapper anim d1">
+          <div class="map-controls">
+            <div class="map-filter-bar">
+              <input type="text" id="mapSearch" class="map-search" placeholder="Search courses..." data-i18n-placeholder="map_search_placeholder">
+              <select id="filterProvince" class="map-select">
+                <option value="" data-i18n="map_filter_province">All Provinces</option>
+              </select>
+              <select id="filterCategory" class="map-select">
+                <option value="" data-i18n="map_filter_category">All Categories</option>
+              </select>
+              <select id="filterStatus" class="map-select">
+                <option value="" data-i18n="map_filter_status">All Statuses</option>
+              </select>
+              <button id="mapClearFilters" class="map-btn"><i class="fa-solid fa-eraser"></i> Clear Filters</button>
+            </div>
+            <div class="map-action-bar">
+              <span id="mapCount" class="map-count">0 courses</span>
+              <button id="mapLocate" class="map-btn"><i class="fa-solid fa-location-dot"></i> My Location</button>
+              <button id="mapNearby" class="map-btn"><i class="fa-solid fa-crosshairs"></i> Nearby</button>
+              <button id="mapDarkToggle" class="map-btn map-btn-icon"><i class="fa-solid fa-moon"></i></button>
+            </div>
+          </div>
+          <div id="mapContainer" class="map-container"></div>
+          <div id="mapNoResults" class="map-no-results" style="display:none;">
+            <i class="fa-solid fa-map-pin"></i>
+            <p data-i18n="map_no_results">No courses match your filters.</p>
+          </div>
+        </div>
+      </section>
+
+  </main>
+</div>
+
+  <!-- ══════════════════════════════════════════
+FOOTER
+══════════════════════════════════════════ -->
+  <footer class="footer" id="shop">
+    <div class="footer-accent"></div>
+    <div class="container">
+      <div class="row g-5">
+
+        <div class="col-lg-4">
+          <a class="footer-brand" href="index.html">
+            <span class="brand-icon"><i class="fa-brands fa-canadian-maple-leaf"></i></span>
+            <span data-i18n="brand_name">MYGV</span>
+          </a>
+          <p class="f-desc" data-i18n="footer_desc">
+            The pinnacle of Golf Visa experiences. Opening Canada's most
+            prestigious courses to the discerning golfer.
+          </p>
+          <div class="f-newsletter">
+            <p class="f-newsletter-title">Stay in the loop</p>
+            <div class="f-newsletter-form">
+              <input type="email" class="f-newsletter-input" placeholder="Enter your email" aria-label="Email for newsletter" />
+              <button class="f-newsletter-btn" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <p class="f-col-title" data-i18n="footer_company">Company</p>
+          <a href="about.html" class="f-link" data-i18n="about">About</a>
+          <a href="careers.html" class="f-link" data-i18n="footer_careers">Careers</a>
+          <a href="press.html" class="f-link" data-i18n="footer_press">Press</a>
+          <a href="contact.html" class="f-link" data-i18n="contact">Contact</a>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <p class="f-col-title" data-i18n="footer_support">Support</p>
+          <a href="faq.html" class="f-link" data-i18n="footer_faq">FAQ</a>
+          <a href="privacy.html" class="f-link" data-i18n="footer_privacy">Privacy</a>
+          <a href="about.html#conditions" class="f-link" data-i18n="footer_terms">Terms</a>
+          <a href="accessibility.html" class="f-link" data-i18n="footer_accessibility">Accessibility</a>
+        </div>
+
+        <div class="col-lg-4">
+          <p class="f-col-title" data-i18n="footer_connect">Connect</p>
+          <div class="socials">
+            <a href="#" class="social-btn" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-btn" aria-label="X / Twitter">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="#" class="social-btn" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" class="social-btn" aria-label="YouTube">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </div>
+          <div class="f-contact-row">
+            <i class="fa-regular fa-envelope" style="color:#c9a96e;"></i>
+            <a href="mailto:info@mygv.ca">info@mygv.ca</a>
+          </div>
+          <div class="f-contact-row">
+            <i class="fa-solid fa-phone" style="color:#c9a96e;"></i>
+            <a href="tel:+1800555GOLF">+1 (800) 555-GOLF</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="f-bottom" data-i18n="footer_copyright">
+        &copy; 2027 MYGV — Golf Visa. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+  </script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js">
+  </script>
+  <script src="js/i18n.js">
+  </script>
+  <script src="js/main.js">
+  </script>
+  <script src="js/map.js">
+  </script>
+  <script src="js/tournament.js">
+  </script>
+
+</body>
+
+</html>
+
+</body>
+</html>

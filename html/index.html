@@ -15,13 +15,14 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap"
     rel="stylesheet" />
   <!-- Custom Styles -->
   <link rel="stylesheet" href="css/style.css" />
-
 
 </head>
 
@@ -33,7 +34,7 @@
   <nav class="navbar navbar-expand-xl fixed-top" id="mainNav" role="navigation" aria-label="Main navigation">
     <div class="container nav-inner">
 
-      <a class="navbar-brand" href="#hero" aria-label="MYGV Home">
+      <a class="navbar-brand" href="index.html" aria-label="MYGV Home">
         <span class="brand-icon"><i class="fa-brands fa-canadian-maple-leaf"></i></span>
         <span class="brand-text">
           <span class="brand-name" data-i18n="brand_name">MYGV</span>
@@ -52,126 +53,37 @@
         </button>
 
         <ul class="navbar-nav">
-
           <li class="nav-item">
-            <a class="nav-link active" href="#hero" data-i18n="home">Home</a>
+            <a class="nav-link" href="index.html" data-i18n="home">Home</a>
           </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button"
-              aria-expanded="false">
-              <span data-i18n="golf_visas">Golf Visas</span> <span class="link-arrow"><i class="fa-solid fa-chevron-down"></i></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#gvnb">
-                  <i class="fa-solid fa-map-pin"></i>
-                  <span><span data-i18n="gvnb">GVNB 2027</span><span class="dd-sub" data-i18n="gvnb_sub">New
-                      Brunswick</span></span>
-                </a></li>
-              <li><a class="dropdown-item" href="#gvns">
-                  <i class="fa-solid fa-map-pin"></i>
-                  <span><span data-i18n="gvns">GVNS 2027</span><span class="dd-sub" data-i18n="gvns_sub">Nova
-                      Scotia</span></span>
-                </a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#packages">
-                  <i class="fa-solid fa-box"></i>
-                  <span data-i18n="packages">Packages</span>
-                </a></li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="gvnb.html"><span data-i18n="gvnb">GVNB</span></a>
           </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button"
-              aria-expanded="false">
-              <span data-i18n="courses">Courses</span> <span class="link-arrow"><i class="fa-solid fa-chevron-down"></i></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#participating-courses">
-                  <i class="fa-solid fa-flag-checkered"></i>
-                  <span data-i18n="part_courses">Participating Courses</span>
-                </a></li>
-              <li><a class="dropdown-item" href="#course-map">
-                  <i class="fa-solid fa-map"></i>
-                  <span data-i18n="course_map">Course Map</span>
-                </a></li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="gvns.html"><span data-i18n="gvns">GVNS</span></a>
           </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button"
-              aria-expanded="false">
-              <span data-i18n="tournaments">Tournaments</span> <span class="link-arrow"><i class="fa-solid fa-chevron-down"></i></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#gv-tournament">
-                  <i class="fa-solid fa-trophy"></i>
-                  <span data-i18n="gv_tournament">Golf Visa Tournament</span>
-                </a></li>
-              <li><a class="dropdown-item" href="#tournament-program">
-                  <i class="fa-solid fa-calendar-check"></i>
-                  <span data-i18n="tournament_program">Tournament Program</span>
-                </a></li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="packages.html"><span data-i18n="packages">Packages</span></a>
           </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button"
-              aria-expanded="false">
-              <span data-i18n="corporate">Corporate</span> <span class="link-arrow"><i class="fa-solid fa-chevron-down"></i></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#personalized-gv">
-                  <i class="fa-solid fa-building"></i>
-                  <span data-i18n="personalized_gv">Personalized Golf Visa</span>
-                </a></li>
-              <li><a class="dropdown-item" href="#organizations">
-                  <i class="fa-solid fa-users"></i>
-                  <span data-i18n="organizations">Organizations</span>
-                </a></li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="courses.html"><span data-i18n="courses">Courses</span></a>
           </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button"
-              aria-expanded="false">
-              <span data-i18n="about">About</span> <span class="link-arrow"><i class="fa-solid fa-chevron-down"></i></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#mission">
-                  <i class="fa-solid fa-bullseye"></i>
-                  <span data-i18n="mission">Mission Statement</span>
-                </a></li>
-              <li><a class="dropdown-item" href="#conditions">
-                  <i class="fa-solid fa-file-lines"></i>
-                  <span data-i18n="conditions">Conditions</span>
-                </a></li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="tournament.html"><span data-i18n="tournaments">Tournament</span></a>
           </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button"
-              aria-expanded="false">
-              <span data-i18n="contact">Contact</span> <span class="link-arrow"><i class="fa-solid fa-chevron-down"></i></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#contact-us">
-                  <i class="fa-solid fa-envelope"></i>
-                  <span data-i18n="contact_us">Contact Us</span>
-                </a></li>
-              <li><a class="dropdown-item" href="#etransfer">
-                  <i class="fa-solid fa-money-bill-transfer"></i>
-                  <span data-i18n="etransfer">E-Transfer Payment</span>
-                </a></li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="corporate.html"><span data-i18n="corporate">Corporate</span></a>
           </li>
-
+          <li class="nav-item">
+            <a class="nav-link" href="about.html" data-i18n="about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html" data-i18n="contact">Contact</a>
+          </li>
         </ul>
 
         <div class="nav-actions">
-          <a href="#buy" class="btn-buy-gv">
+          <a href="buy.html" class="btn-buy-gv">
             <i class="fa-solid fa-crown"></i> <span data-i18n="buy_cta">Buy Golf Visa</span>
           </a>
 
@@ -202,20 +114,27 @@
     </div>
   </nav>
 
-
   <!-- ══════════════════════════════════════════
 HERO
 ══════════════════════════════════════════ -->
   <section class="hero" id="hero">
 
+    <div class="hero-bg-glow"></div>
+    <div class="hero-bg-particles"></div>
+
     <div class="hero-text">
       <div class="hero-text-inner">
-        <div class="eyebrow" data-i18n="hero_eyebrow">Exclusive Golf Visa Program</div>
+        <div class="hero-badge" data-i18n="hero_eyebrow">Exclusive Golf Visa Program</div>
 
         <h1 class="hero-h1">
-          <span data-i18n="hero_title_part1">The Pinnacle of</span><br>
-          <em data-i18n="hero_title_part2">MYGV</em> <span data-i18n="hero_title_part3">Golf.</span>
+          <span class="hero-line-1" data-i18n="hero_title_part1">The Pinnacle of</span>
+          <span class="hero-line-2">
+            <em data-i18n="hero_title_part2">MYGV</em>
+            <span data-i18n="hero_title_part3">Golf.</span>
+          </span>
         </h1>
+
+        <div class="hero-divider"></div>
 
         <p class="hero-sub" data-i18n="hero_subtitle">
           Unlock exclusive value. Join our elite community of golf
@@ -227,652 +146,61 @@ HERO
         </p>
 
         <div class="hero-ctas">
-          <a href="#courses" class="btn-gold">
+          <a href="courses.html" class="btn-gold">
             <span data-i18n="hero_btn_explore">Explore 2027 GV Card</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
-          <a href="#memberships" class="btn-ghost" data-i18n="hero_btn_memberships">
+          <a href="buy.html" class="btn-ghost" data-i18n="hero_btn_memberships">
             View Memberships
           </a>
         </div>
 
         <div class="hero-stats">
-          <div>
-            <div class="h-stat-num">50+</div>
-            <div class="h-stat-lbl" data-i18n="hero_stat_courses">Partner Courses</div>
+          <div class="hero-stat">
+            <div class="h-stat-icon"><i class="fa-solid fa-flag-checkered"></i></div>
+            <div>
+              <div class="h-stat-num">50+</div>
+              <div class="h-stat-lbl" data-i18n="hero_stat_courses">Partner Courses</div>
+            </div>
           </div>
-          <div>
-            <div class="h-stat-num">2</div>
-            <div class="h-stat-lbl" data-i18n="hero_stat_provinces">Provinces</div>
+          <div class="hero-stat">
+            <div class="h-stat-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <div class="h-stat-num">2</div>
+              <div class="h-stat-lbl" data-i18n="hero_stat_provinces">Provinces</div>
+            </div>
           </div>
-          <div>
-            <div class="h-stat-num">500+</div>
-            <div class="h-stat-lbl" data-i18n="hero_stat_members">Members</div>
+          <div class="hero-stat">
+            <div class="h-stat-icon"><i class="fa-solid fa-users"></i></div>
+            <div>
+              <div class="h-stat-num">500+</div>
+              <div class="h-stat-lbl" data-i18n="hero_stat_members">Members</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
     <div class="hero-photo">
+      <div class="hero-photo-overlay"></div>
       <img src="img/01.jpg" alt="Scenic golf course at golden hour" loading="eager" data-i18n="hero_img_alt">
+      <div class="hero-scroll-indicator">
+        <span class="hero-scroll-text" data-i18n="hero_scroll">Scroll</span>
+        <span class="hero-scroll-arrow"><i class="fa-solid fa-chevron-down"></i></span>
+      </div>
     </div>
 
   </section>
-
-
-  <!-- ══════════════════════════════════════════
-MAIN — content col + sidebar col
-══════════════════════════════════════════ -->
-  <div class="page-wrap">
-
-    <main>
-
-      <!-- ─── Province Cards (existing) ─── -->
-      <section class="sec" id="courses">
-        <div class="sec-hd anim">
-          <div class="eyebrow" data-i18n="destinations_eyebrow">Destinations</div>
-          <h2 class="sec-title" data-i18n="destinations_title">Premier Golf Provinces</h2>
-          <p class="sec-desc" data-i18n="destinations_desc">
-            Discover world‑class courses across Canada's most
-            prestigious regions.
-          </p>
-        </div>
-
-        <div class="row g-4">
-          <div class="col-md-6 anim d1">
-            <div class="card-prov">
-              <div class="cp-img">
-                <img src="img/02.jpg" alt="Golf British Columbia" loading="lazy" data-i18n="province_bc_img_alt">
-                <div class="cp-badge">
-                  <i class="fa-solid fa-location-dot"></i> <span data-i18n="province_bc_name">British Columbia</span>
-                </div>
-              </div>
-              <div class="cp-body">
-                <div class="cp-region" data-i18n="province_bc_region">West Coast</div>
-                <h3 data-i18n="province_bc_card_title">GOLF VISA British Columbia</h3>
-                <p data-i18n="province_bc_desc">
-                  World‑class courses between ocean and mountains.
-                  Experience the finest fairways Canada has to offer.
-                </p>
-                <a href="#" class="link-arr">
-                  <span data-i18n="province_bc_link">Explore BC</span> <i class="fa-solid fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 anim d2">
-            <div class="card-prov">
-              <div class="cp-img">
-                <img src="img/03.jpg" alt="Golf Ontario" loading="lazy" data-i18n="province_on_img_alt">
-                <div class="cp-badge">
-                  <i class="fa-solid fa-location-dot"></i> <span data-i18n="province_on_name">Ontario</span>
-                </div>
-              </div>
-              <div class="cp-body">
-                <div class="cp-region" data-i18n="province_on_region">Central Canada</div>
-                <h3 data-i18n="province_on_card_title">GOLF VISA Ontario</h3>
-                <p data-i18n="province_on_desc">
-                  Legendary courses in the heart of Canada's most vibrant
-                  landscapes — lush greens and world‑class tradition.
-                </p>
-                <a href="#" class="link-arr">
-                  <span data-i18n="province_on_link">Explore Ontario</span> <i class="fa-solid fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ─── GVNB 2027 (new) ─── -->
-      <section class="section-block missing-section" id="gvnb">
-        <div class="sec-hd anim">
-          <div class="eyebrow" data-i18n="gvnb_section_eyebrow">Golf Visa</div>
-          <h2 class="sec-title" data-i18n="gvnb_section_title">GVNB 2027 — New Brunswick</h2>
-          <p class="sec-desc" data-i18n="gvnb_desc">
-            Experience the rugged beauty and world‑class fairways of New Brunswick.
-            From the Bay of Fundy to the Acadian coast, GVNB brings you the best of
-            Atlantic Canada.
-          </p>
-        </div>
-        <div class="card-grid anim d1">
-          <div class="mini-card">
-            <i class="fa-solid fa-flag"></i>
-            <h5 data-i18n="gvnb_courses">6 Partner Courses</h5>
-            <p data-i18n="gvnb_courses_desc">Including Algonquin, Kingswood, and more</p>
-          </div>
-          <div class="mini-card">
-            <i class="fa-solid fa-calendar-days"></i>
-            <h5 data-i18n="gvnb_season">May – October 2027</h5>
-            <p data-i18n="gvnb_season_desc">Full season access</p>
-          </div>
-          <div class="mini-card">
-            <i class="fa-solid fa-users"></i>
-            <h5 data-i18n="gvnb_events">Exclusive Events</h5>
-            <p data-i18n="gvnb_events_desc">Member tournaments &amp; clinics</p>
-          </div>
-          <div class="mini-card">
-            <i class="fa-solid fa-tag"></i>
-            <h5>From $349</h5>
-            <p data-i18n="early_bird_pricing">Early‑bird pricing available</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ─── GVNS 2027 (new) ─── -->
-      <section class="section-block missing-section" id="gvns">
-        <div class="sec-hd anim">
-          <div class="eyebrow" data-i18n="gvns_section_eyebrow">Golf Visa</div>
-          <h2 class="sec-title" data-i18n="gvns_section_title">GVNS 2027 — Nova Scotia</h2>
-          <p class="sec-desc" data-i18n="gvns_desc">
-            Discover the links‑style gems of Nova Scotia. With dramatic ocean views
-            and championship layouts, GVNS is the ultimate East Coast golf experience.
-          </p>
-        </div>
-        <div class="card-grid anim d1">
-          <div class="mini-card">
-            <i class="fa-solid fa-flag"></i>
-            <h5 data-i18n="gvns_courses">8 Partner Courses</h5>
-            <p data-i18n="gvns_courses_desc">Cabot Links, Fox Harb'r, and more</p>
-          </div>
-          <div class="mini-card">
-            <i class="fa-solid fa-calendar-days"></i>
-            <h5 data-i18n="gvns_season">June – October 2027</h5>
-            <p data-i18n="gvns_season_desc">Peak season access</p>
-          </div>
-          <div class="mini-card">
-            <i class="fa-solid fa-ship"></i>
-            <h5 data-i18n="gvns_coastal">Coastal Experience</h5>
-            <p data-i18n="gvns_coastal_desc">Ocean‑view fairways &amp; seaside dining</p>
-          </div>
-          <div class="mini-card">
-            <i class="fa-solid fa-tag"></i>
-            <h5>From $399</h5>
-            <p data-i18n="early_bird_pricing">Early‑bird pricing available</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ─── Packages (new) ─── -->
-      <section class="section-block missing-section" id="packages">
-        <div class="sec-hd anim">
-          <div class="eyebrow" data-i18n="packages_eyebrow">Choose Your Experience</div>
-          <h2 class="sec-title" data-i18n="packages_title">Golf Visa Packages</h2>
-          <p class="sec-desc" data-i18n="packages_desc">
-            Tailored packages that combine premium golf, luxury accommodation, and
-            unforgettable experiences.
-          </p>
-        </div>
-        <div class="card-grid anim d1">
-          <div class="mini-card">
-            <i class="fa-solid fa-gem"></i>
-            <h5 data-i18n="packages_premier_name">Premier Package</h5>
-            <p data-i18n="packages_premier_desc">5 rounds + 2 nights at partner resorts</p>
-            <span class="badge-gold" style="margin-top:0.5rem;">$1,299</span>
-          </div>
-          <div class="mini-card">
-            <i class="fa-solid fa-star"></i>
-            <h5 data-i18n="packages_signature_name">Signature Package</h5>
-            <p data-i18n="packages_signature_desc">3 rounds + 1 night + spa credit</p>
-            <span class="badge-gold" style="margin-top:0.5rem;">$799</span>
-          </div>
-          <div class="mini-card">
-            <i class="fa-solid fa-play"></i>
-            <h5 data-i18n="packages_weekender_name">Weekender</h5>
-            <p data-i18n="packages_weekender_desc">2 rounds + preferred tee times</p>
-            <span class="badge-gold" style="margin-top:0.5rem;">$499</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- ─── Participating Courses (new) ─── -->
-      <section class="section-block missing-section" id="participating-courses">
-        <div class="sec-hd anim">
-          <div class="eyebrow" data-i18n="part_courses_eyebrow">Our Network</div>
-          <h2 class="sec-title" data-i18n="part_courses_title">Participating Courses</h2>
-          <p class="sec-desc" data-i18n="part_courses_desc">
-            From coast to coast, MYGV partners with Canada's most distinguished
-            golf clubs.
-          </p>
-        </div>
-        <ul class="anim d1">
-          <li><i class="fa-solid fa-circle-check inline-icon"></i> <strong data-i18n="part_courses_bc">British Columbia — Capilano, Shaughnessy, Nicklaus North</strong></li>
-          <li><i class="fa-solid fa-circle-check inline-icon"></i> <strong data-i18n="part_courses_on">Ontario — Glen Abbey, St. George's, Hamilton</strong></li>
-          <li><i class="fa-solid fa-circle-check inline-icon"></i> <strong data-i18n="part_courses_qc">Quebec — Le Mirage, Royal Québec, La Vallée</strong></li>
-          <li><i class="fa-solid fa-circle-check inline-icon"></i> <strong data-i18n="part_courses_ns">Nova Scotia — Cabot Links, Fox Harb'r, Highland Links</strong></li>
-          <li><i class="fa-solid fa-circle-check inline-icon"></i> <strong data-i18n="part_courses_nb">New Brunswick — Algonquin, Kingswood, Rockwood</strong></li>
-        </ul>
-      </section>
-
-      <!-- ─── Course Map ─── -->
-      <section class="section-block missing-section" id="course-map">
-        <div class="sec-hd anim">
-          <div class="eyebrow" data-i18n="course_map_eyebrow">Explore</div>
-          <h2 class="sec-title" data-i18n="course_map">Course Map</h2>
-          <p class="sec-desc" data-i18n="course_map_desc">Interactive map of all MYGV partner courses across Canada.</p>
-        </div>
-        <script id="golfCoursesData" type="application/json">
-[{"id":1,"name":"Cabot Links","city":"Inverness","province":"Nova Scotia","category":"Resort","status":"active","lat":46.2291,"lng":-61.2949,"desc":"World-renowned links course on Cape Breton's western shore.","image":"","url":"https://cabotlinks.com"},{"id":2,"name":"Cabot Cliffs","city":"Inverness","province":"Nova Scotia","category":"Resort","status":"active","lat":46.225,"lng":-61.3,"desc":"Spectacular clifftop course ranked among the world's best.","image":"","url":"https://cabotlinks.com/cliffs"},{"id":3,"name":"Highland Links","city":"Cape Breton","province":"Nova Scotia","category":"Links","status":"active","lat":46.31,"lng":-60.41,"desc":"Championship links with stunning Cape Breton views.","image":"","url":""},{"id":4,"name":"Fox Harb'r Resort","city":"Wallace","province":"Nova Scotia","category":"Resort","status":"active","lat":45.801,"lng":-63.472,"desc":"Luxury golf resort with an award-winning course.","image":"","url":"https://foxharbr.com"},{"id":5,"name":"Links at Brunello","city":"Timberlea","province":"Nova Scotia","category":"Public","status":"active","lat":44.659,"lng":-63.74,"desc":"Modern 18-hole championship course near Halifax.","image":"","url":""},{"id":6,"name":"Lost Creek Golf Club","city":"Waverley","province":"Nova Scotia","category":"Public","status":"active","lat":44.79,"lng":-63.58,"desc":"Scenic parkland course in the Waverley area.","image":"","url":""},{"id":7,"name":"Glen Arbour Golf Course","city":"Halifax","province":"Nova Scotia","category":"Public","status":"active","lat":44.73,"lng":-63.69,"desc":"Residential community course with rolling fairways.","image":"","url":""},{"id":8,"name":"Osprey Ridge Golf Club","city":"Halifax","province":"Nova Scotia","category":"Public","status":"active","lat":44.68,"lng":-63.61,"desc":"Challenging course with elevated tees and ocean views.","image":"","url":""},{"id":9,"name":"Grandview Golf Club","city":"Dartmouth","province":"Nova Scotia","category":"Public","status":"active","lat":44.69,"lng":-63.52,"desc":"Popular course overlooking the Halifax harbour.","image":"","url":""},{"id":10,"name":"Montague Golf Club","city":"Lunenburg","province":"Nova Scotia","category":"Public","status":"active","lat":44.347,"lng":-64.312,"desc":"Seaside links-style course in historic Lunenburg area.","image":"","url":""},{"id":11,"name":"White Point Golf Club","city":"White Point","province":"Nova Scotia","category":"Resort","status":"active","lat":44.066,"lng":-64.603,"desc":"Oceanfront resort course on the South Shore.","image":"","url":""},{"id":12,"name":"Digby Pines Golf Club","city":"Digby","province":"Nova Scotia","category":"Resort","status":"active","lat":44.622,"lng":-65.757,"desc":"Classic resort course overlooking the Annapolis Basin.","image":"","url":""},{"id":13,"name":"Bell Bay Golf Club","city":"Baddeck","province":"Nova Scotia","category":"Public","status":"active","lat":46.1,"lng":-60.753,"desc":"Championship course on the Cabot Trail.","image":"","url":""},{"id":14,"name":"Northumberland Golf Club","city":"Pugwash","province":"Nova Scotia","category":"Public","status":"active","lat":45.85,"lng":-63.668,"desc":"Seaside links course on the Northumberland Strait.","image":"","url":""},{"id":15,"name":"Abercrombie Golf Club","city":"Trenton","province":"Nova Scotia","category":"Public","status":"active","lat":45.619,"lng":-62.635,"desc":"Parkland course in Pictou County.","image":"","url":""},{"id":16,"name":"Dundee Resort & Golf","city":"Cape Breton","province":"Nova Scotia","category":"Resort","status":"active","lat":46.18,"lng":-60.9,"desc":"Resort course with Bras d'Or Lake views.","image":"","url":""},{"id":17,"name":"Lingan Golf Club","city":"Sydney","province":"Nova Scotia","category":"Public","status":"active","lat":46.19,"lng":-60.04,"desc":"Links-style course near Sydney.","image":"","url":""},{"id":18,"name":"Port Morien Golf Club","city":"Port Morien","province":"Nova Scotia","category":"Public","status":"active","lat":46.14,"lng":-59.87,"desc":"Seaside course on Cape Breton's eastern shore.","image":"","url":""},{"id":19,"name":"Seaview Golf Club","city":"North Sydney","province":"Nova Scotia","category":"Public","status":"active","lat":46.22,"lng":-60.27,"desc":"Panoramic ocean views from every hole.","image":"","url":""},{"id":20,"name":"Paragon Golf Club","city":"Kingston","province":"Nova Scotia","category":"Public","status":"active","lat":44.99,"lng":-64.94,"desc":"Championship course in the Annapolis Valley.","image":"","url":""},{"id":21,"name":"Algonquin Golf Club","city":"St. Andrews","province":"New Brunswick","category":"Resort","status":"active","lat":45.075,"lng":-67.05,"desc":"Historic resort course in the seaside town of St. Andrews.","image":"","url":""},{"id":22,"name":"Kingswood Park Golf Course","city":"Fredericton","province":"New Brunswick","category":"Public","status":"active","lat":45.94,"lng":-66.64,"desc":"Popular 18-hole course in Fredericton.","image":"","url":""},{"id":23,"name":"Westfield Golf Club","city":"Westfield","province":"New Brunswick","category":"Public","status":"active","lat":45.35,"lng":-66.22,"desc":"Scenic course along the Saint John River.","image":"","url":""},{"id":24,"name":"Fredericton Golf Club","city":"Fredericton","province":"New Brunswick","category":"Private","status":"active","lat":45.96,"lng":-66.62,"desc":"Established private club in the capital city.","image":"","url":""},{"id":25,"name":"Gowan Brae Golf Club","city":"Bathurst","province":"New Brunswick","category":"Public","status":"active","lat":47.63,"lng":-65.66,"desc":"Championship course in northern New Brunswick.","image":"","url":""},{"id":26,"name":"Miramichi Golf Club","city":"Miramichi","province":"New Brunswick","category":"Public","status":"active","lat":47.01,"lng":-65.48,"desc":"Beautiful course along the Miramichi River.","image":"","url":""},{"id":27,"name":"Bouctouche Golf Club","city":"Bouctouche","province":"New Brunswick","category":"Public","status":"active","lat":46.47,"lng":-64.72,"desc":"Links-style course on the Northumberland Strait.","image":"","url":""},{"id":28,"name":"Royal Oaks Golf Club","city":"Moncton","province":"New Brunswick","category":"Public","status":"active","lat":46.08,"lng":-64.85,"desc":"Top-rated course in the Moncton area.","image":"","url":""},{"id":29,"name":"Hillsborough Golf Club","city":"Edmundston","province":"New Brunswick","category":"Public","status":"active","lat":47.38,"lng":-68.32,"desc":"Scenic course in northwestern New Brunswick.","image":"","url":""},{"id":30,"name":"Aroostook Valley Country Club","city":"Fort Fairfield","province":"New Brunswick","category":"Private","status":"active","lat":46.82,"lng":-67.83,"desc":"Cross-border course near the Maine border.","image":"","url":""},{"id":31,"name":"Pine Needles Golf Club","city":"Grand Falls","province":"New Brunswick","category":"Public","status":"active","lat":47.05,"lng":-67.74,"desc":"River-view course in the Grand Falls area.","image":"","url":""},{"id":32,"name":"Memramcook Valley Golf Club","city":"Memramcook","province":"New Brunswick","category":"Public","status":"active","lat":46,"lng":-64.55,"desc":"Valley course near the Nova Scotia border.","image":"","url":""},{"id":33,"name":"Sackville Golf Club","city":"Sackville","province":"New Brunswick","category":"Public","status":"active","lat":45.9,"lng":-64.37,"desc":"Welcoming course in the Tantramar marshlands.","image":"","url":""},{"id":34,"name":"Riverside Country Club","city":"Rothesay","province":"New Brunswick","category":"Private","status":"active","lat":45.39,"lng":-65.99,"desc":"Premier private club near Saint John.","image":"","url":""},{"id":35,"name":"Hampton Golf Club","city":"Hampton","province":"New Brunswick","category":"Public","status":"active","lat":45.53,"lng":-65.83,"desc":"Scenic course in the Kennebecasis Valley.","image":"","url":""},{"id":36,"name":"Country Meadows","city":"Quispamsis","province":"New Brunswick","category":"Public","status":"active","lat":45.43,"lng":-65.95,"desc":"Family-friendly course near Saint John.","image":"","url":""},{"id":37,"name":"Rockwood Park Golf Club","city":"Saint John","province":"New Brunswick","category":"Public","status":"active","lat":45.28,"lng":-66.06,"desc":"Urban course in Rockwood Park, Saint John.","image":"","url":""},{"id":38,"name":"Green Gables Golf Course","city":"Cavendish","province":"Prince Edward Island","category":"Public","status":"active","lat":46.49,"lng":-63.39,"desc":"Iconic course inspired by Anne of Green Gables.","image":"","url":""},{"id":39,"name":"Crowbush Cove Golf Course","city":"Lakeside","province":"Prince Edward Island","category":"Public","status":"active","lat":46.44,"lng":-62.75,"desc":"Top-ranked PEI course with dramatic dunes.","image":"","url":""},{"id":40,"name":"Brudenell River Golf Course","city":"Brudenell","province":"Prince Edward Island","category":"Resort","status":"active","lat":46.19,"lng":-62.58,"desc":"River and woodland course in eastern PEI.","image":"","url":""},{"id":41,"name":"Dundarave Golf Course","city":"Wood Islands","province":"Prince Edward Island","category":"Public","status":"active","lat":46.16,"lng":-62.73,"desc":"Links-style course with views of the Northumberland Strait.","image":"","url":""},{"id":42,"name":"Mill River Golf Course","city":"Alberton","province":"Prince Edward Island","category":"Public","status":"active","lat":46.81,"lng":-64.05,"desc":"Riverside course on the western tip of PEI.","image":"","url":""},{"id":43,"name":"Eagles Glenn Golf Course","city":"Cavendish","province":"Prince Edward Island","category":"Public","status":"active","lat":46.5,"lng":-63.41,"desc":"Spectacular course with ocean views from every hole.","image":"","url":""},{"id":44,"name":"Glasgow Hills Resort","city":"New Glasgow","province":"Prince Edward Island","category":"Resort","status":"active","lat":46.42,"lng":-63.27,"desc":"Highland-themed resort course in central PEI.","image":"","url":""},{"id":45,"name":"Fox Meadow Golf Club","city":"Stratford","province":"Prince Edward Island","category":"Public","status":"active","lat":46.22,"lng":-63.08,"desc":"Parkland course near Charlottetown.","image":"","url":""},{"id":46,"name":"Belvedere Golf Club","city":"Charlottetown","province":"Prince Edward Island","category":"Public","status":"active","lat":46.25,"lng":-63.13,"desc":"Historic course in the heart of Charlottetown.","image":"","url":""},{"id":47,"name":"Countryview Golf Club","city":"O'Leary","province":"Prince Edward Island","category":"Public","status":"active","lat":46.71,"lng":-64.23,"desc":"Rural course in western PEI.","image":"","url":""},{"id":48,"name":"Chester Golf Club","city":"Chester","province":"Nova Scotia","category":"Private","status":"active","lat":44.547,"lng":-64.243,"desc":"Picturesque private club on the South Shore.","image":"","url":""},{"id":49,"name":"River Oaks Golf Club","city":"Mechanic Settlement","province":"New Brunswick","category":"Public","status":"active","lat":45.72,"lng":-65.2,"desc":"Wooded course in southern New Brunswick.","image":"","url":""},{"id":50,"name":"Lakeview Golf Club","city":"Summerside","province":"Prince Edward Island","category":"Public","status":"active","lat":46.39,"lng":-63.79,"desc":"Scenic course overlooking Bedeque Bay.","image":"","url":""},{"id":51,"name":"Oakfield Golf Club","city":"Oakfield","province":"Nova Scotia","category":"Public","status":"active","lat":44.87,"lng":-63.58,"desc":"Parkland course along the Shubenacadie River.","image":"","url":""},{"id":52,"name":"Truro Golf Club","city":"Truro","province":"Nova Scotia","category":"Public","status":"active","lat":45.36,"lng":-63.3,"desc":"Central Nova Scotia course with rolling terrain.","image":"","url":""},{"id":53,"name":"Ashburn Golf Club","city":"Halifax","province":"Nova Scotia","category":"Private","status":"active","lat":44.63,"lng":-63.66,"desc":"Premier private club in Halifax.","image":"","url":""},{"id":54,"name":"Brightwood Golf Club","city":"Dartmouth","province":"Nova Scotia","category":"Public","status":"active","lat":44.67,"lng":-63.57,"desc":"Popular executive course in Dartmouth.","image":"","url":""},{"id":55,"name":"Sandy Lane Golf Club","city":"Moncton","province":"New Brunswick","category":"Public","status":"active","lat":46.13,"lng":-64.78,"desc":"Challenging course in the Greater Moncton area.","image":"","url":""},{"id":56,"name":"Covered Bridge Golf Club","city":"Hartland","province":"New Brunswick","category":"Public","status":"active","lat":46.3,"lng":-67.53,"desc":"Course near the world's longest covered bridge.","image":"","url":""},{"id":57,"name":"Sussex Golf Club","city":"Sussex","province":"New Brunswick","category":"Public","status":"active","lat":45.72,"lng":-65.52,"desc":"Valley course in southern New Brunswick.","image":"","url":""},{"id":58,"name":"Barrieau's Golf Range","city":"Fredericton","province":"New Brunswick","category":"Practice","status":"inactive","lat":45.93,"lng":-66.59,"desc":"Practice facility in Fredericton.","image":"","url":""},{"id":59,"name":"South Branch Golf Club","city":"South Branch","province":"New Brunswick","category":"Public","status":"inactive","lat":46.56,"lng":-64.86,"desc":"Rural course on the Acadian Peninsula.","image":"","url":""},{"id":60,"name":"Wentworth Golf Club","city":"Wentworth","province":"Nova Scotia","category":"Public","status":"active","lat":45.61,"lng":-63.56,"desc":"Highland course in northern Nova Scotia.","image":"","url":""}]
-</script>
-        <div class="map-wrapper anim d1">
-          <div class="map-controls">
-            <div class="map-filter-bar">
-              <input type="text" id="mapSearch" class="map-search" placeholder="Search courses..." data-i18n-placeholder="map_search_placeholder">
-              <select id="filterProvince" class="map-select">
-                <option value="" data-i18n="map_filter_province">All Provinces</option>
-              </select>
-              <select id="filterCategory" class="map-select">
-                <option value="" data-i18n="map_filter_category">All Categories</option>
-              </select>
-              <select id="filterStatus" class="map-select">
-                <option value="" data-i18n="map_filter_status">All Statuses</option>
-              </select>
-              <button id="mapClearFilters" class="map-btn"><i class="fa-solid fa-eraser"></i> Clear Filters</button>
-            </div>
-            <div class="map-action-bar">
-              <span id="mapCount" class="map-count">0 courses</span>
-              <button id="mapLocate" class="map-btn"><i class="fa-solid fa-location-dot"></i> My Location</button>
-              <button id="mapNearby" class="map-btn"><i class="fa-solid fa-crosshairs"></i> Nearby</button>
-              <button id="mapDarkToggle" class="map-btn map-btn-icon"><i class="fa-solid fa-moon"></i></button>
-            </div>
-          </div>
-          <div id="mapContainer" class="map-container"></div>
-          <div id="mapNoResults" class="map-no-results" style="display:none;">
-            <i class="fa-solid fa-map-pin"></i>
-            <p data-i18n="map_no_results">No courses match your filters.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ─── GV Tournament (new) ─── -->
-      <section class="section-block missing-section" id="gv-tournament">
-        <div class="sec-hd anim">
-          <div class="eyebrow" data-i18n="gv_tournament_eyebrow">Competition</div>
-          <h2 class="sec-title" data-i18n="gv_tournament">Golf Visa Tournament</h2>
-          <p class="sec-desc" data-i18n="gv_tournament_desc">
-            The annual MYGV Championship — an exclusive event for our elite members.
-          </p>
-        </div>
-        <div class="row g-4 anim d1">
-          <div class="col-md-6">
-            <div style="background:#fff; border-radius:16px; padding:1.5rem; box-shadow:0 4px 16px rgba(0,0,0,0.04);">
-              <i class="fa-solid fa-trophy" style="color:#c9a96e; font-size:2rem;"></i>
-              <h5 style="margin:0.5rem 0 0.25rem;" data-i18n="gv_tournament_championship">2027 Championship</h5>
-              <p style="color:#666; font-size:0.9rem;" data-i18n="gv_tournament_championship_info">August 21–23, 2027 · Cabot Links, NS</p>
-              <a href="tournament.html" class="badge-gold" data-i18n="gv_tournament_register" style="text-decoration:none;display:inline-block;">Register Now</a>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div style="background:#fff; border-radius:16px; padding:1.5rem; box-shadow:0 4px 16px rgba(0,0,0,0.04);">
-              <i class="fa-solid fa-medal" style="color:#c9a96e; font-size:2rem;"></i>
-              <h5 style="margin:0.5rem 0 0.25rem;" data-i18n="gv_tournament_qualifier">Qualifier Series</h5>
-              <p style="color:#666; font-size:0.9rem;" data-i18n="gv_tournament_qualifier_info">June – July 2027 · Multiple venues</p>
-              <span class="badge-gold" data-i18n="gv_tournament_schedule">View Schedule</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ─── Tournament Program (new) ─── -->
-      <section class="section-block missing-section" id="tournament-program">
-        <div class="sec-hd anim">
-          <div class="eyebrow" data-i18n="tournament_program_eyebrow">Program</div>
-          <h2 class="sec-title" data-i18n="tournament_program">Tournament Program</h2>
-          <p class="sec-desc" data-i18n="tournament_program_desc">
-            A structured pathway from amateur to champion — with coaching,
-            clinics, and competitive play.
-          </p>
-        </div>
-        <ul class="anim d1">
-          <li><i class="fa-solid fa-flag inline-icon"></i> <strong data-i18n="tournament_program_spring">Spring Training — April–May: clinics &amp; practice rounds</strong></li>
-          <li><i class="fa-solid fa-flag inline-icon"></i> <strong data-i18n="tournament_program_summer">Summer Series — June–July: 4 regional qualifiers</strong></li>
-          <li><i class="fa-solid fa-flag inline-icon"></i> <strong data-i18n="tournament_program_championship">Championship — August: finals at Cabot Links</strong></li>
-          <li><i class="fa-solid fa-flag inline-icon"></i> <strong data-i18n="tournament_program_autumn">Autumn Classic — September: season‑closing event</strong></li>
-        </ul>
-      </section>
-
-      <!-- ─── Corporate ─── (existing) -->
-      <section class="sec anim" id="corporate">
-        <div class="corp-card">
-          <div class="corp-text">
-            <div class="eyebrow" data-i18n="corporate_eyebrow">Corporate Partnerships</div>
-            <h2><span data-i18n="corporate_title_part1">Elevate Your Business</span><br><span data-i18n="corporate_title_part2">on the Fairways</span></h2>
-            <p data-i18n="corporate_desc">
-              Access premium golf experiences designed for executives
-              and corporate teams. Build relationships on Canada's most
-              prestigious fairways.
-            </p>
-            <a href="#" class="btn-navy">
-              <span data-i18n="corporate_btn">Access Corporate GV</span> <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-          <div class="corp-photo">
-            <img src="img/01.jpg" alt="Corporate golf" loading="lazy" data-i18n="corporate_img_alt">
-          </div>
-        </div>
-      </section>
-
-      <!-- ─── Personalized GV (new) ─── -->
-      <section class="section-block missing-section" id="personalized-gv">
-        <div class="sec-hd anim">
-          <div class="eyebrow" data-i18n="personalized_gv_eyebrow">Bespoke</div>
-          <h2 class="sec-title" data-i18n="personalized_gv">Personalized Golf Visa</h2>
-          <p class="sec-desc" data-i18n="personalized_gv_desc">
-            A custom‑tailored golf experience designed around your schedule,
-            preferences, and goals.
-          </p>
-        </div>
-        <div class="card-grid anim d1">
-          <div class="mini-card">
-            <i class="fa-solid fa-calendar-plus"></i>
-            <h5 data-i18n="personalized_gv_dates">Flexible Dates</h5>
-            <p data-i18n="personalized_gv_dates_desc">Choose your own tee times and travel windows</p>
-          </div>
-          <div class="mini-card">
-            <i class="fa-solid fa-location-dot"></i>
-            <h5 data-i18n="personalized_gv_selection">Course Selection</h5>
-            <p data-i18n="personalized_gv_selection_desc">Hand‑pick your preferred courses</p>
-          </div>
-          <div class="mini-card">
-            <i class="fa-solid fa-champagne-glasses"></i>
-            <h5 data-i18n="personalized_gv_concierge">Concierge Service</h5>
-            <p data-i18n="personalized_gv_concierge_desc">Dining, accommodation &amp; transport arranged</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ─── Organizations (new) ─── -->
-      <section class="section-block missing-section" id="organizations">
-        <div class="sec-hd anim">
-          <div class="eyebrow" data-i18n="organizations_eyebrow">Groups</div>
-          <h2 class="sec-title" data-i18n="organizations_title">Organizations &amp; Groups</h2>
-          <p class="sec-desc" data-i18n="organizations_desc">
-            Corporate teams, golf societies, and private groups — we offer
-            tailored programs for every organization.
-          </p>
-        </div>
-        <ul class="anim d1">
-          <li><i class="fa-solid fa-building inline-icon"></i> <strong data-i18n="organizations_corporate">Corporate Memberships — 10+ employees: group rates &amp; events</strong></li>
-          <li><i class="fa-solid fa-people-group inline-icon"></i> <strong data-i18n="organizations_society">Society Packages — 20+ members: dedicated tournament days</strong></li>
-          <li><i class="fa-solid fa-handshake inline-icon"></i> <strong data-i18n="organizations_partner">Partner Program — exclusive benefits for affiliated clubs</strong></li>
-        </ul>
-      </section>
-
-      <!-- ─── Memberships (existing) ─── -->
-      <section class="sec" id="memberships">
-        <div class="sec-hd anim">
-          <div class="eyebrow" data-i18n="memberships_eyebrow">Memberships</div>
-          <h2 class="sec-title" data-i18n="memberships_title">Choose Your Elite Tier</h2>
-          <p class="sec-desc" data-i18n="memberships_desc">
-            Select the membership that fits your lifestyle and unlock
-            exclusive privileges across Canada.
-          </p>
-        </div>
-
-        <div class="row g-4">
-          <div class="col-md-6 anim d1">
-            <div class="member-card">
-              <span class="tier-chip silver" data-i18n="memberships_silver_chip">Silver</span>
-              <h3 data-i18n="memberships_silver_name">Silver GV Card</h3>
-              <p class="m-desc" data-i18n="memberships_silver_desc">
-                Standard access to our partner network with preferred
-                tee times and membership benefits.
-              </p>
-              <div class="price-row">
-                <span class="price-main">$499</span>
-                <span class="price-sfx" data-i18n="memberships_per_year"> / year</span>
-              </div>
-              <ul class="feat-list">
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="memberships_silver_feat1">Access to 20+ partner courses</span></li>
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="memberships_silver_feat2">Preferred tee time booking</span></li>
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="memberships_silver_feat3">Digital GV Card</span></li>
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="memberships_silver_feat4">Newsletter &amp; updates</span></li>
-              </ul>
-              <button class="btn-member" data-i18n="memberships_silver_btn">Get Started</button>
-            </div>
-          </div>
-
-          <div class="col-md-6 anim d2">
-            <div class="member-card is-gold">
-              <span class="tier-chip gold" data-i18n="memberships_gold_chip">Gold</span>
-              <h3 data-i18n="memberships_gold_name">Gold GV Card</h3>
-              <p class="m-desc" data-i18n="memberships_gold_desc">
-                Unlimited access, VIP tee times, and luxury benefits at
-                Canada's premier courses.
-              </p>
-              <div class="price-row">
-                <span class="price-main">$999</span>
-                <span class="price-sfx" data-i18n="memberships_per_year"> / year</span>
-              </div>
-              <ul class="feat-list">
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="memberships_gold_feat1">Unlimited access to all courses</span></li>
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="memberships_gold_feat2">VIP tee times &amp; priority booking</span></li>
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="memberships_gold_feat3">Exclusive member events</span></li>
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="memberships_gold_feat4">Luxury perks &amp; rewards</span></li>
-              </ul>
-              <button class="btn-member filled" data-i18n="memberships_silver_btn">Get Started</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ─── Mission (new) ─── -->
-      <section class="section-block missing-section" id="mission">
-        <div class="sec-hd anim">
-          <div class="eyebrow" data-i18n="mission_eyebrow">About</div>
-          <h2 class="sec-title" data-i18n="mission">Mission Statement</h2>
-          <p class="sec-desc" data-i18n="mission_desc">
-            To connect discerning golfers with Canada's most extraordinary
-            courses through a seamless, premium membership experience.
-          </p>
-        </div>
-        <div style="max-width:720px;" class="anim d1">
-          <p style="color:#444; line-height:1.8;">
-            <i class="fa-solid fa-quote-left"
-              style="color:#c9a96e; font-size:1.4rem; opacity:0.5; display:block; margin-bottom:0.5rem;"></i>
-            <span data-i18n="mission_text">MYGV was founded with a single purpose: to elevate the golf experience by removing barriers, curating excellence, and building a community of passionate players. We believe that every round should be memorable, every fairway should inspire, and every member should feel valued.</span>
-          </p>
-          <p style="color:#444; line-height:1.8; margin-top:1rem;">
-            <strong data-i18n="mission_values">Our values: Integrity, Excellence, Community, and a deep respect for the game and the land it's played on.</strong>
-          </p>
-        </div>
-      </section>
-
-      <!-- ─── Conditions (new) ─── -->
-      <section class="section-block missing-section" id="conditions">
-        <div class="sec-hd anim">
-          <div class="eyebrow" data-i18n="conditions_eyebrow">Legal</div>
-          <h2 class="sec-title" data-i18n="conditions_title">Terms &amp; Conditions</h2>
-          <p class="sec-desc" data-i18n="conditions_desc">
-            Important information about your Golf Visa membership.
-          </p>
-        </div>
-        <div style="max-width:720px;" class="anim d1">
-          <ul style="color:#444; line-height:1.9;">
-            <li><i class="fa-solid fa-check inline-icon"></i> <span data-i18n="conditions_item1">Membership is valid for the calendar year indicated.</span></li>
-            <li><i class="fa-solid fa-check inline-icon"></i> <span data-i18n="conditions_item2">Tee times are subject to course availability.</span></li>
-            <li><i class="fa-solid fa-check inline-icon"></i> <span data-i18n="conditions_item3">Cancellations must be made 48 hours in advance.</span></li>
-            <li><i class="fa-solid fa-check inline-icon"></i> <span data-i18n="conditions_item4">GV Card is non‑transferable and for personal use only.</span>
-            </li>
-            <li><i class="fa-solid fa-check inline-icon"></i> <span data-i18n="conditions_item5">All members must adhere to course dress codes and
-              etiquette.</span></li>
-            <li><i class="fa-solid fa-check inline-icon"></i> <span data-i18n="conditions_item6">MYGV reserves the right to update terms with 30 days'
-              notice.</span></li>
-          </ul>
-          <p style="color:#888; font-size:0.85rem; margin-top:1rem;">
-            <span data-i18n="conditions_full_terms">Full terms available upon request.</span> <a href="#" style="color:#c9a96e;" data-i18n="conditions_download_pdf">Download PDF</a>
-          </p>
-        </div>
-      </section>
-
-      <!-- ─── Contact Us (new) ─── -->
-      <section class="section-block missing-section" id="contact-us">
-        <div class="sec-hd anim">
-          <div class="eyebrow" data-i18n="contact_us_eyebrow">Get in Touch</div>
-          <h2 class="sec-title" data-i18n="contact_us">Contact Us</h2>
-          <p class="sec-desc" data-i18n="contact_us_desc">
-            We're here to help. Reach out for membership inquiries,
-            partnership opportunities, or general questions.
-          </p>
-        </div>
-        <div class="row g-4 anim d1">
-          <div class="col-md-4">
-            <div
-              style="background:#fff; border-radius:16px; padding:1.5rem; text-align:center; box-shadow:0 4px 16px rgba(0,0,0,0.04); height:100%;">
-              <i class="fa-solid fa-envelope" style="font-size:2rem; color:#c9a96e;"></i>
-              <h5 style="margin:0.75rem 0 0.25rem;" data-i18n="contact_us_email">Email</h5>
-              <p style="color:#666; font-size:0.9rem;">info@mygv.ca</p>
-              <p style="color:#999; font-size:0.8rem;" data-i18n="contact_us_response_time">Response within 24h</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              style="background:#fff; border-radius:16px; padding:1.5rem; text-align:center; box-shadow:0 4px 16px rgba(0,0,0,0.04); height:100%;">
-              <i class="fa-solid fa-phone" style="font-size:2rem; color:#c9a96e;"></i>
-              <h5 style="margin:0.75rem 0 0.25rem;" data-i18n="contact_us_phone">Phone</h5>
-              <p style="color:#666; font-size:0.9rem;">+1 (800) 555‑GOLF</p>
-              <p style="color:#999; font-size:0.8rem;" data-i18n="contact_us_hours">Mon–Fri 9am–6pm EST</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              style="background:#fff; border-radius:16px; padding:1.5rem; text-align:center; box-shadow:0 4px 16px rgba(0,0,0,0.04); height:100%;">
-              <i class="fa-solid fa-location-dot" style="font-size:2rem; color:#c9a96e;"></i>
-              <h5 style="margin:0.75rem 0 0.25rem;" data-i18n="contact_us_hq">Headquarters</h5>
-              <p style="color:#666; font-size:0.9rem;">Toronto, ON</p>
-              <p style="color:#999; font-size:0.8rem;" data-i18n="contact_us_appointment">By appointment only</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ─── E-Transfer (new) ─── -->
-      <section class="section-block missing-section" id="etransfer">
-        <div class="sec-hd anim">
-          <div class="eyebrow" data-i18n="etransfer_eyebrow">Payments</div>
-          <h2 class="sec-title" data-i18n="etransfer">E-Transfer Payment</h2>
-          <p class="sec-desc" data-i18n="etransfer_desc">
-            Secure and convenient Interac e‑Transfer for your Golf Visa purchase.
-          </p>
-        </div>
-        <div style="max-width:600px;" class="anim d1">
-          <div style="background:#fff; border-radius:16px; padding:2rem; box-shadow:0 4px 16px rgba(0,0,0,0.04);">
-            <p style="display:flex; align-items:center; gap:0.75rem; font-weight:600;">
-              <i class="fa-solid fa-circle-info" style="color:#c9a96e;"></i>
-              <span data-i18n="etransfer_how_to">How to pay via e‑Transfer</span>
-            </p>
-            <ol style="color:#444; line-height:2.2; padding-left:1.25rem;">
-              <li data-i18n="etransfer_step1">Log in to your online banking</li>
-              <li><span data-i18n="etransfer_step2">Select Interac e‑Transfer</span></li>
-              <li><span data-i18n="etransfer_step3">Send to: payments@mygv.ca</span></li>
-              <li><span data-i18n="etransfer_step4">Include your full name and GV Card tier in the message</span></li>
-              <li data-i18n="etransfer_step5">You'll receive confirmation within 2 business hours</li>
-            </ol>
-            <div style="background:#f5f2ec; border-radius:8px; padding:1rem; margin-top:1rem;">
-              <p style="margin:0; font-size:0.9rem; color:#555;">
-                <i class="fa-solid fa-lock" style="color:#c9a96e;"></i>
-                <strong data-i18n="etransfer_secure">Secure: All transactions are encrypted and monitored.</strong>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ─── Buy (new) ─── -->
-      <section class="section-block missing-section" id="buy">
-        <div class="sec-hd anim">
-          <div class="eyebrow" data-i18n="buy_eyebrow">Purchase</div>
-          <h2 class="sec-title" data-i18n="buy_title">Buy Your Golf Visa</h2>
-          <p class="sec-desc" data-i18n="buy_desc">
-            Choose your membership tier and start your MYGV journey today.
-          </p>
-        </div>
-        <div class="row g-4 anim d1">
-          <div class="col-md-6">
-            <div
-              style="background:#fff; border-radius:16px; padding:2rem; box-shadow:0 4px 16px rgba(0,0,0,0.04); text-align:center; height:100%;">
-              <span class="tier-chip silver" data-i18n="memberships_silver_chip">Silver</span>
-              <h4 style="font-family:'Playfair Display',serif; margin:0.5rem 0;" data-i18n="memberships_silver_name">Silver GV Card</h4>
-              <p style="color:#666;">$499 / year</p>
-              <a href="#" class="btn-gold" style="display:inline-flex;" data-i18n="buy_now">Buy Now</a>
-              <p style="color:#999; font-size:0.8rem; margin-top:0.75rem;" data-i18n="buy_silver_includes">Includes 20+ courses</p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div
-              style="background:#fdf9f0; border-radius:16px; padding:2rem; box-shadow:0 4px 16px rgba(0,0,0,0.04); text-align:center; border:1px solid #c9a96e; height:100%;">
-              <span class="tier-chip gold" data-i18n="memberships_gold_chip">Gold</span>
-              <h4 style="font-family:'Playfair Display',serif; margin:0.5rem 0;" data-i18n="memberships_gold_name">Gold GV Card</h4>
-              <p style="color:#666;">$999 / year</p>
-              <a href="#" class="btn-gold" style="display:inline-flex;" data-i18n="buy_now">Buy Now</a>
-              <p style="color:#999; font-size:0.8rem; margin-top:0.75rem;" data-i18n="buy_gold_includes">Unlimited access + VIP perks</p>
-            </div>
-          </div>
-        </div>
-        <p class="anim d2" style="margin-top:1.5rem; color:#888; font-size:0.9rem; text-align:center;">
-          <i class="fa-solid fa-shield-halved" style="color:#c9a96e;"></i>
-          <span data-i18n="buy_guarantee">Secure checkout · Instant digital delivery · 30‑day money‑back guarantee</span>
-        </p>
-      </section>
-
-    </main>
-
-
-    <!-- ─── SIDEBAR ─── -->
-    <aside>
-      <div class="sidebar-inner">
-        <p class="sb-label" data-i18n="sidebar_featured_title">Featured Courses</p>
-
-        <div class="side-card anim d1">
-          <div class="side-img">
-            <img src="img/02.jpg" alt="Oceanview Greens" loading="lazy">
-            <span class="side-chip featured" data-i18n="sidebar_featured_chip">Featured</span>
-          </div>
-          <div class="side-body">
-            <h4>Oceanview Greens</h4>
-            <p data-i18n="sidebar_oceanview_desc">Signature 18‑hole course above the Pacific.</p>
-            <a href="#" class="btn-green" data-i18n="sidebar_book_now">Book Now</a>
-          </div>
-        </div>
-
-        <div class="side-card anim d2">
-          <div class="side-img">
-            <img src="img/03.jpg" alt="The Golden Fairway" loading="lazy">
-            <span class="side-chip gold-course" data-i18n="sidebar_gold_chip">Gold Course</span>
-          </div>
-          <div class="side-body">
-            <h4>The Golden Fairway</h4>
-            <p data-i18n="sidebar_golden_desc">Exclusive access — Top 10 in Canada.</p>
-            <a href="#" class="btn-green" data-i18n="sidebar_book_now">Book Now</a>
-          </div>
-        </div>
-
-        <div class="side-card anim d3">
-          <div class="side-img">
-            <img src="img/01.jpg" alt="Mountain Ridge" loading="lazy">
-            <span class="side-chip" style="background:#0e1b1f; color:#c9a96e;" data-i18n="sidebar_mountain_chip">Mountain</span>
-          </div>
-          <div class="side-body">
-            <h4>Mountain Ridge</h4>
-            <p data-i18n="sidebar_mountain_desc">Alpine fairways with 360° views.</p>
-            <a href="#" class="btn-green" data-i18n="sidebar_book_now">Book Now</a>
-          </div>
-        </div>
-      </div>
-    </aside>
-
-  </div>
-
 
   <!-- ══════════════════════════════════════════
 FOOTER
 ══════════════════════════════════════════ -->
   <footer class="footer" id="shop">
+    <div class="footer-accent"></div>
     <div class="container">
       <div class="row g-5">
 
         <div class="col-lg-4">
-          <a class="footer-brand" href="#hero">
+          <a class="footer-brand" href="index.html">
             <span class="brand-icon"><i class="fa-brands fa-canadian-maple-leaf"></i></span>
             <span data-i18n="brand_name">MYGV</span>
           </a>
@@ -880,22 +208,29 @@ FOOTER
             The pinnacle of Golf Visa experiences. Opening Canada's most
             prestigious courses to the discerning golfer.
           </p>
+          <div class="f-newsletter">
+            <p class="f-newsletter-title">Stay in the loop</p>
+            <div class="f-newsletter-form">
+              <input type="email" class="f-newsletter-input" placeholder="Enter your email" aria-label="Email for newsletter" />
+              <button class="f-newsletter-btn" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
         </div>
 
         <div class="col-6 col-lg-2">
           <p class="f-col-title" data-i18n="footer_company">Company</p>
-          <a href="#mission" class="f-link" data-i18n="about">About</a>
-          <a href="#contact-us" class="f-link" data-i18n="contact">Contact</a>
-          <a href="#" class="f-link" data-i18n="footer_careers">Careers</a>
-          <a href="#" class="f-link" data-i18n="footer_press">Press</a>
+          <a href="about.html" class="f-link" data-i18n="about">About</a>
+          <a href="careers.html" class="f-link" data-i18n="footer_careers">Careers</a>
+          <a href="press.html" class="f-link" data-i18n="footer_press">Press</a>
+          <a href="contact.html" class="f-link" data-i18n="contact">Contact</a>
         </div>
 
         <div class="col-6 col-lg-2">
           <p class="f-col-title" data-i18n="footer_support">Support</p>
-          <a href="#" class="f-link" data-i18n="footer_faq">FAQ</a>
-          <a href="#" class="f-link" data-i18n="footer_privacy">Privacy</a>
-          <a href="#conditions" class="f-link" data-i18n="footer_terms">Terms</a>
-          <a href="#" class="f-link" data-i18n="footer_accessibility">Accessibility</a>
+          <a href="faq.html" class="f-link" data-i18n="footer_faq">FAQ</a>
+          <a href="privacy.html" class="f-link" data-i18n="footer_privacy">Privacy</a>
+          <a href="about.html#conditions" class="f-link" data-i18n="footer_terms">Terms</a>
+          <a href="accessibility.html" class="f-link" data-i18n="footer_accessibility">Accessibility</a>
         </div>
 
         <div class="col-lg-4">
@@ -914,6 +249,14 @@ FOOTER
               <i class="fa-brands fa-youtube"></i>
             </a>
           </div>
+          <div class="f-contact-row">
+            <i class="fa-regular fa-envelope" style="color:#c9a96e;"></i>
+            <a href="mailto:info@mygv.ca">info@mygv.ca</a>
+          </div>
+          <div class="f-contact-row">
+            <i class="fa-solid fa-phone" style="color:#c9a96e;"></i>
+            <a href="tel:+1800555GOLF">+1 (800) 555-GOLF</a>
+          </div>
         </div>
 
       </div>
@@ -923,7 +266,6 @@ FOOTER
       </div>
     </div>
   </footer>
-
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
   </script>
@@ -937,7 +279,12 @@ FOOTER
   </script>
   <script src="js/map.js">
   </script>
+  <script src="js/tournament.js">
+  </script>
 
 </body>
 
+</html>
+
+</body>
 </html>
