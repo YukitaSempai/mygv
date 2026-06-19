@@ -612,50 +612,40 @@
     /* ─── envelope letter (slides out) ─── */
     .hm-env-letter {
       position: absolute;
-      left: 7%;
-      right: 7%;
-      bottom: 6%;
-      height: 54%;
-      background: linear-gradient(160deg, #fcf9f4, #f7f2e9);
-      border-radius: 14px;
-      border: 1px solid rgba(201,169,110,0.15);
-      box-shadow: 0 -4px 24px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.06);
+      left: 5%;
+      right: 5%;
+      bottom: 4%;
+      height: 68%;
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid rgba(201,169,110,0.2);
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.1), 0 4px 16px rgba(0,0,0,0.06);
       z-index: 2;
+      overflow: hidden;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 1.25rem;
-      text-align: center;
+      padding: 6px;
       top: 100%;
       opacity: 0;
       transition: top 0.65s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.4s ease;
     }
-    .hm-letter-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #c9a96e, #dbb97e);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #0e1b1f;
-      font-size: 0.85rem;
-      margin-bottom: 0.4rem;
+    .hm-letter-img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 6px;
+      background: #ede4d4;
+      transform: scale(0.82);
+      opacity: 0;
+      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease;
     }
-    .hm-letter-heading {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: #0e1b1f;
-      margin: 0 0 0.15rem;
-    }
-    .hm-letter-text {
-      font-size: 0.7rem;
-      color: rgba(0,0,0,0.4);
-      margin: 0;
-      line-height: 1.4;
-      max-width: 180px;
+    .hm-card.opening .hm-letter-img {
+      transform: scale(1);
+      opacity: 1;
+      transition-delay: 0.5s, 0.5s;
     }
 
     /* ─── opening animation ─── */
@@ -700,7 +690,6 @@
         left: 5%;
         right: 5%;
         bottom: 5%;
-        padding: 1rem;
       }
     }
     @media (max-width: 576px) {
@@ -711,14 +700,10 @@
         width: 34px;
         height: 40px;
         font-size: 1rem;
-        top: 0.75rem;
         right: 0.75rem;
       }
       .hm-env-to h3 {
         font-size: 1.7rem;
-      }
-      .hm-letter-heading {
-        font-size: 1.1rem;
       }
     }
 

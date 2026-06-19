@@ -137,7 +137,7 @@
       if (href) {
         setTimeout(function () {
           window.location.href = href;
-        }, 1900);
+        }, 1400);
       }
     });
   });
