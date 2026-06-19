@@ -99,7 +99,7 @@
   /* ════════════════════════════════════════
      PACKAGE PRICE COUNTER
   ════════════════════════════════════════ */
-  var priceVals = document.querySelectorAll('.pkg-price-val');
+  var priceVals = document.querySelectorAll('.pkg-price-val, .t-price-val');
   if (priceVals.length && 'IntersectionObserver' in window) {
     var priceObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -127,21 +127,38 @@
   }
 
   /* ════════════════════════════════════════
+     HOME CARD CLICK (open animation + redirect)
+  ════════════════════════════════════════ */
+  document.querySelectorAll('.hm-card').forEach(function (card) {
+    card.addEventListener('click', function () {
+      if (card.classList.contains('opening')) return;
+      card.classList.add('opening');
+      var href = card.getAttribute('data-href');
+      if (href) {
+        setTimeout(function () {
+          window.location.href = href;
+        }, 1900);
+      }
+    });
+  });
+
+  /* ════════════════════════════════════════
      CARD TILT ON MOUSE MOVE
   ════════════════════════════════════════ */
   document.querySelectorAll('[data-tilt]').forEach(function (card) {
     card.addEventListener('mousemove', function (e) {
+      if (card.classList.contains('opening')) return;
       var rect = card.getBoundingClientRect();
       var x = (e.clientX - rect.left) / rect.width - 0.5;
       var y = (e.clientY - rect.top) / rect.height - 0.5;
-      var inner = card.querySelector('.pkg-card-inner');
+      var inner = card.querySelector('.pkg-card-inner, .hm-env');
       if (inner) {
         inner.style.transform =
           'translateY(-8px) rotateX(' + (-y * 6) + 'deg) rotateY(' + (x * 6) + 'deg)';
       }
     });
     card.addEventListener('mouseleave', function () {
-      var inner = card.querySelector('.pkg-card-inner');
+      var inner = card.querySelector('.pkg-card-inner, .hm-env');
       if (inner) {
         inner.style.transform = '';
       }

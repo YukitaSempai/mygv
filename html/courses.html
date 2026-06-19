@@ -26,7 +26,7 @@
 
 </head>
 
-<body class="">
+<body class="page-courses">
 
   <!-- ══════════════════════════════════════════
     NAVBAR
@@ -117,98 +117,88 @@
 <div class="page-wrap">
   <main>
 
-      <!-- ─── Destinations — Explorer ─── -->
-      <section class="sec sec-cream-dark sec-shield sec-py-lg" id="courses">
+      <!-- ─── Courses — Compact + Map ─── -->
+      <section class="section-block sec-courses sec-py-md" id="courses">
         <div class="container">
-          <div class="sec-hd reveal" style="text-align:center;">
-            <div class="eyebrow" data-i18n="destinations_eyebrow">Destinations</div>
-            <h2 class="sec-title" data-i18n="destinations_title">Premier Golf Provinces</h2>
-            <p class="sec-desc" style="margin:0 auto;" data-i18n="destinations_desc">
-              Discover world‑class courses across Canada's most
-              prestigious regions.
-            </p>
+          <!-- HEADER -->
+          <div class="row justify-content-center text-center reveal">
+            <div class="col-lg-9">
+              <div class="eyebrow" style="color:#c9a96e;" data-i18n="destinations_eyebrow">Destinations</div>
+              <h2 class="sec-title" style="color:#fff;" data-i18n="destinations_title">Premier Golf Provinces</h2>
+              <p class="sec-desc" style="color:rgba(255,255,255,0.65); margin:0.5rem auto 0; max-width:600px;" data-i18n="destinations_desc">
+                Discover world‑class courses across Canada's most prestigious regions.
+              </p>
+            </div>
           </div>
 
-          <div class="row g-4 reveal" data-stagger="0.15" style="margin-top:1.5rem;">
-            <div class="col-md-6">
-              <div class="card-prov hover-lift">
-                <div class="cp-img">
-                  <img src="img/02.jpg" alt="Golf British Columbia" loading="lazy" data-i18n="province_bc_img_alt">
-                  <div class="cp-badge">
-                    <i class="fa-solid fa-location-dot"></i> <span data-i18n="province_bc_name">British Columbia</span>
+          <!-- PROVINCES + NETWORK (side by side) -->
+          <div class="row g-3 mt-3 reveal" data-stagger="0.12">
+            <!-- Province cards -->
+            <div class="col-lg-7">
+              <div class="row g-3">
+                <div class="col-md-6 reveal">
+                  <div class="crs-card crs-card-sm">
+                    <div class="crs-card-img">
+                      <img src="img/02.jpg" alt="Golf British Columbia" loading="lazy" data-i18n="province_bc_img_alt">
+                      <div class="crs-badge">
+                        <i class="fa-solid fa-location-dot"></i> <span data-i18n="province_bc_name">British Columbia</span>
+                      </div>
+                    </div>
+                    <div class="crs-card-body">
+                      <div class="crs-region" data-i18n="province_bc_region">West Coast</div>
+                      <h5 data-i18n="province_bc_card_title">GOLF VISA British Columbia</h5>
+                      <p data-i18n="province_bc_desc">World‑class courses between ocean and mountains.</p>
+                      <a href="#" class="crs-link">
+                        <span data-i18n="province_bc_link">Explore BC</span> <i class="fa-solid fa-arrow-right"></i>
+                      </a>
+                    </div>
                   </div>
                 </div>
-                <div class="cp-body">
-                  <div class="cp-region" data-i18n="province_bc_region">West Coast</div>
-                  <h3 data-i18n="province_bc_card_title">GOLF VISA British Columbia</h3>
-                  <p data-i18n="province_bc_desc">
-                    World‑class courses between ocean and mountains.
-                    Experience the finest fairways Canada has to offer.
-                  </p>
-                  <a href="#" class="link-arr">
-                    <span data-i18n="province_bc_link">Explore BC</span> <i class="fa-solid fa-arrow-right"></i>
-                  </a>
+                <div class="col-md-6 reveal">
+                  <div class="crs-card crs-card-sm">
+                    <div class="crs-card-img">
+                      <img src="img/03.jpg" alt="Golf Ontario" loading="lazy" data-i18n="province_on_img_alt">
+                      <div class="crs-badge">
+                        <i class="fa-solid fa-location-dot"></i> <span data-i18n="province_on_name">Ontario</span>
+                      </div>
+                    </div>
+                    <div class="crs-card-body">
+                      <div class="crs-region" data-i18n="province_on_region">Central Canada</div>
+                      <h5 data-i18n="province_on_card_title">GOLF VISA Ontario</h5>
+                      <p data-i18n="province_on_desc">Legendary courses in the heart of Canada's landscapes.</p>
+                      <a href="#" class="crs-link">
+                        <span data-i18n="province_on_link">Explore Ontario</span> <i class="fa-solid fa-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <div class="col-md-6">
-              <div class="card-prov hover-lift">
-                <div class="cp-img">
-                  <img src="img/03.jpg" alt="Golf Ontario" loading="lazy" data-i18n="province_on_img_alt">
-                  <div class="cp-badge">
-                    <i class="fa-solid fa-location-dot"></i> <span data-i18n="province_on_name">Ontario</span>
-                  </div>
-                </div>
-                <div class="cp-body">
-                  <div class="cp-region" data-i18n="province_on_region">Central Canada</div>
-                  <h3 data-i18n="province_on_card_title">GOLF VISA Ontario</h3>
-                  <p data-i18n="province_on_desc">
-                    Legendary courses in the heart of Canada's most vibrant
-                    landscapes — lush greens and world‑class tradition.
-                  </p>
-                  <a href="#" class="link-arr">
-                    <span data-i18n="province_on_link">Explore Ontario</span> <i class="fa-solid fa-arrow-right"></i>
-                  </a>
-                </div>
+            <!-- Network list -->
+            <div class="col-lg-5 reveal">
+              <div class="crs-network-card">
+                <h6 class="crs-network-title" style="color:#c9a96e; font-weight:700; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.12em; margin-bottom:1rem;">
+                  <i class="fa-solid fa-circle-nodes" style="margin-right:0.5rem;"></i> <span data-i18n="part_courses_title">Participating Courses</span>
+                </h6>
+                <ul class="crs-network-list">
+                  <li><i class="fa-solid fa-circle-check"></i> <strong data-i18n="part_courses_bc">British Columbia — Capilano, Shaughnessy, Nicklaus North</strong></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <strong data-i18n="part_courses_on">Ontario — Glen Abbey, St. George's, Hamilton</strong></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <strong data-i18n="part_courses_qc">Quebec — Le Mirage, Royal Québec, La Vallée</strong></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <strong data-i18n="part_courses_ns">Nova Scotia — Cabot Links, Fox Harb'r, Highland Links</strong></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <strong data-i18n="part_courses_nb">New Brunswick — Algonquin, Kingswood, Rockwood</strong></li>
+                </ul>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <!-- ─── Participating Courses — Network ─── -->
-      <section class="section-block sec-network sec-py-md missing-section" id="participating-courses">
-        <div class="container">
-          <div class="sec-hd reveal" style="text-align:center;">
-            <div class="eyebrow" data-i18n="part_courses_eyebrow">Our Network</div>
-            <h2 class="sec-title" data-i18n="part_courses_title">Participating Courses</h2>
-            <p class="sec-desc" style="margin:0 auto;" data-i18n="part_courses_desc">
-              From coast to coast, MYGV partners with Canada's most distinguished
-              golf clubs.
-            </p>
-          </div>
-          <ul class="reveal" data-stagger="0.1" style="max-width:640px; margin:1.5rem auto 0; list-style:none; padding:0;">
-            <li><i class="fa-solid fa-circle-check inline-icon" style="color:#c9a96e; font-size:1rem;"></i> <strong data-i18n="part_courses_bc">British Columbia — Capilano, Shaughnessy, Nicklaus North</strong></li>
-            <li><i class="fa-solid fa-circle-check inline-icon" style="color:#c9a96e; font-size:1rem;"></i> <strong data-i18n="part_courses_on">Ontario — Glen Abbey, St. George's, Hamilton</strong></li>
-            <li><i class="fa-solid fa-circle-check inline-icon" style="color:#c9a96e; font-size:1rem;"></i> <strong data-i18n="part_courses_qc">Quebec — Le Mirage, Royal Québec, La Vallée</strong></li>
-            <li><i class="fa-solid fa-circle-check inline-icon" style="color:#c9a96e; font-size:1rem;"></i> <strong data-i18n="part_courses_ns">Nova Scotia — Cabot Links, Fox Harb'r, Highland Links</strong></li>
-            <li><i class="fa-solid fa-circle-check inline-icon" style="color:#c9a96e; font-size:1rem;"></i> <strong data-i18n="part_courses_nb">New Brunswick — Algonquin, Kingswood, Rockwood</strong></li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- ─── Course Map — Interactive ─── -->
-      <section class="section-block sec-py-lg missing-section" id="course-map">
-        <div class="container">
-          <div class="sec-hd reveal" style="text-align:center;">
-            <div class="eyebrow" data-i18n="course_map_eyebrow">Explore</div>
-            <h2 class="sec-title" data-i18n="course_map">Course Map</h2>
-            <p class="sec-desc" style="margin:0 auto;" data-i18n="course_map_desc">Interactive map of all MYGV partner courses across Canada.</p>
-          </div>
-          <div class="reveal" style="margin-top:1.5rem;">
+          <!-- MAP -->
+          <div class="reveal" style="margin-top:2rem;" id="course-map">
+            <div class="crs-map-head text-center" style="margin-bottom:0.75rem;">
+              <div class="eyebrow" style="color:#c9a96e; font-size:0.65rem;" data-i18n="course_map_eyebrow">Explore</div>
+              <h3 style="color:#fff; font-size:1.3rem; margin:0.1rem 0 0;" data-i18n="course_map">Course Map</h3>
+            </div>
             <script id="golfCoursesData" type="application/json">
-[{"id":1,"name":"Cabot Links","city":"Inverness","province":"Nova Scotia","category":"Resort","status":"active","lat":46.2291,"lng":-61.2949,"desc":"World-renowned links course on Cape Breton's western shore.","image":"","url":"https://cabotlinks.com"},{"id":2,"name":"Cabot Cliffs","city":"Inverness","province":"Nova Scotia","category":"Resort","status":"active","lat":46.225,"lng":-61.3,"desc":"Spectacular clifftop course ranked among the world's best.","image":"","url":"https://cabotlinks.com/cliffs"},{"id":3,"name":"Highland Links","city":"Cape Breton","province":"Nova Scotia","category":"Links","status":"active","lat":46.31,"lng":-60.41,"desc":"Championship links with stunning Cape Breton views.","image":"","url":""},{"id":4,"name":"Fox Harb'r Resort","city":"Wallace","province":"Nova Scotia","category":"Resort","status":"active","lat":45.801,"lng":-63.472,"desc":"Luxury golf resort with an award-winning course.","image":"","url":"https://foxharbr.com"},{"id":5,"name":"Links at Brunello","city":"Timberlea","province":"Nova Scotia","category":"Public","status":"active","lat":44.659,"lng":-63.74,"desc":"Modern 18-hole championship course near Halifax.","image":"","url":""},{"id":6,"name":"Lost Creek Golf Club","city":"Waverley","province":"Nova Scotia","category":"Public","status":"active","lat":44.79,"lng":-63.58,"desc":"Scenic parkland course in the Waverley area.","image":"","url":""},{"id":7,"name":"Glen Arbour Golf Course","city":"Halifax","province":"Nova Scotia","category":"Public","status":"active","lat":44.73,"lng":-63.69,"desc":"Residential community course with rolling fairways.","image":"","url":""},{"id":8,"name":"Osprey Ridge Golf Club","city":"Halifax","province":"Nova Scotia","category":"Public","status":"active","lat":44.68,"lng":-63.61,"desc":"Challenging course with elevated tees and ocean views.","image":"","url":""},{"id":9,"name":"Grandview Golf Club","city":"Dartmouth","province":"Nova Scotia","category":"Public","status":"active","lat":44.69,"lng":-63.53,"desc":"A well-maintained course with great views of the harbour.","image":"","url":""},{"id":10,"name":"The Algonquin Golf Course","city":"Saint Andrews","province":"New Brunswick","category":"Resort","status":"active","lat":45.074,"lng":-67.054,"desc":"Historic seaside course at the Algonquin Resort.","image":"","url":""},{"id":11,"name":"Kingswood Golf","city":"Ottawa","province":"New Brunswick","category":"Public","status":"active","lat":46.01,"lng":-66.73,"desc":"Premier golf destination in New Brunswick.","image":"","url":""},{"id":12,"name":"Rockwood Park Golf Course","city":"Saint John","province":"New Brunswick","category":"Public","status":"active","lat":45.27,"lng":-66.07,"desc":"Scenic 18-hole course within Rockwood Park.","image":"","url":""},{"id":13,"name":"Magnetic Hill Golf","city":"Moncton","province":"New Brunswick","category":"Public","status":"active","lat":46.12,"lng":-64.82,"desc":"Championship course in the greater Moncton area.","image":"","url":""},{"id":14,"name":"Stanley Golf Club","city":"Stanley","province":"New Brunswick","category":"Public","status":"active","lat":46.28,"lng":-66.38,"desc":"Friendly 9-hole course in rural New Brunswick.","image":"","url":""},{"id":15,"name":"Edmundston Golf Club","city":"Edmundston","province":"New Brunswick","category":"Public","status":"active","lat":47.37,"lng":-68.33,"desc":"9-hole course along the Saint John River valley.","image":"","url":""}]
+[{"id":1,"name":"Cabot Links","city":"Inverness","province":"Nova Scotia","category":"Resort","status":"active","lat":46.2291,"lng":-61.2949,"desc":"World-renowned links course on Cape Breton's western shore.","image":"","url":"https://cabotlinks.com"},{"id":2,"name":"Cabot Cliffs","city":"Inverness","province":"Nova Scotia","category":"Resort","status":"active","lat":46.225,"lng":-61.3,"desc":"Spectacular clifftop course ranked among the world's best.","image":"","url":"https://cabotlinks.com/cliffs"},{"id":3,"name":"Highland Links","city":"Cape Breton","province":"Nova Scotia","category":"Links","status":"active","lat":46.31,"lng":-60.41,"desc":"Championship links with stunning Cape Breton views.","image":"","url":""},{"id":4,"name":"Fox Harb'r Resort","city":"Wallace","province":"Nova Scotia","category":"Resort","status":"active","lat":45.801,"lng":-63.472,"desc":"Luxury golf resort with an award-winning course.","image":"","url":"https://foxharbr.com"},{"id":5,"name":"Links at Brunello","city":"Timberlea","province":"Nova Scotia","category":"Public","status":"active","lat":44.659,"lng":-63.74,"desc":"Modern 18-hole championship course near Halifax.","image":"","url":""},{"id":6,"name":"Lost Creek Golf Club","city":"Waverley","province":"Nova Scotia","category":"Public","status":"active","lat":44.79,"lng":-63.58,"desc":"Scenic parkland course in the Waverley area.","image":"","url":""},{"id":7,"name":"Glen Arbour Golf Course","city":"Halifax","province":"Nova Scotia","category":"Public","status":"active","lat":44.73,"lng":-63.69,"desc":"Residential community course with rolling fairways.","image":"","url":""},{"id":8,"name":"Osprey Ridge Golf Club","city":"Halifax","province":"Nova Scotia","category":"Public","status":"active","lat":44.68,"lng":-63.61,"desc":"Challenging course with elevated tees and ocean views.","image":"","url":""},{"id":9,"name":"Grandview Golf Club","city":"Dartmouth","province":"Nova Scotia","category":"Public","status":"active","lat":44.69,"lng":-63.52,"desc":"Popular public course with water features and tree-lined fairways.","image":"","url":""},{"id":10,"name":"Chester Golf Club","city":"Chester","province":"Nova Scotia","category":"Public","status":"active","lat":44.55,"lng":-64.24,"desc":"Classic seaside course on the South Shore.","image":"","url":""},{"id":11,"name":"The Algonquin","city":"St. Andrews","province":"New Brunswick","category":"Resort","status":"active","lat":45.0737,"lng":-67.052,"desc":"Historic resort course with breathtaking Bay of Fundy views.","image":"","url":"https://algonquinresort.com"},{"id":12,"name":"Kingswood Park","city":"Fredericton","province":"New Brunswick","category":"Public","status":"active","lat":45.974,"lng":-66.671,"desc":"Premier public course in New Brunswick's capital.","image":"","url":""},{"id":13,"name":"Rockwood Park","city":"Saint John","province":"New Brunswick","category":"Public","status":"active","lat":45.272,"lng":-66.07,"desc":"Urban course set within a beautiful park.","image":"","url":""},{"id":14,"name":"Gowan Brae","city":"Bathurst","province":"New Brunswick","category":"Public","status":"active","lat":47.62,"lng":-65.651,"desc":"Top-ranked public course in northern NB.","image":"","url":""},{"id":15,"name":"Fredericton Golf Club","city":"Fredericton","province":"New Brunswick","category":"Public","status":"active","lat":45.958,"lng":-66.643,"desc":"Classic tree-lined course along the Saint John River.","image":"","url":""},{"id":16,"name":"St. George's Golf and Country Club","city":"Etobicoke","province":"Ontario","category":"Private","status":"active","lat":43.655,"lng":-79.538,"desc":"Top-ranked private club in Toronto.","image":"","url":""},{"id":17,"name":"Glen Abbey Golf Club","city":"Oakville","province":"Ontario","category":"Public","status":"active","lat":43.464,"lng":-79.705,"desc":"Iconic course designed by Jack Nicklaus, home of the Canadian Open.","image":"","url":""},{"id":18,"name":"Hamilton Golf and Country Club","city":"Hamilton","province":"Ontario","category":"Private","status":"active","lat":43.218,"lng":-79.916,"desc":"Prestigious private club with a rich history.","image":"","url":""},{"id":19,"name":"Toronto Golf Club","city":"Mississauga","province":"Ontario","category":"Private","status":"active","lat":43.571,"lng":-79.584,"desc":"Canada's oldest golf club, established 1876.","image":"","url":""},{"id":20,"name":"RattleSnake Point Golf Club","city":"Milton","province":"Ontario","category":"Public","status":"active","lat":43.503,"lng":-79.894,"desc":"27-hole public facility with championship pedigree.","image":"","url":"https://rattlesnakepoint.com"},{"id":21,"name":"Capilano Golf and Country Club","city":"West Vancouver","province":"British Columbia","category":"Private","status":"active","lat":49.349,"lng":-123.179,"desc":"Elite private club with mountain views.","image":"","url":""},{"id":22,"name":"Shaughnessy Golf and Country Club","city":"Vancouver","province":"British Columbia","category":"Private","status":"active","lat":49.226,"lng":-123.148,"desc":"Historic private club in Vancouver.","image":"","url":""},{"id":23,"name":"Nicklaus North Golf Course","city":"Whistler","province":"British Columbia","category":"Public","status":"active","lat":50.125,"lng":-122.95,"desc":"Jack Nicklaus signature course in Whistler.","image":"","url":"https://nicklausnorth.com"},{"id":24,"name":"Big Sky Golf Club","city":"Pemberton","province":"British Columbia","category":"Public","status":"active","lat":50.322,"lng":-122.793,"desc":"Mountain course with stunning valley views.","image":"","url":""},{"id":25,"name":"Chateau Whistler Golf Club","city":"Whistler","province":"British Columbia","category":"Resort","status":"active","lat":50.115,"lng":-122.954,"desc":"Resort course in Whistler designed by Robert Trent Jones Jr.","image":"","url":""},{"id":26,"name":"Le Mirage Golf Club","city":"Terrebonne","province":"Quebec","category":"Public","status":"active","lat":45.69,"lng":-73.679,"desc":"Championship public course near Montreal.","image":"","url":""},{"id":27,"name":"Royal Quebec Golf Club","city":"Cap-Rouge","province":"Quebec","category":"Private","status":"active","lat":46.749,"lng":-71.355,"desc":"Historic private club in Quebec City.","image":"","url":""},{"id":28,"name":"La Vallée du Richelieu","city":"Sainte-Julie","province":"Quebec","category":"Public","status":"active","lat":45.585,"lng":-73.321,"desc":"Popular public course in Montérégie.","image":"","url":""},{"id":29,"name":"Fairmont Le Château Montebello","city":"Montebello","province":"Quebec","category":"Resort","status":"active","lat":45.655,"lng":-74.945,"desc":"Resort course at the world's largest log cabin.","image":"","url":""},{"id":30,"name":"Ki-8-Eb Golf Course","city":"Rapid City","province":"Manitoba","category":"Public","status":"active","lat":50.121,"lng":-100.036,"desc":"Top-ranked course in Western Manitoba.","image":"","url":""},{"id":31,"name":"Breezy Bend Country Club","city":"Headingley","province":"Manitoba","category":"Private","status":"active","lat":49.868,"lng":-97.408,"desc":"Elite private club near Winnipeg.","image":"","url":""},{"id":32,"name":"Elmhurst Golf and Country Club","city":"Winnipeg","province":"Manitoba","category":"Private","status":"active","lat":49.827,"lng":-97.175,"desc":"Private club with a classic parkland layout.","image":"","url":""},{"id":33,"name":"The Gallery Golf Course","city":"Lumsden","province":"Saskatchewan","category":"Public","status":"active","lat":50.652,"lng":-104.866,"desc":"Scenic course in the Qu'Appelle Valley.","image":"","url":""},{"id":34,"name":"Riverside Country Club","city":"Saskatoon","province":"Saskatchewan","category":"Private","status":"active","lat":52.139,"lng":-106.663,"desc":"Private club along the South Saskatchewan River.","image":"","url":""},{"id":35,"name":"Wascana Country Club","city":"Regina","province":"Saskatchewan","category":"Private","status":"active","lat":50.429,"lng":-104.617,"desc":"Prestigious club in Saskatchewan's capital.","image":"","url":""},{"id":36,"name":"Silver Springs Golf Club","city":"Calgary","province":"Alberta","category":"Public","status":"active","lat":51.083,"lng":-114.206,"desc":"Public course with Rocky Mountain views.","image":"","url":""},{"id":37,"name":"Priddis Greens Golf and Country Club","city":"Priddis","province":"Alberta","category":"Private","status":"active","lat":50.887,"lng":-114.329,"desc":"Private club in the foothills of the Rockies.","image":"","url":""},{"id":38,"name":"Jasper Park Lodge Golf Club","city":"Jasper","province":"Alberta","category":"Resort","status":"active","lat":52.882,"lng":-118.072,"desc":"World-famous resort course in the Canadian Rockies.","image":"","url":"https://fairmont.com/jasper"},{"id":39,"name":"Banff Springs Golf Club","city":"Banff","province":"Alberta","category":"Resort","status":"active","lat":51.167,"lng":-115.56,"desc":"Iconic mountain course in Banff National Park.","image":"","url":"https://banffspringsgolf.com"},{"id":40,"name":"Marine Drive Golf Club","city":"Vancouver","province":"British Columbia","category":"Private","status":"active","lat":49.26,"lng":-123.178,"desc":"Classic Vancouver private club with ocean views.","image":"","url":""},{"id":41,"name":"Furry Creek Golf and Country Club","city":"Furry Creek","province":"British Columbia","category":"Public","status":"active","lat":49.586,"lng":-123.257,"desc":"Spectacular oceanside course along the Sea-to-Sky Highway.","image":"","url":"https://furrycreekgolf.com"},{"id":42,"name":"Predator Ridge Golf Resort","city":"Vernon","province":"British Columbia","category":"Resort","status":"active","lat":50.283,"lng":-119.27,"desc":"Award-winning Okanagan resort with two 18-hole courses.","image":"","url":"https://predatorridge.com"},{"id":43,"name":"Tobiano","city":"Kamloops","province":"British Columbia","category":"Public","status":"active","lat":50.694,"lng":-120.436,"desc":"Dramatic desert-style course overlooking Kamloops Lake.","image":"","url":"https://tobianogolf.com"},{"id":44,"name":"Greywolf Golf Course","city":"Panorama","province":"British Columbia","category":"Resort","status":"active","lat":50.46,"lng":-116.238,"desc":"Mountain course at Panorama Resort with dramatic elevation changes.","image":"","url":"https://panoramaresort.com/greywolf"},{"id":45,"name":"Fairmont Le Manoir Richelieu","city":"La Malbaie","province":"Quebec","category":"Resort","status":"active","lat":47.651,"lng":-70.151,"desc":"Resort course overlooking the St. Lawrence River in Charlevoix.","image":"","url":""},{"id":46,"name":"Club de Golf Rosemère","city":"Rosemère","province":"Quebec","category":"Private","status":"active","lat":45.631,"lng":-73.805,"desc":"Private club in the Laurentians.","image":"","url":""},{"id":47,"name":"Kanawaki Golf Club","city":"Kahnawake","province":"Quebec","category":"Private","status":"active","lat":45.416,"lng":-73.59,"desc":"Private club near Montreal with a storied history.","image":"","url":""},{"id":48,"name":"Dundee Golf Club","city":"Saint-Bernardin","province":"Ontario","category":"Public","status":"active","lat":45.244,"lng":-74.991,"desc":"Championship public course in Eastern Ontario.","image":"","url":""},{"id":49,"name":"Moose Mountain Golf Club","city":"Cochrane","province":"Alberta","category":"Public","status":"active","lat":51.188,"lng":-114.51,"desc":"Mountain-view course near Calgary with a unique layout.","image":"","url":""},{"id":50,"name":"Humber Valley Golf Course","city":"Etobicoke","province":"Ontario","category":"Public","status":"active","lat":43.653,"lng":-79.505,"desc":"Public course in Toronto's west end.","image":"","url":""},{"id":51,"name":"Dentonia Park Golf Course","city":"Scarborough","province":"Ontario","category":"Public","status":"active","lat":43.728,"lng":-79.292,"desc":"Popular public course in Scarborough.","image":"","url":""},{"id":52,"name":"Swan-E-Set Bay Resort","city":"Pitt Meadows","province":"British Columbia","category":"Resort","status":"active","lat":49.238,"lng":-122.673,"desc":"Luxury resort and marina with championship golf.","image":"","url":""},{"id":53,"name":"Mayfair Lakes Golf Club","city":"Richmond","province":"British Columbia","category":"Public","status":"active","lat":49.155,"lng":-123.118,"desc":"Scenic public course with lakes and wildlife.","image":"","url":""},{"id":54,"name":"Meadow Gardens Golf Club","city":"Pitt Meadows","province":"British Columbia","category":"Public","status":"active","lat":49.243,"lng":-122.658,"desc":"Championship public course in the Fraser Valley.","image":"","url":""},{"id":55,"name":"Pitt Meadows Golf Club","city":"Pitt Meadows","province":"British Columbia","category":"Public","status":"active","lat":49.218,"lng":-122.683,"desc":"Classic parkland course in the Lower Mainland.","image":"","url":""},{"id":56,"name":"Delta Golf Club","city":"Delta","province":"British Columbia","category":"Public","status":"active","lat":49.004,"lng":-123.087,"desc":"Public course in Delta with mountain views.","image":"","url":""},{"id":57,"name":"Quilchena Golf and Country Club","city":"Richmond","province":"British Columbia","category":"Private","status":"active","lat":49.126,"lng":-123.161,"desc":"Private club in Richmond, BC.","image":"","url":""},{"id":58,"name":"Vancouver Golf Club","city":"Coquitlam","province":"British Columbia","category":"Private","status":"active","lat":49.278,"lng":-122.793,"desc":"Historic private club in Coquitlam.","image":"","url":""},{"id":59,"name":"Ledgeview Golf Club","city":"Abbotsford","province":"British Columbia","category":"Public","status":"active","lat":49.048,"lng":-122.281,"desc":"Championship public course in Abbotsford.","image":"","url":""},{"id":60,"name":"Westwood Plateau Golf & Country Club","city":"Coquitlam","province":"British Columbia","category":"Public","status":"active","lat":49.31,"lng":-122.785,"desc":"Mountain-top course with spectacular views.","image":"","url":""}]
             </script>
             <div class="map-wrapper">
               <div class="map-controls">
@@ -238,7 +228,7 @@
                 <p data-i18n="map_no_results">No courses match your filters.</p>
               </div>
             </div>
-          </div>
+          </div>  <!-- /course-map -->
         </div>
       </section>
 
