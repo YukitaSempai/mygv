@@ -147,16 +147,23 @@
   ════════════════════════════════════════ */
   document.querySelectorAll('[data-tilt]').forEach(function (card) {
     var glow = card.querySelector('.hm-card-glow');
+    var tiltFactor = 20;
+    if (card.classList.contains('corp-bespoke-card')) {
+      tiltFactor = 8;
+    }
+    if (card.classList.contains('about-value-card')) {
+      tiltFactor = 6;
+    }
     card.addEventListener('mousemove', function (e) {
       if (card.classList.contains('opening')) return;
       var rect = card.getBoundingClientRect();
       var x = (e.clientX - rect.left) / rect.width - 0.5;
       var y = (e.clientY - rect.top) / rect.height - 0.5;
-      var inner = card.querySelector('.pkg-card-inner, .hm-card-inner');
+      var inner = card.querySelector('.pkg-card-inner, .hm-card-inner, .corp-bespoke-inner, .about-value-inner');
       var isHm = inner && inner.classList.contains('hm-card-inner');
       if (inner) {
         inner.style.transform =
-          'translateY(-12px) rotateX(' + (-y * 20) + 'deg) rotateY(' + (x * 20) + 'deg)';
+          'translateY(-12px) rotateX(' + (-y * tiltFactor) + 'deg) rotateY(' + (x * tiltFactor) + 'deg)';
       }
       if (glow && isHm) {
         var px = (x * 100 + 50);
@@ -166,7 +173,7 @@
       }
     });
     card.addEventListener('mouseleave', function () {
-      var inner = card.querySelector('.pkg-card-inner, .hm-card-inner');
+      var inner = card.querySelector('.pkg-card-inner, .hm-card-inner, .corp-bespoke-inner, .about-value-inner');
       if (inner) inner.style.transform = '';
       if (glow) glow.style.background = '';
     });
