@@ -5,24 +5,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title data-i18n="page_title">MYGV — The Pinnacle of Golf Visa</title>
+  <meta name="description" content="More Golf. Less Green. Discover MYGV Golf Visa — exclusive access to 75+ courses across New Brunswick, Nova Scotia, and PEI with 2-for-1 green fees and premium golf experiences." />
+  <meta property="og:title" content="MYGV — The Pinnacle of Golf Visa" />
+  <meta property="og:description" content="More Golf. Less Green. Exclusive access to 75+ courses across the Maritimes with 2-for-1 green fees." />
+  <meta property="og:image" content="img/04.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" href="img/04.png" />
+  <link rel="apple-touch-icon" href="img/04.png" />
 
-  <!-- Leaflet -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
-  <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-  <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap"
     rel="stylesheet" />
-  <!-- Custom Styles -->
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Leaflet (course map only) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
 
 </head>
 
@@ -53,32 +56,87 @@
         </button>
 
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html" data-i18n="home">Home</a>
+          <!-- Golf Visas -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span data-i18n="nav_golf_visas">Golf Visas</span>
+              <span class="link-arrow"><i class="fa-solid fa-chevron-down"></i></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="gvnb.html">
+                  <span class="dd-label" data-i18n="gvnb">GVNB</span>
+                  <span class="dd-sub" data-i18n="nav_sub_nb">New Brunswick</span>
+                </a></li>
+              <li><a class="dropdown-item" href="gvns.html">
+                  <span class="dd-label" data-i18n="gvns">GVNS</span>
+                  <span class="dd-sub" data-i18n="nav_sub_ns">Nova Scotia</span>
+                </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="packages.html">
+                  <span class="dd-label" data-i18n="packages">Packages</span>
+                  <span class="dd-sub" data-i18n="nav_sub_packages">Multi-buy &amp; bundles</span>
+                </a></li>
+              <li><a class="dropdown-item" href="course-map.html">
+                  <span class="dd-label" data-i18n="course_map">Course Map</span>
+                  <span class="dd-sub" data-i18n="nav_sub_map">View all courses</span>
+                </a></li>
+            </ul>
           </li>
+
+          <!-- Tournament -->
           <li class="nav-item">
-            <a class="nav-link" href="gvnb.html"><span data-i18n="gvnb">GVNB</span></a>
+            <a class="nav-link" href="tournament.html">
+              <span data-i18n="tournaments">Tournament</span>
+            </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="gvns.html"><span data-i18n="gvns">GVNS</span></a>
+
+          <!-- Corporate -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span data-i18n="corporate">Corporate</span>
+              <span class="link-arrow"><i class="fa-solid fa-chevron-down"></i></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="corporate.html">
+                  <span class="dd-label" data-i18n="corporate">Personalized GV</span>
+                  <span class="dd-sub" data-i18n="nav_sub_corp">Business &amp; team packages</span>
+                </a></li>
+              <li><a class="dropdown-item" href="brochure-personalized.html">
+                  <span class="dd-label" data-i18n="brochure_nav">GV Brochure</span>
+                  <span class="dd-sub" data-i18n="nav_sub_brochure">Client showcase</span>
+                </a></li>
+            </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="packages.html"><span data-i18n="packages">Packages</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="courses.html"><span data-i18n="courses">Courses</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="tournament.html"><span data-i18n="tournaments">Tournament</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="corporate.html"><span data-i18n="corporate">Corporate</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html" data-i18n="about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html" data-i18n="contact">Contact</a>
+
+          <!-- Company -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span data-i18n="nav_company">Company</span>
+              <span class="link-arrow"><i class="fa-solid fa-chevron-down"></i></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">
+                  <span class="dd-label" data-i18n="about">About</span>
+                  <span class="dd-sub" data-i18n="nav_sub_about">Our story &amp; values</span>
+                </a></li>
+              <li><a class="dropdown-item" href="mission-statement.html">
+                  <span class="dd-label" data-i18n="stmt_nav">Mission</span>
+                  <span class="dd-sub" data-i18n="nav_sub_mission">Our purpose</span>
+                </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="contact.html">
+                  <span class="dd-label" data-i18n="contact">Contact</span>
+                  <span class="dd-sub" data-i18n="nav_sub_contact">Get in touch</span>
+                </a></li>
+              <li><a class="dropdown-item" href="terms-2026.html">
+                  <span class="dd-label" data-i18n="terms_nav">Terms</span>
+                  <span class="dd-sub" data-i18n="nav_sub_terms">Terms &amp; conditions</span>
+                </a></li>
+              <li><a class="dropdown-item" href="etransfer.html">
+                  <span class="dd-label" data-i18n="etransfer_nav">E-Transfer</span>
+                  <span class="dd-sub" data-i18n="nav_sub_etransfer">Payment info</span>
+                </a></li>
+            </ul>
           </li>
         </ul>
 
@@ -101,11 +159,11 @@
                 </a></li>
               <li><a class="dropdown-item" href="#" data-lang="fr">
                   <span class="lang-flag"><img src="https://flagcdn.com/w20/fr.png" alt="FR" class="flag-img"></span>
-                  <span data-i18n="lang_fr">Français</span>
+                  <span data-i18n="lang_fr">Fran&ccedil;ais</span>
                 </a></li>
               <li><a class="dropdown-item" href="#" data-lang="es">
                   <span class="lang-flag"><img src="https://flagcdn.com/w20/es.png" alt="ES" class="flag-img"></span>
-                  <span data-i18n="lang_es">Español</span>
+                  <span data-i18n="lang_es">Espa&ntilde;ol</span>
                 </a></li>
             </ul>
           </div>
@@ -117,57 +175,47 @@
 <div class="page-wrap">
   <main>
 
-  <!-- ─── Corporate Hero ─── -->
-  <section class="sec sec-corp-hero" id="corporate">
+   <!-- ─── Personalized GV Hero ─── -->
+  <section class="section-block sec-py-lg" id="personalized-gv">
     <div class="container">
-      <div class="corp-hero-grid">
-        <div class="corp-hero-text">
-          <div class="corp-tag reveal">
-            <span class="corp-tag-dot"></span>
-            <span data-i18n="corporate_eyebrow">Corporate Partnerships</span>
-          </div>
-          <h2 class="corp-hero-title reveal">
-            <span data-i18n="corporate_title_part1">Elevate Your Business</span><br>
-            <span data-i18n="corporate_title_part2">on the Fairways</span>
-          </h2>
-          <p class="corp-hero-desc reveal" data-i18n="corporate_desc">
-            Access premium golf experiences designed for executives
-            and corporate teams. Build relationships on Canada's most
-            prestigious fairways.
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 reveal">
+          <div class="eyebrow" data-i18n="corporate_eyebrow">Personalized Golf Visa</div>
+          <h2 class="sec-title" data-i18n="pgv_hero_title">A Smarter Way to Promote Your Business</h2>
+          <p class="lead text-white-50 mb-4" data-i18n="pgv_hero_sub">
+            More than a gift\u2014an experience, thoughtfully designed to endure.
           </p>
-          <div class="corp-hero-actions reveal">
-            <a href="#" class="btn-corp-primary">
-              <span data-i18n="corporate_btn">Access Corporate GV</span>
+          <p data-i18n="pgv_hero_desc1">
+            Personalized MYGV business cards offer a refined approach to client
+            engagement\u2014strengthening relationships, recognizing loyalty, and
+            inspiring meaningful, word-of-mouth referrals.
+          </p>
+          <p data-i18n="pgv_hero_desc2">
+            Created for discerning businesses, executive gifting, and premier golf
+            experiences, MYGV delivers lasting golfing value through access,
+            exclusivity, and memorable moments your clients will genuinely
+            appreciate\u2014and return to throughout the season.
+          </p>
+          <div class="mt-4">
+            <a href="mailto:info@golfvisa.ca" class="btn-corp-primary">
+              <span data-i18n="pgv_hero_btn">Get Your Personalized GV Today</span>
               <i class="fa-solid fa-arrow-right"></i>
             </a>
-            <a href="#" class="btn-corp-ghost">
-              <span data-i18n="corporate_btn_learn">Learn More</span>
-            </a>
-          </div>
-          <div class="corp-hero-stats reveal">
-            <div class="corp-hero-stat">
-              <span class="corp-hero-stat-num"><span class="counter" data-target="500">0</span>+</span>
-              <span class="corp-hero-stat-label">Corporate Clients</span>
-            </div>
-            <div class="corp-hero-stat-divider"></div>
-            <div class="corp-hero-stat">
-              <span class="corp-hero-stat-num"><span class="counter" data-target="50">0</span>+</span>
-              <span class="corp-hero-stat-label">Partner Courses</span>
-            </div>
-            <div class="corp-hero-stat-divider"></div>
-            <div class="corp-hero-stat">
-              <span class="corp-hero-stat-num"><span class="counter" data-target="98">0</span>%</span>
-              <span class="corp-hero-stat-label">Satisfaction</span>
-            </div>
           </div>
         </div>
-        <div class="corp-hero-visual reveal" data-stagger="0.1">
-          <div class="corp-hero-img-wrap">
-            <img src="img/01.jpg" alt="Corporate golf" loading="lazy" data-i18n="corporate_img_alt">
-            <div class="corp-hero-img-border"></div>
-            <div class="corp-hero-card">
-              <i class="fa-solid fa-star"></i>
-              <span data-i18n="corporate_badge">Premium Member</span>
+        <div class="col-lg-6 reveal" data-stagger="0.1">
+          <div class="card-glass p-5 text-center">
+            <i class="fa-solid fa-id-card" style="font-size:4rem;color:#c9a96e;margin-bottom:1rem;"></i>
+            <h4 data-i18n="pgv_card_title">Your MYGV Becomes Their Valued Golf Value</h4>
+            <p data-i18n="pgv_card_desc">
+              Remain present without intrusion. Inspire conversation without effort.
+              Build loyalty that extends beyond the initial gesture\u2014keeping your
+              brand in play.
+            </p>
+            <div class="mt-3">
+              <span class="badge" style="background:#c9a96e;color:#1a1a2e;padding:0.5rem 1.5rem;font-size:0.9rem;">
+                <i class="fa-solid fa-star"></i> <span data-i18n="pgv_card_badge">Get the Best Customer Referral Business Card Today!</span>
+              </span>
             </div>
           </div>
         </div>
@@ -175,96 +223,233 @@
     </div>
   </section>
 
-  <!-- ─── Bespoke ─── -->
-  <section class="section-block sec-corp-bespoke" id="bespoke">
+  <!-- ─── Gift That Stays in Play ─── -->
+  <section class="section-block sec-py-lg t-row-alt" id="gift-in-play">
     <div class="container">
       <div class="sec-hd reveal" style="text-align:center;">
-        <div class="eyebrow" data-i18n="personalized_gv_eyebrow">Bespoke</div>
-        <h2 class="sec-title" data-i18n="personalized_gv">Personalized Golf Visa</h2>
-        <p class="sec-desc" data-i18n="personalized_gv_desc">
-          A custom&#8209;tailored golf experience designed around your schedule,
-          preferences, and goals.
+        <h2 class="sec-title" data-i18n="pgv_gift_title">A Gift That Stays in Play All Season</h2>
+        <p class="sec-desc" data-i18n="pgv_gift_desc">
+          When you present a personalized MYGV business card, you\u2019re offering more
+          than a one-time gift\u2014you\u2019re delivering a full season of golf and an
+          experience your clients will truly value.
+        </p>
+        <p class="sec-desc" data-i18n="pgv_gift_desc2">
+          Unlike traditional gifts that are quickly forgotten, MYGV is something
+          your clients keep, use, and appreciate throughout the entire season.
         </p>
       </div>
-      <div class="row g-4" data-stagger="0.12">
-        <div class="col-md-4 reveal">
-          <div class="corp-bespoke-card" data-tilt>
-            <div class="corp-bespoke-inner">
-              <div class="corp-bespoke-icon">
-                <i class="fa-solid fa-calendar-plus"></i>
-              </div>
-              <h5 data-i18n="personalized_gv_dates">Flexible Dates</h5>
-              <p data-i18n="personalized_gv_dates_desc">Choose your own tee times and travel windows</p>
+    </div>
+  </section>
+
+  <!-- ─── Pricing Packages ─── -->
+  <section class="section-block sec-py-lg" id="pricing">
+    <div class="container">
+      <div class="sec-hd reveal" style="text-align:center;">
+        <div class="eyebrow" style="color:#c9a96e;" data-i18n="pgv_pricing_eyebrow">Packages</div>
+        <h2 class="sec-title" data-i18n="pgv_pricing_title">Choose Your Package</h2>
+      </div>
+      <div class="row g-4" data-stagger="0.1">
+        <div class="col-md-3 reveal">
+          <div class="card-glass p-4 text-center h-100">
+            <div class="card-glass-tier">BRONZE</div>
+            <div class="card-glass-price" data-i18n="pgv_bronze_price">$1,375</div>
+            <div class="card-glass-qty" data-i18n="pgv_bronze_qty">25 Cards</div>
+            <hr style="border-color:rgba(255,255,255,0.1);">
+            <p class="small text-white-50" data-i18n="pgv_bronze_opt">Choice of GVNB or GVNS</p>
+            <div class="mt-3">
+              <a href="mailto:info@golfvisa.ca" class="btn-corp-primary" style="padding:0.5rem 1.5rem;font-size:0.9rem;">
+                <span data-i18n="pgv_order_btn">Order Now</span>
+              </a>
             </div>
           </div>
         </div>
-        <div class="col-md-4 reveal">
-          <div class="corp-bespoke-card" data-tilt>
-            <div class="corp-bespoke-inner">
-              <div class="corp-bespoke-icon">
-                <i class="fa-solid fa-location-dot"></i>
-              </div>
-              <h5 data-i18n="personalized_gv_selection">Course Selection</h5>
-              <p data-i18n="personalized_gv_selection_desc">Hand&#8209;pick your preferred courses</p>
+        <div class="col-md-3 reveal">
+          <div class="card-glass p-4 text-center h-100">
+            <div class="card-glass-tier">SILVER</div>
+            <div class="card-glass-price" data-i18n="pgv_silver_price">$2,450</div>
+            <div class="card-glass-qty" data-i18n="pgv_silver_qty">50 Cards</div>
+            <hr style="border-color:rgba(255,255,255,0.1);">
+            <p class="small text-white-50" data-i18n="pgv_silver_opt">Choice of GVNB or GVNS</p>
+            <div class="mt-3">
+              <a href="mailto:info@golfvisa.ca" class="btn-corp-primary" style="padding:0.5rem 1.5rem;font-size:0.9rem;">
+                <span data-i18n="pgv_order_btn">Order Now</span>
+              </a>
             </div>
           </div>
         </div>
-        <div class="col-md-4 reveal">
-          <div class="corp-bespoke-card" data-tilt>
-            <div class="corp-bespoke-inner">
-              <div class="corp-bespoke-icon">
-                <i class="fa-solid fa-champagne-glasses"></i>
-              </div>
-              <h5 data-i18n="personalized_gv_concierge">Concierge Service</h5>
-              <p data-i18n="personalized_gv_concierge_desc">Dining, accommodation &amp; transport arranged</p>
+        <div class="col-md-3 reveal">
+          <div class="card-glass p-4 text-center h-100">
+            <div class="card-glass-tier">GOLD</div>
+            <div class="card-glass-price" data-i18n="pgv_gold_price">$3,850</div>
+            <div class="card-glass-qty" data-i18n="pgv_gold_qty">100 Cards</div>
+            <hr style="border-color:rgba(255,255,255,0.1);">
+            <p class="small text-white-50" data-i18n="pgv_gold_opt">Choice of GVNB or GVNS</p>
+            <div class="mt-3">
+              <a href="mailto:info@golfvisa.ca" class="btn-corp-primary" style="padding:0.5rem 1.5rem;font-size:0.9rem;">
+                <span data-i18n="pgv_order_btn">Order Now</span>
+              </a>
             </div>
+          </div>
+        </div>
+        <div class="col-md-3 reveal">
+          <div class="card-glass p-4 text-center h-100">
+            <div class="card-glass-tier">DIAMOND</div>
+            <div class="card-glass-price" data-i18n="pgv_diamond_price">$6,875</div>
+            <div class="card-glass-qty" data-i18n="pgv_diamond_qty">200 Cards</div>
+            <hr style="border-color:rgba(255,255,255,0.1);">
+            <p class="small text-white-50" data-i18n="pgv_diamond_opt">Choice of GVNB or GVNS</p>
+            <div class="mt-3">
+              <a href="mailto:info@golfvisa.ca" class="btn-corp-primary" style="padding:0.5rem 1.5rem;font-size:0.9rem;">
+                <span data-i18n="pgv_order_btn">Order Now</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4 reveal">
+        <p class="small text-white-50" data-i18n="pgv_dual_opt">
+          *Both GVNB and GVNS can be requested. Ask for details and discount for purchasing both provinces.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── How to Order ─── -->
+  <section class="section-block sec-py-lg t-row-alt" id="how-to-order">
+    <div class="container">
+      <div class="sec-hd reveal" style="text-align:center;">
+        <h2 class="sec-title" data-i18n="pgv_order_title">Your Complete Personalized GV Experience</h2>
+        <p class="sec-desc" data-i18n="pgv_order_desc">
+          When ordering your Personalized MYGV Business Cards online, please email
+          a JPEG file of your logo and photo or JPEG of your business card, and any
+          additional information and notes relating to your Personalized MYGV
+          Business Card to info@golfvisa.ca.
+        </p>
+      </div>
+      <div class="row g-4 mt-3" data-stagger="0.1">
+        <div class="col-md-4 reveal">
+          <div class="card-glass p-4 text-center h-100">
+            <div class="step-num">1</div>
+            <h5 data-i18n="pgv_step1">Email Your Assets</h5>
+            <p class="small text-white-50" data-i18n="pgv_step1_desc">Send logo, photo, or business card JPEG to info@golfvisa.ca</p>
+          </div>
+        </div>
+        <div class="col-md-4 reveal">
+          <div class="card-glass p-4 text-center h-100">
+            <div class="step-num">2</div>
+            <h5 data-i18n="pgv_step2">Proof Approval</h5>
+            <p class="small text-white-50" data-i18n="pgv_step2_desc">A proof will be emailed to you for approval before production</p>
+          </div>
+        </div>
+        <div class="col-md-4 reveal">
+          <div class="card-glass p-4 text-center h-100">
+            <div class="step-num">3</div>
+            <h5 data-i18n="pgv_step3">Delivery</h5>
+            <p class="small text-white-50" data-i18n="pgv_step3_desc">Delivered or couriered within 14 business days of approval</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── Organizations & Groups ─── -->
-  <section class="section-block sec-corp-orgs" id="organizations">
+  <!-- ─── Client List ─── -->
+  <section class="section-block sec-py-lg" id="clients">
     <div class="container">
       <div class="sec-hd reveal" style="text-align:center;">
-        <div class="eyebrow" style="color:#c9a96e;" data-i18n="organizations_eyebrow">Groups</div>
-        <h2 class="sec-title" data-i18n="organizations_title">Organizations &amp; Groups</h2>
-        <p class="sec-desc" data-i18n="organizations_desc">
-          Corporate teams, golf societies, and private groups — we offer
-          tailored programs for every organization.
-        </p>
+        <div class="eyebrow" style="color:#c9a96e;" data-i18n="pgv_clients_eyebrow">Trusted By</div>
+        <h2 class="sec-title" data-i18n="pgv_clients_title">Our Valued Clients</h2>
       </div>
-      <div class="corp-orgs-grid reveal" data-stagger="0.1">
-        <div class="corp-org-card">
-          <div class="corp-org-icon">
-            <i class="fa-solid fa-building"></i>
-          </div>
-          <div class="corp-org-info">
-            <strong data-i18n="organizations_corporate">Corporate Memberships</strong>
-            <span data-i18n="organizations_corporate_sub">10+ employees &middot; group rates &amp; events</span>
-          </div>
-          <i class="fa-solid fa-chevron-right corp-org-arrow"></i>
-        </div>
-        <div class="corp-org-card">
-          <div class="corp-org-icon">
-            <i class="fa-solid fa-people-group"></i>
-          </div>
-          <div class="corp-org-info">
-            <strong data-i18n="organizations_society">Society Packages</strong>
-            <span data-i18n="organizations_society_sub">20+ members &middot; dedicated tournament days</span>
-          </div>
-          <i class="fa-solid fa-chevron-right corp-org-arrow"></i>
-        </div>
-        <div class="corp-org-card">
-          <div class="corp-org-icon">
-            <i class="fa-solid fa-handshake"></i>
-          </div>
-          <div class="corp-org-info">
-            <strong data-i18n="organizations_partner">Partner Program</strong>
-            <span data-i18n="organizations_partner_sub">Exclusive benefits for affiliated clubs</span>
-          </div>
-          <i class="fa-solid fa-chevron-right corp-org-arrow"></i>
+      <div class="client-grid reveal">
+        <span>Capstone Building Products</span>
+        <span>Paul Davis</span>
+        <span>Adventure Motors Marine RV</span>
+        <span>Fundy Pros Specialty Construction</span>
+        <span>Inflector Environmental Services</span>
+        <span>Cut-Rite Lawncare &amp; Landscaping</span>
+        <span>Pleasant Timber Mart Yarmouth</span>
+        <span>Carmichael Engineering</span>
+        <span>Watts Leasing</span>
+        <span>Atlantic Hockey Group</span>
+        <span>C &amp; J Brothers Plumbing</span>
+        <span>LeBlanc Sprinklers Ltd.</span>
+        <span>Trabero AI</span>
+        <span>Ritchie's Carpet Warehouse</span>
+        <span>Central Equipment Inc.</span>
+        <span>Boyd Equipment Ltd.</span>
+        <span>Fredericton Toyota</span>
+        <span>Gemini PEI</span>
+        <span>Gerald Mitchell Contracting</span>
+        <span>Wall Construction</span>
+        <span>Mallard Transportation</span>
+        <span>FIREDRIVE Indoor Golf &amp; Lounge</span>
+        <span>Fraser's Pro Home Centre</span>
+        <span>Steele Chevrolet Buick GMC</span>
+        <span>PMC Energy Performance</span>
+        <span>Embroidery Guyz</span>
+        <span>Brault Roofing</span>
+        <span>ConAir Ventilation</span>
+        <span>PYE Chevrolet Buick GMC</span>
+        <span>Eddy Group</span>
+        <span>Lockheed Martin IMPACT Centre</span>
+        <span>Maple Leaf Tractors &amp; Equipment Inc.</span>
+        <span>Truro Toyota</span>
+        <span>Speedy Glass Pubnico</span>
+        <span>Eastcoast Traffic Control</span>
+        <span>Caledonia Forest Products</span>
+        <span>Inglis Jewellers</span>
+        <span>Sunpoke LIBCAN</span>
+        <span>Anchor Toyota New Glasgow</span>
+        <span>Remco Construction</span>
+        <span>Nita's Bar &amp; Grill</span>
+        <span>WELDPRO Ltd</span>
+        <span>House of Stone</span>
+        <span>Paul Davis Halifax</span>
+        <span>Global Windows &amp; Doors</span>
+        <span>Paul Davis Southern New Brunswick</span>
+        <span>Paul Davis Greater Moncton</span>
+        <span>Paul Davis Central Nova Scotia</span>
+        <span>Duct Headz Heat Pump Cleaning</span>
+        <span>LineStar Utility Supply Inc.</span>
+        <span>Mortgage Alliance</span>
+        <span>Atlabach Consulting</span>
+        <span>Bowlacade Bible Hill</span>
+        <span>Hollis Clearance Centre</span>
+        <span>Stuart Kia</span>
+        <span>Pro Design Cresting</span>
+        <span>Cleve's Source for Sports</span>
+        <span>Scammell Auto</span>
+        <span>Simpson Building Contractors Ltd.</span>
+        <span>Truly Nolen Pest Control</span>
+        <span>Superline Fuels</span>
+        <span>West Nova Fuels</span>
+        <span>Renee Belong - EXIT Realty Digby NS</span>
+        <span>Moncton Auto Kings Auto Repair</span>
+        <span>Yarmouth Chiropractor - Dr Luke Boudreau</span>
+        <span>absda</span>
+        <span>Vintage Textured Walls Systems</span>
+        <span>Vintage Brick &amp; Stone</span>
+        <span>Interior Visions</span>
+        <span>A-TECH Roofing Ltd.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA ─── -->
+  <section class="section-block sec-py-lg t-row-alt" id="pgv-cta">
+    <div class="container">
+      <div class="card-glass p-5 text-center reveal">
+        <h2 class="sec-title mb-3" data-i18n="pgv_cta_title">Ready to Get Started?</h2>
+        <p class="sec-desc" data-i18n="pgv_cta_desc">
+          Contact us to design your personalized MYGV business cards and brochure.
+        </p>
+        <div class="mt-4">
+          <a href="mailto:info@golfvisa.ca" class="btn-corp-primary">
+            <i class="fa-solid fa-envelope"></i>
+            <span data-i18n="pgv_cta_btn">info@golfvisa.ca</span>
+          </a>
+          <p class="small text-white-50 mt-3" data-i18n="pgv_cta_hst">
+            2775570 Alberta Ltd. o/a MYGV/GOLF VISA &nbsp;|&nbsp; HST # 713882363RT0001
+          </p>
         </div>
       </div>
     </div>
@@ -302,6 +487,7 @@ FOOTER
         <div class="col-6 col-lg-2">
           <p class="f-col-title" data-i18n="footer_company">Company</p>
           <a href="about.html" class="f-link" data-i18n="about">About</a>
+          <a href="mission-statement.html" class="f-link" data-i18n="stmt_nav">Mission</a>
           <a href="careers.html" class="f-link" data-i18n="footer_careers">Careers</a>
           <a href="press.html" class="f-link" data-i18n="footer_press">Press</a>
           <a href="contact.html" class="f-link" data-i18n="contact">Contact</a>
@@ -311,7 +497,7 @@ FOOTER
           <p class="f-col-title" data-i18n="footer_support">Support</p>
           <a href="faq.html" class="f-link" data-i18n="footer_faq">FAQ</a>
           <a href="privacy.html" class="f-link" data-i18n="footer_privacy">Privacy</a>
-          <a href="about.html#conditions" class="f-link" data-i18n="footer_terms">Terms</a>
+          <a href="terms-2026.html" class="f-link" data-i18n="footer_terms">Terms</a>
           <a href="accessibility.html" class="f-link" data-i18n="footer_accessibility">Accessibility</a>
         </div>
 
@@ -333,11 +519,13 @@ FOOTER
           </div>
           <div class="f-contact-row">
             <i class="fa-regular fa-envelope" style="color:#c9a96e;"></i>
-            <a href="mailto:info@mygv.ca">info@mygv.ca</a>
+            <a href="mailto:info@golfvisa.ca">info@golfvisa.ca</a>
           </div>
           <div class="f-contact-row">
             <i class="fa-solid fa-phone" style="color:#c9a96e;"></i>
-            <a href="tel:+1800555GOLF">+1 (800) 555-GOLF</a>
+            <a href="tel:19027023565">902.702.3565</a> <span style="color:rgba(255,255,255,0.5);font-size:0.8rem;">NS/PEI</span>
+            &nbsp;|&nbsp;
+            <a href="tel:15068044466" style="margin-left:0.25rem;">506.804.4466</a> <span style="color:rgba(255,255,255,0.5);font-size:0.8rem;">NB</span>
           </div>
         </div>
 

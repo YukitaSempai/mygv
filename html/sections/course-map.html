@@ -1,43 +1,156 @@
-      <!-- ─── Course Map — Interactive ─── -->
-      <section class="section-block sec-py-lg missing-section" id="course-map">
-        <div class="container">
-          <div class="sec-hd reveal" style="text-align:center;">
-            <div class="eyebrow" data-i18n="course_map_eyebrow">Explore</div>
-            <h2 class="sec-title" data-i18n="course_map">Course Map</h2>
-            <p class="sec-desc" style="margin:0 auto;" data-i18n="course_map_desc">Interactive map of all MYGV partner courses across Canada.</p>
-          </div>
-          <div class="reveal" style="margin-top:1.5rem;">
-            <script id="golfCoursesData" type="application/json">
-[{"id":1,"name":"Cabot Links","city":"Inverness","province":"Nova Scotia","category":"Resort","status":"active","lat":46.2291,"lng":-61.2949,"desc":"World-renowned links course on Cape Breton's western shore.","image":"","url":"https://cabotlinks.com"},{"id":2,"name":"Cabot Cliffs","city":"Inverness","province":"Nova Scotia","category":"Resort","status":"active","lat":46.225,"lng":-61.3,"desc":"Spectacular clifftop course ranked among the world's best.","image":"","url":"https://cabotlinks.com/cliffs"},{"id":3,"name":"Highland Links","city":"Cape Breton","province":"Nova Scotia","category":"Links","status":"active","lat":46.31,"lng":-60.41,"desc":"Championship links with stunning Cape Breton views.","image":"","url":""},{"id":4,"name":"Fox Harb'r Resort","city":"Wallace","province":"Nova Scotia","category":"Resort","status":"active","lat":45.801,"lng":-63.472,"desc":"Luxury golf resort with an award-winning course.","image":"","url":"https://foxharbr.com"},{"id":5,"name":"Links at Brunello","city":"Timberlea","province":"Nova Scotia","category":"Public","status":"active","lat":44.659,"lng":-63.74,"desc":"Modern 18-hole championship course near Halifax.","image":"","url":""},{"id":6,"name":"Lost Creek Golf Club","city":"Waverley","province":"Nova Scotia","category":"Public","status":"active","lat":44.79,"lng":-63.58,"desc":"Scenic parkland course in the Waverley area.","image":"","url":""},{"id":7,"name":"Glen Arbour Golf Course","city":"Halifax","province":"Nova Scotia","category":"Public","status":"active","lat":44.73,"lng":-63.69,"desc":"Residential community course with rolling fairways.","image":"","url":""},{"id":8,"name":"Osprey Ridge Golf Club","city":"Halifax","province":"Nova Scotia","category":"Public","status":"active","lat":44.68,"lng":-63.61,"desc":"Challenging course with elevated tees and ocean views.","image":"","url":""},{"id":9,"name":"Grandview Golf Club","city":"Dartmouth","province":"Nova Scotia","category":"Public","status":"active","lat":44.69... (line truncated to 2000 chars)
-</script>
-            <div class="map-wrapper">
-              <div class="map-controls">
-                <div class="map-filter-bar">
-                  <input type="text" id="mapSearch" class="map-search" placeholder="Search courses..." data-i18n-placeholder="map_search_placeholder">
-                  <select id="filterProvince" class="map-select">
-                    <option value="" data-i18n="map_filter_province">All Provinces</option>
-                  </select>
-                  <select id="filterCategory" class="map-select">
-                    <option value="" data-i18n="map_filter_category">All Categories</option>
-                  </select>
-                  <select id="filterStatus" class="map-select">
-                    <option value="" data-i18n="map_filter_status">All Statuses</option>
-                  </select>
-                  <button id="mapClearFilters" class="map-btn"><i class="fa-solid fa-eraser"></i> Clear Filters</button>
-                </div>
-                <div class="map-action-bar">
-                  <span id="mapCount" class="map-count">0 courses</span>
-                  <button id="mapLocate" class="map-btn"><i class="fa-solid fa-location-dot"></i> My Location</button>
-                  <button id="mapNearby" class="map-btn"><i class="fa-solid fa-crosshairs"></i> Nearby</button>
-                  <button id="mapDarkToggle" class="map-btn map-btn-icon"><i class="fa-solid fa-moon"></i></button>
-                </div>
-              </div>
-              <div id="mapContainer" class="map-container"></div>
-              <div id="mapNoResults" class="map-no-results" style="display:none;">
-                <i class="fa-solid fa-map-pin"></i>
-                <p data-i18n="map_no_results">No courses match your filters.</p>
-              </div>
+  <!-- ══════════════════════════════════════════
+  Course Map — Interactive
+  ══════════════════════════════════════════ -->
+  <section class="section-block sec-py-lg" id="course-map">
+    <div class="container">
+      <div class="sec-hd reveal" style="text-align:center;">
+        <div class="eyebrow" data-i18n="course_map_eyebrow">Explore</div>
+        <h2 class="sec-title" data-i18n="course_map">Course Map</h2>
+        <p class="sec-desc" style="margin:0 auto;" data-i18n="course_map_desc">Explore your next golf adventure. Interactive map of all MYGV partner courses.</p>
+      </div>
+      <div class="reveal" style="margin-top:1.5rem;">
+        <script id="golfCoursesData" type="application/json">
+[{"id":1,"name":"Algonquin Golf Course","city":"St. Andrews","province":"New Brunswick","category":"Resort","status":"active","lat":45.074,"lng":-67.055,"desc":"Historic seaside resort course overlooking Passamaquoddy Bay.","image":"","url":""},{"id":2,"name":"Aroostook Valley Country Club","city":"Four Falls","province":"New Brunswick","category":"Public","status":"active","lat":46.832,"lng":-67.745,"desc":"Championship course set along the Aroostook River valley.","image":"","url":""},{"id":3,"name":"Bell Bay Golf Club","city":"Baddeck","province":"Nova Scotia","category":"Public","status":"active","lat":46.098,"lng":-60.748,"desc":"Spectacular course along the Bras d'Or Lakes on Cape Breton.","image":"","url":""},{"id":4,"name":"Cabot Links","city":"Inverness","province":"Nova Scotia","category":"Resort","status":"active","lat":46.2291,"lng":-61.2949,"desc":"World-renowned links course on Cape Breton's western shore.","image":"","url":"https://cabotlinks.com"},{"id":5,"name":"Cabot Cliffs","city":"Inverness","province":"Nova Scotia","category":"Resort","status":"active","lat":46.225,"lng":-61.3,"desc":"Spectacular clifftop course ranked among the world's best.","image":"","url":"https://cabotlinks.com/cliffs"},{"id":6,"name":"Edmundston Golf Club","city":"Edmundston","province":"New Brunswick","category":"Public","status":"active","lat":47.371,"lng":-68.318,"desc":"Scenic 18-hole course along the Saint John River valley.","image":"","url":""},{"id":7,"name":"Fox Harb'r Resort","city":"Wallace","province":"Nova Scotia","category":"Resort","status":"active","lat":45.801,"lng":-63.472,"desc":"Luxury golf resort with an award-winning course.","image":"","url":"https://foxharbr.com"},{"id":8,"name":"Highland Links","city":"Cape Breton","province":"Nova Scotia","category":"Links","status":"active","lat":46.31,"lng":-60.41,"desc":"Championship links with stunning Cape Breton views.","image":"","url":""},{"id":9,"name":"Kingswood Resort","city":"Grand Lake","province":"New Brunswick","category":"Resort","status":"active","lat":46.058,"lng":-65.843,"desc":"Resort course set in the rolling hills of central NB.","image":"","url":""},{"id":10,"name":"Rockwood Park Golf Course","city":"Saint John","province":"New Brunswick","category":"Public","status":"active","lat":45.283,"lng":-66.066,"desc":"Urban parkland course within Saint John's historic Rockwood Park.","image":"","url":""},{"id":11,"name":"Westfield Golf & Country Club","city":"Westfield","province":"New Brunswick","category":"Public","status":"active","lat":45.341,"lng":-66.072,"desc":"Challenging course with scenic Kennebecasis River views.","image":"","url":""},{"id":12,"name":"Abercrombie Country Club","city":"New Glasgow","province":"Nova Scotia","category":"Public","status":"active","lat":45.588,"lng":-62.648,"desc":"Well-maintained parkland course on the Northumberland Strait.","image":"","url":""},{"id":13,"name":"Amherst Golf Club","city":"Amherst","province":"Nova Scotia","category":"Public","status":"active","lat":45.833,"lng":-64.212,"desc":"Classic 18-hole course in the Tantramar region.","image":"","url":""},{"id":14,"name":"Gowan Brae Golf & Country Club","city":"Bathurst","province":"New Brunswick","category":"Public","status":"active","lat":47.593,"lng":-65.695,"desc":"Championship course carved from the Acadian forest.","image":"","url":""},{"id":15,"name":"Links at Brunello","city":"Timberlea","province":"Nova Scotia","category":"Public","status":"active","lat":44.659,"lng":-63.74,"desc":"Modern 18-hole championship course near Halifax.","image":"","url":""}]
+        </script>
+        <div class="map-wrapper">
+          <div class="map-controls">
+            <div class="map-filter-bar">
+              <input type="text" id="mapSearch" class="map-search" placeholder="Search courses..." data-i18n-placeholder="map_search_placeholder">
+              <select id="filterProvince" class="map-select">
+                <option value="" data-i18n="map_filter_province">All Provinces</option>
+              </select>
+              <select id="filterCategory" class="map-select">
+                <option value="" data-i18n="map_filter_category">All Categories</option>
+              </select>
+              <select id="filterStatus" class="map-select">
+                <option value="" data-i18n="map_filter_status">All Statuses</option>
+              </select>
+              <button id="mapClearFilters" class="map-btn"><i class="fa-solid fa-eraser"></i> <span data-i18n="map_clear">Clear Filters</span></button>
+            </div>
+            <div class="map-action-bar">
+              <span id="mapCount" class="map-count" data-i18n="map_count">0 courses</span>
+              <button id="mapLocate" class="map-btn"><i class="fa-solid fa-location-dot"></i> <span data-i18n="map_locate">My Location</span></button>
+              <button id="mapNearby" class="map-btn"><i class="fa-solid fa-crosshairs"></i> <span data-i18n="map_nearby">Nearby</span></button>
+              <button id="mapDarkToggle" class="map-btn map-btn-icon"><i class="fa-solid fa-moon"></i></button>
             </div>
           </div>
+          <div id="mapContainer" class="map-container"></div>
+          <div id="mapNoResults" class="map-no-results" style="display:none;">
+            <i class="fa-solid fa-map-pin"></i>
+            <p data-i18n="map_no_results">No courses match your filters.</p>
+          </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+  Aroostook Valley — Special Directions
+  ══════════════════════════════════════════ -->
+  <section class="sec sec-cm-directions sec-py-md" id="av-directions">
+    <div class="container">
+      <div class="sec-hd reveal" style="text-align:center;">
+        <div class="eyebrow" data-i18n="cm_av_eyebrow">Important</div>
+        <h2 class="sec-title" style="color:#fff;" data-i18n="cm_av_title">Special Directions to Aroostook Valley Country Club</h2>
+        <p class="sec-desc" style="margin:0 auto; color:rgba(255,255,255,0.7);" data-i18n="cm_av_desc">Aroostook Valley Country Club is located in Four Falls, New Brunswick. Please follow these special directions.</p>
+      </div>
+
+      <div class="row g-4 reveal" data-stagger="0.1" style="margin-top:1.5rem;">
+        <!-- From Perth-Andover -->
+        <div class="col-lg-6">
+          <div class="cm-dir-card">
+            <div class="cm-dir-head">
+              <div class="cm-dir-icon"><i class="fa-solid fa-location-arrow"></i></div>
+              <h3 data-i18n="cm_av_from_perth">From Perth-Andover</h3>
+            </div>
+            <ol class="cm-dir-steps">
+              <li data-i18n="cm_av_perth_1">Head west towards Edmundston / Grand Falls</li>
+              <li data-i18n="cm_av_perth_2">Take Exit #107, then at the bottom of the ramp turn left</li>
+              <li data-i18n="cm_av_perth_3">You will go under two overpasses and immediately after going under the second overpass turn left again — the sign will say Four Falls Highway 130</li>
+              <li data-i18n="cm_av_perth_4">You will find yourself on a large bridge that crosses the Aroostook River; immediately at the end of the bridge turn left on Brown Road</li>
+              <li data-i18n="cm_av_perth_5">Continue on Brown Road straight west towards the Maine / NB border</li>
+              <li data-i18n="cm_av_perth_6">Brown Road will come to an end and turn into Russell Road Fort Fairfield; you will see a modular building which was a Canadian Customs</li>
+              <li data-i18n="cm_av_perth_7">200 yards before that building turn left on the field road — it is clearly marked</li>
+              <li data-i18n="cm_av_perth_8">Continue to our parking area where you will see carts parked outside of a large dome building</li>
+              <li data-i18n="cm_av_perth_9">Hop on a cart and follow signs to the club house</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- From Grand Falls -->
+        <div class="col-lg-6">
+          <div class="cm-dir-card">
+            <div class="cm-dir-head">
+              <div class="cm-dir-icon"><i class="fa-solid fa-location-arrow"></i></div>
+              <h3 data-i18n="cm_av_from_grand">From Grand Falls</h3>
+            </div>
+            <ol class="cm-dir-steps">
+              <li data-i18n="cm_av_grand_1">Head east towards Perth-Andover</li>
+              <li data-i18n="cm_av_grand_2">Take Exit #99, then turn right onto Highway 130 towards Four Falls</li>
+              <li data-i18n="cm_av_grand_3">Before the large bridge that crosses the Aroostook River, immediately turn right on Brown Road</li>
+              <li data-i18n="cm_av_grand_4">Continue on Brown Road straight west towards the Maine / NB border</li>
+              <li data-i18n="cm_av_grand_5">Brown Road will come to an end and turn into Russell Road Fort Fairfield; you will see a modular building which was a Canadian Customs</li>
+              <li data-i18n="cm_av_grand_6">200 yards before that building turn left on the field road — it is clearly marked</li>
+              <li data-i18n="cm_av_grand_7">Continue to our parking area where you will see carts parked outside of a large dome building</li>
+              <li data-i18n="cm_av_grand_8">Hop on a cart and follow signs to the club house</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+  Aroostook Valley — French Directions
+  ══════════════════════════════════════════ -->
+  <section class="sec sec-cm-directions sec-py-md t-row-alt" id="av-directions-fr">
+    <div class="container">
+      <div class="sec-hd reveal" style="text-align:center;">
+        <div class="eyebrow" data-i18n="cm_av_fr_eyebrow">Fran\u00e7ais</div>
+        <h2 class="sec-title" style="color:#fff;" data-i18n="cm_av_fr_title">Itin\u00e9raire sp\u00e9cial vers Aroostook Valley Country Club</h2>
+      </div>
+
+      <div class="row g-4 reveal" data-stagger="0.1" style="margin-top:1.5rem;">
+        <!-- FR: From Perth-Andover -->
+        <div class="col-lg-6">
+          <div class="cm-dir-card">
+            <div class="cm-dir-head">
+              <div class="cm-dir-icon"><i class="fa-solid fa-location-arrow"></i></div>
+              <h3 data-i18n="cm_av_fr_from_perth">Depuis Perth-Andover</h3>
+            </div>
+            <ol class="cm-dir-steps">
+              <li data-i18n="cm_av_fr_perth_1">Dirigez-vous vers l\u2019ouest en direction d\u2019Edmundston/Grand-Sault</li>
+              <li data-i18n="cm_av_fr_perth_2">Prenez la sortie #107, puis au bas de la bretelle tournez \u00e0 gauche</li>
+              <li data-i18n="cm_av_fr_perth_3">Vous passerez sous deux viaducs et imm\u00e9diatement apr\u00e8s le deuxi\u00e8me viaduc, tournez \u00e0 gauche \u2014 le panneau indiquera Four Falls Highway 130</li>
+              <li data-i18n="cm_av_fr_perth_4">Vous serez sur un grand pont traversant la rivi\u00e8re Aroostook; imm\u00e9diatement apr\u00e8s le pont, tournez \u00e0 gauche sur Brown Road</li>
+              <li data-i18n="cm_av_fr_perth_5">Continuez sur Brown Road vers l\u2019ouest en direction de la fronti\u00e8re Maine/NB</li>
+              <li data-i18n="cm_av_fr_perth_6">Brown Road se termine et devient Russell Road Fort Fairfield; vous verrez un b\u00e2timent modulaire qui \u00e9tait une douane canadienne</li>
+              <li data-i18n="cm_av_fr_perth_7">200 yards avant ce b\u00e2timent, tournez \u00e0 gauche sur le chemin de campagne \u2014 c\u2019est clairement indiqu\u00e9</li>
+              <li data-i18n="cm_av_fr_perth_8">Continuez jusqu\u2019au stationnement o\u00f9 des voiturettes sont gar\u00e9es devant un grand d\u00f4me</li>
+              <li data-i18n="cm_av_fr_perth_9">Montez dans une voiturette et suivez les panneaux vers le club house</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- FR: From Grand Falls -->
+        <div class="col-lg-6">
+          <div class="cm-dir-card">
+            <div class="cm-dir-head">
+              <div class="cm-dir-icon"><i class="fa-solid fa-location-arrow"></i></div>
+              <h3 data-i18n="cm_av_fr_from_grand">Depuis Grand-Sault</h3>
+            </div>
+            <ol class="cm-dir-steps">
+              <li data-i18n="cm_av_fr_grand_1">Dirigez-vous vers l\u2019est en direction de Perth-Andover</li>
+              <li data-i18n="cm_av_fr_grand_2">Prenez la sortie #99, puis tournez \u00e0 droite sur l\u2019autoroute 130 vers Four Falls</li>
+              <li data-i18n="cm_av_fr_grand_3">Avant le grand pont traversant la rivi\u00e8re Aroostook, tournez imm\u00e9diatement \u00e0 droite sur Brown Road</li>
+              <li data-i18n="cm_av_fr_grand_4">Continuez sur Brown Road vers l\u2019ouest en direction de la fronti\u00e8re Maine/NB</li>
+              <li data-i18n="cm_av_fr_grand_5">Brown Road se termine et devient Russell Road Fort Fairfield; vous verrez un b\u00e2timent modulaire qui \u00e9tait une douane canadienne</li>
+              <li data-i18n="cm_av_fr_grand_6">200 yards avant ce b\u00e2timent, tournez \u00e0 gauche sur le chemin de campagne \u2014 c\u2019est clairement indiqu\u00e9</li>
+              <li data-i18n="cm_av_fr_grand_7">Continuez jusqu\u2019au stationnement o\u00f9 des voiturettes sont gar\u00e9es devant un grand d\u00f4me</li>
+              <li data-i18n="cm_av_fr_grand_8">Montez dans une voiturette et suivez les panneaux vers le club house</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

@@ -36,15 +36,19 @@ function buildPage(templateFile, contentSection, bodyClass) {
 }
 
 const PAGES = [
-  { template: '_template.html',       output: 'index.html' },
+  { template: '_template.html',       output: 'index.html',       bodyClass: 'page-home' },
   { template: '_template-page.html',  content: 'gvnb',              bodyClass: 'page-gvnb',  output: 'gvnb.html' },
   { template: '_template-page.html',  content: 'gvns',              bodyClass: 'page-gvns',  output: 'gvns.html' },
   { template: '_template-page.html',  content: 'packages',          bodyClass: 'page-packages',  output: 'packages.html' },
-  { template: '_template-page.html',  content: 'page-courses',      bodyClass: 'page-courses',  output: 'courses.html' },
+  { template: '_template-page.html',  content: 'course-map',        bodyClass: 'page-course-map',  output: 'course-map.html' },
   { template: '_template-page.html',  content: 'tournament',        bodyClass: 'page-tournament',  output: 'tournament.html' },
   { template: '_template-page.html',  content: 'corporate',         bodyClass: 'page-corporate',  output: 'corporate.html' },
+  { template: '_template-page.html',  content: 'brochure-personalized', bodyClass: 'page-brochure', output: 'brochure-personalized.html' },
+  { template: '_template-page.html',  content: 'mission-statement',   bodyClass: 'page-mission', output: 'mission-statement.html' },
+  { template: '_template-page.html',  content: 'terms-2026',          bodyClass: 'page-terms', output: 'terms-2026.html' },
   { template: '_template-page.html',  content: 'about',            bodyClass: 'page-about',  output: 'about.html' },
-  { template: '_template-page.html',  content: 'contact-etransfer', bodyClass: 'page-contact', output: 'contact.html' },
+  { template: '_template-page.html',  content: 'contact',           bodyClass: 'page-contact', output: 'contact.html' },
+  { template: '_template-page.html',  content: 'etransfer',          bodyClass: 'page-etransfer', output: 'etransfer.html' },
   { template: '_template-page.html',  content: 'page-buy',          output: 'buy.html' },
   { template: '_template-page.html',  content: 'page-careers',      output: 'careers.html' },
   { template: '_template-page.html',  content: 'page-press',        output: 'press.html' },

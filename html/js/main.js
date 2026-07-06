@@ -14,13 +14,22 @@
   syncNav();
 
   /* ════════════════════════════════════════
-     CLOSE MOBILE MENU ON LINK CLICK
+     CLOSE MOBILE MENU ON NAVIGATION CLICK
   ════════════════════════════════════════ */
   const navCollapse = document.getElementById('navMain');
   if (navCollapse) {
-    const closeLinks = navCollapse.querySelectorAll('.nav-link');
-    closeLinks.forEach(function (link) {
+    // Close menu when a direct nav link (not dropdown toggle) is clicked
+    navCollapse.querySelectorAll('.nav-link:not(.dropdown-toggle)').forEach(function (link) {
       link.addEventListener('click', function () {
+        if (window.innerWidth < 1200 && navCollapse.classList.contains('show')) {
+          var bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
+          if (bsCollapse) bsCollapse.hide();
+        }
+      });
+    });
+    // Also close menu when a dropdown item is selected
+    navCollapse.querySelectorAll('.dropdown-item').forEach(function (item) {
+      item.addEventListener('click', function () {
         if (window.innerWidth < 1200 && navCollapse.classList.contains('show')) {
           var bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
           if (bsCollapse) bsCollapse.hide();
@@ -127,18 +136,11 @@
   }
 
   /* ════════════════════════════════════════
-     HOME CARD CLICK (open animation + redirect)
+     HOME CARD CLICK (subtle feedback before navigation)
   ════════════════════════════════════════ */
   document.querySelectorAll('.hm-card').forEach(function (card) {
-    card.addEventListener('click', function () {
-      if (card.classList.contains('opening')) return;
+    card.addEventListener('click', function (e) {
       card.classList.add('opening');
-      var href = card.getAttribute('data-href');
-      if (href) {
-        setTimeout(function () {
-          window.location.href = href;
-        }, 1000);
-      }
     });
   });
 
@@ -184,12 +186,24 @@
   ════════════════════════════════════════ */
   (function () {
     var page = window.location.pathname.split('/').pop() || 'index.html';
+    var matched = false;
     document.querySelectorAll('.navbar-nav .nav-link').forEach(function (link) {
       var href = link.getAttribute('href');
       if (href === page || (page === 'index.html' && href === 'index.html')) {
         link.classList.add('active');
+        matched = true;
       }
     });
+    // Mark dropdown parent active if a child matches
+    if (!matched) {
+      document.querySelectorAll('.navbar-nav .dropdown-item').forEach(function (item) {
+        var href = item.getAttribute('href');
+        if (href === page) {
+          var parentToggle = item.closest('.dropdown') && item.closest('.dropdown').querySelector('.dropdown-toggle');
+          if (parentToggle) parentToggle.classList.add('active');
+        }
+      });
+    }
   })();
 
   /* ════════════════════════════════════════

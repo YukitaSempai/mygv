@@ -5,24 +5,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title data-i18n="page_title">MYGV — The Pinnacle of Golf Visa</title>
+  <meta name="description" content="More Golf. Less Green. Discover MYGV Golf Visa — exclusive access to 75+ courses across New Brunswick, Nova Scotia, and PEI with 2-for-1 green fees and premium golf experiences." />
+  <meta property="og:title" content="MYGV — The Pinnacle of Golf Visa" />
+  <meta property="og:description" content="More Golf. Less Green. Exclusive access to 75+ courses across the Maritimes with 2-for-1 green fees." />
+  <meta property="og:image" content="img/04.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" href="img/04.png" />
+  <link rel="apple-touch-icon" href="img/04.png" />
 
-  <!-- Leaflet -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
-  <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-  <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap"
     rel="stylesheet" />
-  <!-- Custom Styles -->
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Leaflet (course map only) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
 
 </head>
 
@@ -53,32 +56,87 @@
         </button>
 
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html" data-i18n="home">Home</a>
+          <!-- Golf Visas -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span data-i18n="nav_golf_visas">Golf Visas</span>
+              <span class="link-arrow"><i class="fa-solid fa-chevron-down"></i></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="gvnb.html">
+                  <span class="dd-label" data-i18n="gvnb">GVNB</span>
+                  <span class="dd-sub" data-i18n="nav_sub_nb">New Brunswick</span>
+                </a></li>
+              <li><a class="dropdown-item" href="gvns.html">
+                  <span class="dd-label" data-i18n="gvns">GVNS</span>
+                  <span class="dd-sub" data-i18n="nav_sub_ns">Nova Scotia</span>
+                </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="packages.html">
+                  <span class="dd-label" data-i18n="packages">Packages</span>
+                  <span class="dd-sub" data-i18n="nav_sub_packages">Multi-buy &amp; bundles</span>
+                </a></li>
+              <li><a class="dropdown-item" href="course-map.html">
+                  <span class="dd-label" data-i18n="course_map">Course Map</span>
+                  <span class="dd-sub" data-i18n="nav_sub_map">View all courses</span>
+                </a></li>
+            </ul>
           </li>
+
+          <!-- Tournament -->
           <li class="nav-item">
-            <a class="nav-link" href="gvnb.html"><span data-i18n="gvnb">GVNB</span></a>
+            <a class="nav-link" href="tournament.html">
+              <span data-i18n="tournaments">Tournament</span>
+            </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="gvns.html"><span data-i18n="gvns">GVNS</span></a>
+
+          <!-- Corporate -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span data-i18n="corporate">Corporate</span>
+              <span class="link-arrow"><i class="fa-solid fa-chevron-down"></i></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="corporate.html">
+                  <span class="dd-label" data-i18n="corporate">Personalized GV</span>
+                  <span class="dd-sub" data-i18n="nav_sub_corp">Business &amp; team packages</span>
+                </a></li>
+              <li><a class="dropdown-item" href="brochure-personalized.html">
+                  <span class="dd-label" data-i18n="brochure_nav">GV Brochure</span>
+                  <span class="dd-sub" data-i18n="nav_sub_brochure">Client showcase</span>
+                </a></li>
+            </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="packages.html"><span data-i18n="packages">Packages</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="courses.html"><span data-i18n="courses">Courses</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="tournament.html"><span data-i18n="tournaments">Tournament</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="corporate.html"><span data-i18n="corporate">Corporate</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html" data-i18n="about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html" data-i18n="contact">Contact</a>
+
+          <!-- Company -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span data-i18n="nav_company">Company</span>
+              <span class="link-arrow"><i class="fa-solid fa-chevron-down"></i></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">
+                  <span class="dd-label" data-i18n="about">About</span>
+                  <span class="dd-sub" data-i18n="nav_sub_about">Our story &amp; values</span>
+                </a></li>
+              <li><a class="dropdown-item" href="mission-statement.html">
+                  <span class="dd-label" data-i18n="stmt_nav">Mission</span>
+                  <span class="dd-sub" data-i18n="nav_sub_mission">Our purpose</span>
+                </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="contact.html">
+                  <span class="dd-label" data-i18n="contact">Contact</span>
+                  <span class="dd-sub" data-i18n="nav_sub_contact">Get in touch</span>
+                </a></li>
+              <li><a class="dropdown-item" href="terms-2026.html">
+                  <span class="dd-label" data-i18n="terms_nav">Terms</span>
+                  <span class="dd-sub" data-i18n="nav_sub_terms">Terms &amp; conditions</span>
+                </a></li>
+              <li><a class="dropdown-item" href="etransfer.html">
+                  <span class="dd-label" data-i18n="etransfer_nav">E-Transfer</span>
+                  <span class="dd-sub" data-i18n="nav_sub_etransfer">Payment info</span>
+                </a></li>
+            </ul>
           </li>
         </ul>
 
@@ -101,11 +159,11 @@
                 </a></li>
               <li><a class="dropdown-item" href="#" data-lang="fr">
                   <span class="lang-flag"><img src="https://flagcdn.com/w20/fr.png" alt="FR" class="flag-img"></span>
-                  <span data-i18n="lang_fr">Français</span>
+                  <span data-i18n="lang_fr">Fran&ccedil;ais</span>
                 </a></li>
               <li><a class="dropdown-item" href="#" data-lang="es">
                   <span class="lang-flag"><img src="https://flagcdn.com/w20/es.png" alt="ES" class="flag-img"></span>
-                  <span data-i18n="lang_es">Español</span>
+                  <span data-i18n="lang_es">Espa&ntilde;ol</span>
                 </a></li>
             </ul>
           </div>
@@ -126,9 +184,9 @@
         <div class="container">
           <div class="row g-5 align-items-center">
             <div class="col-lg-5 reveal">
-              <div class="eyebrow" style="color:#c9a96e;">Golf Visa</div>
-              <h2 class="sec-title" style="color:#fff; text-align:left;">GVNB 2027 — New Brunswick</h2>
-              <p class="sec-desc" style="color:rgba(255,255,255,0.75); text-align:left; margin-top:0.75rem;">
+              <div class="eyebrow" style="color:#c9a96e;" data-i18n="gvnb_hero_eyebrow">Golf Visa</div>
+              <h2 class="sec-title" style="color:#fff; text-align:left;" data-i18n="gvnb_hero_title">GVNB 2027 — New Brunswick</h2>
+              <p class="sec-desc" style="color:rgba(255,255,255,0.75); text-align:left; margin-top:0.75rem;" data-i18n="gvnb_hero_desc">
                 Experience the rugged beauty and world‑class fairways of New Brunswick.
                 From the Bay of Fundy to the Acadian coast, GVNB brings you the best of
                 Atlantic Canada — plus bonus courses in Nova Scotia, Quebec, PEI, and Cape Breton.
@@ -137,42 +195,42 @@
                 <div class="col-sm-6">
                   <div class="gvnb-stat">
                     <span class="gvnb-stat-value counter" data-target="26">0</span>
-                    <span class="gvnb-stat-label">NB Partner Courses</span>
+                    <span class="gvnb-stat-label" data-i18n="gvnb_stat_courses">NB Partner Courses</span>
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div class="gvnb-stat">
                     <span class="gvnb-stat-value">May – Oct</span>
-                    <span class="gvnb-stat-label">Season 2027</span>
+                    <span class="gvnb-stat-label" data-i18n="gvnb_stat_season">Season 2027</span>
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div class="gvnb-stat">
                     <span class="gvnb-stat-value">+36 Bonus</span>
-                    <span class="gvnb-stat-label">NS, QC, PEI &amp; Cape Breton</span>
+                    <span class="gvnb-stat-label" data-i18n="gvnb_stat_bonus">NS, QC, PEI &amp; Cape Breton</span>
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div class="gvnb-stat">
                     <span class="gvnb-stat-value">From $349</span>
-                    <span class="gvnb-stat-label">Early‑bird pricing</span>
+                    <span class="gvnb-stat-label" data-i18n="gvnb_stat_pricing">Early‑bird pricing</span>
                   </div>
                 </div>
               </div>
               <div class="d-flex flex-wrap gap-3 mt-4">
                 <a href="#gvnb-courses" class="btn btn-gvnb-cta">
-                  <span>View Courses</span>
+                  <span data-i18n="gvnb_btn_courses">View Courses</span>
                   <i class="fa-solid fa-arrow-right"></i>
                 </a>
                 <a href="buy.html" class="btn btn-gvnb-cta-alt">
-                  <span>Get Your Card</span>
+                  <span data-i18n="gvnb_btn_card">Get Your Card</span>
                   <i class="fa-solid fa-crown"></i>
                 </a>
               </div>
             </div>
             <div class="col-lg-7 reveal" data-stagger="0.25">
               <div class="gvnb-image-wrap">
-                <img src="img/05.jpeg" alt="New Brunswick Golf" class="img-fluid gvnb-image" />
+                <img src="img/05.jpeg" alt="New Brunswick Golf" class="img-fluid gvnb-image" data-i18n="gvnb_hero_img_alt" />
               </div>
             </div>
           </div>
@@ -185,9 +243,9 @@
       <section class="sec-gvnb" id="gvnb-courses" style="padding: 3rem 0 5rem;">
         <div class="container">
           <div class="text-center reveal" style="margin-bottom: 2.5rem;">
-            <div class="eyebrow" style="color:#c9a96e;">Participating Courses</div>
-            <h2 class="sec-title" style="color:#fff;">New Brunswick</h2>
-            <p class="sec-desc" style="color:rgba(255,255,255,0.55); margin: 0.5rem auto 0; max-width:600px;">
+            <div class="eyebrow" style="color:#c9a96e;" data-i18n="gvnb_section_eyebrow">Participating Courses</div>
+            <h2 class="sec-title" style="color:#fff;" data-i18n="gvnb_section_title">New Brunswick</h2>
+            <p class="sec-desc" style="color:rgba(255,255,255,0.55); margin: 0.5rem auto 0; max-width:600px;" data-i18n="gvnb_section_desc">
               26 partner courses across New Brunswick. Each offers 4x 2-for-1 Green Fees and a Free Reward round.
             </p>
           </div>
@@ -1158,9 +1216,9 @@
       <section class="sec-gvnb" style="padding: 3rem 0 5rem;">
         <div class="container">
           <div class="text-center reveal" style="margin-bottom: 2.5rem;">
-            <div class="eyebrow" style="color:#c9a96e;">Indoor Practice</div>
-            <h2 class="sec-title" style="color:#fff;">Indoor Golf Simulators</h2>
-            <p class="sec-desc" style="color:rgba(255,255,255,0.55); margin: 0.5rem auto 0; max-width:600px;">
+            <div class="eyebrow" style="color:#c9a96e;" data-i18n="gvnb_indoor_eyebrow">Indoor Practice</div>
+            <h2 class="sec-title" style="color:#fff;" data-i18n="gvnb_indoor_title">Indoor Golf Simulators</h2>
+            <p class="sec-desc" style="color:rgba(255,255,255,0.55); margin: 0.5rem auto 0; max-width:600px;" data-i18n="gvnb_indoor_desc">
               Practice year-round with GVNB indoor simulator partners.
             </p>
           </div>
@@ -1176,17 +1234,17 @@
                 </div>
                 <div class="gvnb-card-body">
                   <div class="gvnb-card-offer">
-                    <span class="gvnb-offer-tag">4× 2-for-1 Simulator Time</span>
-                    <span class="gvnb-offer-tag tag-alt">Free Reward Hour</span>
+                    <span class="gvnb-offer-tag" data-i18n="gvnb_offer_simulator">4× 2-for-1 Simulator Time</span>
+                    <span class="gvnb-offer-tag tag-alt" data-i18n="gvnb_offer_reward_hour">Free Reward Hour</span>
                   </div>
                   <div class="gvnb-card-details">
                     <div class="gvnb-detail-row"><i class="fa-regular fa-clock"></i> <span>Max 2 hours per 2-for-1. Business hours: Sun–Thu 9am–10pm, Fri–Sat 9am–12am</span></div>
                     <div class="gvnb-detail-row"><i class="fa-regular fa-calendar-check"></i> <span>Book 1 hour per person for a full 18 holes</span></div>
                   </div>
                   <div class="gvnb-card-benefits">
-                    <span class="gvnb-benefit-tag"><i class="fa-solid fa-check"></i> 15% OFF FIREDRIVE Apparel</span>
+                    <span class="gvnb-benefit-tag" data-i18n="gvnb_benefit_apparel"><i class="fa-solid fa-check"></i> 15% OFF FIREDRIVE Apparel</span>
                   </div>
-                  <a href="https://www.firedrive.ca/pricing" target="_blank" rel="noopener" class="gvnb-rate-link">Simulator Rates <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  <a href="https://www.firedrive.ca/pricing" target="_blank" rel="noopener" class="gvnb-rate-link" data-i18n="gvnb_link_rates">Simulator Rates <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
                 <div class="gvnb-card-footer">
                   <div class="gvnb-footer-row">
@@ -1209,9 +1267,9 @@
       <section class="sec-gvnb" style="padding: 3rem 0 5rem;">
         <div class="container">
           <div class="text-center reveal" style="margin-bottom: 2.5rem;">
-            <div class="eyebrow" style="color:#c9a96e;">Bonus Courses</div>
+            <div class="eyebrow" style="color:#c9a96e;" data-i18n="gvnb_bonus_eyebrow">Bonus Courses</div>
             <h2 class="sec-title" style="color:#fff;">Nova Scotia</h2>
-            <p class="sec-desc" style="color:rgba(255,255,255,0.55); margin: 0.5rem auto 0; max-width:600px;">
+            <p class="sec-desc" style="color:rgba(255,255,255,0.55); margin: 0.5rem auto 0; max-width:600px;" data-i18n="gvnb_bonus_desc_ns">
               GVNB includes bonus access to select Nova Scotia courses.
             </p>
           </div>
@@ -1229,15 +1287,15 @@
                 </div>
                 <div class="gvnb-card-body">
                   <div class="gvnb-card-offer">
-                    <span class="gvnb-offer-tag">4× 2-for-1 Green Fees</span>
-                    <span class="gvnb-offer-tag tag-alt">Free Reward Round</span>
+                    <span class="gvnb-offer-tag" data-i18n="gvnb_offer_2for1">4× 2-for-1 Green Fees</span>
+                    <span class="gvnb-offer-tag tag-alt" data-i18n="gvnb_offer_reward">Free Reward Round</span>
                   </div>
                   <div class="gvnb-card-details">
                     <div class="gvnb-detail-row"><i class="fa-regular fa-clock"></i> <span>Valid weekdays after 10am, holidays &amp; weekends after 11am (with power cart)</span></div>
                     <div class="gvnb-detail-row"><i class="fa-regular fa-calendar-check"></i> <span>Advance booking: up to 3 days</span></div>
                     <div class="gvnb-detail-row"><i class="fa-solid fa-flag"></i> <span>Valid for 18 holes</span></div>
                   </div>
-                  <a href="https://www.abercrombiegolf.com/golf-in-nova-scotia/rates-members/" target="_blank" rel="noopener" class="gvnb-rate-link">Green Fee Rates <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  <a href="https://www.abercrombiegolf.com/golf-in-nova-scotia/rates-members/" target="_blank" rel="noopener" class="gvnb-rate-link" data-i18n="gvnb_link_rates">Green Fee Rates <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
                 <div class="gvnb-card-footer">
                   <div class="gvnb-footer-row">
@@ -1262,8 +1320,8 @@
                 </div>
                 <div class="gvnb-card-body">
                   <div class="gvnb-card-offer">
-                    <span class="gvnb-offer-tag">4× 2-for-1 Green Fees</span>
-                    <span class="gvnb-offer-tag tag-alt">Free Reward Round</span>
+                    <span class="gvnb-offer-tag" data-i18n="gvnb_offer_2for1">4× 2-for-1 Green Fees</span>
+                    <span class="gvnb-offer-tag tag-alt" data-i18n="gvnb_offer_reward">Free Reward Round</span>
                   </div>
                   <div class="gvnb-card-details">
                     <div class="gvnb-detail-row"><i class="fa-regular fa-clock"></i> <span>Valid weekdays after 10am, holidays &amp; weekends after 11am (with power cart). Based on Premium Rate of $80.</span></div>
@@ -1271,7 +1329,7 @@
                     <div class="gvnb-detail-row"><i class="fa-regular fa-calendar-check"></i> <span>Advance booking: up to 3 days (unlimited with credit card hold)</span></div>
                     <div class="gvnb-detail-row"><i class="fa-solid fa-flag"></i> <span>Valid for 18 holes</span></div>
                   </div>
-                  <a href="https://www.amherstgolfclub.com/rates/" target="_blank" rel="noopener" class="gvnb-rate-link">Green Fee Rates <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  <a href="https://www.amherstgolfclub.com/rates/" target="_blank" rel="noopener" class="gvnb-rate-link" data-i18n="gvnb_link_rates">Green Fee Rates <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
                 <div class="gvnb-card-footer">
                   <div class="gvnb-footer-row">
@@ -1296,15 +1354,15 @@
                 </div>
                 <div class="gvnb-card-body">
                   <div class="gvnb-card-offer">
-                    <span class="gvnb-offer-tag">4× 2-for-1 Green Fees</span>
-                    <span class="gvnb-offer-tag tag-alt">Free Reward Round</span>
+                    <span class="gvnb-offer-tag" data-i18n="gvnb_offer_2for1">4× 2-for-1 Green Fees</span>
+                    <span class="gvnb-offer-tag tag-alt" data-i18n="gvnb_offer_reward">Free Reward Round</span>
                   </div>
                   <div class="gvnb-card-details">
                     <div class="gvnb-detail-row"><i class="fa-regular fa-clock"></i> <span>Valid weekdays any time, holidays &amp; weekends after 1pm (with power cart)</span></div>
                     <div class="gvnb-detail-row"><i class="fa-regular fa-calendar-check"></i> <span>Advance booking: no limit</span></div>
                     <div class="gvnb-detail-row"><i class="fa-solid fa-flag"></i> <span>Valid for 18 holes</span></div>
                   </div>
-                  <a href="https://www.digbypines.ca/golf-at-digby-pines-golf-resort-and-spa#GREENFEES" target="_blank" rel="noopener" class="gvnb-rate-link">Green Fee Rates <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  <a href="https://www.digbypines.ca/golf-at-digby-pines-golf-resort-and-spa#GREENFEES" target="_blank" rel="noopener" class="gvnb-rate-link" data-i18n="gvnb_link_rates">Green Fee Rates <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
                 <div class="gvnb-card-footer">
                   <div class="gvnb-footer-row">
@@ -1330,8 +1388,8 @@
                 </div>
                 <div class="gvnb-card-body">
                   <div class="gvnb-card-offer">
-                    <span class="gvnb-offer-tag">4× 2-for-1 Green Fees</span>
-                    <span class="gvnb-offer-tag tag-alt">Free Reward Round</span>
+                    <span class="gvnb-offer-tag" data-i18n="gvnb_offer_2for1">4× 2-for-1 Green Fees</span>
+                    <span class="gvnb-offer-tag tag-alt" data-i18n="gvnb_offer_reward">Free Reward Round</span>
                     <span class="gvnb-offer-tag tag-featured">Featured</span>
                   </div>
                   <div class="gvnb-card-details">
@@ -1344,7 +1402,7 @@
                     <span class="gvnb-benefit-tag"><i class="fa-solid fa-check"></i> 25% OFF Mini Golf</span>
                     <span class="gvnb-benefit-tag"><i class="fa-solid fa-check"></i> 15% OFF Logo Apparel</span>
                   </div>
-                  <a href="https://dundeeresort.com/green-fees-rates/" target="_blank" rel="noopener" class="gvnb-rate-link">Green Fee Rates <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  <a href="https://dundeeresort.com/green-fees-rates/" target="_blank" rel="noopener" class="gvnb-rate-link" data-i18n="gvnb_link_rates">Green Fee Rates <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
                 <div class="gvnb-card-footer">
                   <div class="gvnb-footer-row">
@@ -1368,9 +1426,9 @@
       <section class="sec-gvnb" style="padding: 3rem 0 5rem;">
         <div class="container">
           <div class="text-center reveal" style="margin-bottom: 2.5rem;">
-            <div class="eyebrow" style="color:#c9a96e;">Bonus Courses</div>
+            <div class="eyebrow" style="color:#c9a96e;" data-i18n="gvnb_bonus_eyebrow">Bonus Courses</div>
             <h2 class="sec-title" style="color:#fff;">Quebec</h2>
-            <p class="sec-desc" style="color:rgba(255,255,255,0.55); margin: 0.5rem auto 0; max-width:600px;">
+            <p class="sec-desc" style="color:rgba(255,255,255,0.55); margin: 0.5rem auto 0; max-width:600px;" data-i18n="gvnb_bonus_desc_qc">
               GVNB includes bonus access to select Quebec courses.
             </p>
           </div>
@@ -1388,8 +1446,8 @@
                 </div>
                 <div class="gvnb-card-body">
                   <div class="gvnb-card-offer">
-                    <span class="gvnb-offer-tag">4× 2-for-1 Green Fees</span>
-                    <span class="gvnb-offer-tag tag-alt">Free Reward Round</span>
+                    <span class="gvnb-offer-tag" data-i18n="gvnb_offer_2for1">4× 2-for-1 Green Fees</span>
+                    <span class="gvnb-offer-tag tag-alt" data-i18n="gvnb_offer_reward">Free Reward Round</span>
                   </div>
                   <div class="gvnb-card-details">
                     <div class="gvnb-detail-row"><i class="fa-regular fa-clock"></i> <span>Valid weekdays any time, holidays &amp; weekends any time (with power cart)</span></div>
@@ -1399,7 +1457,7 @@
                   <div class="gvnb-card-benefits">
                     <span class="gvnb-benefit-tag"><i class="fa-solid fa-check"></i> 2-for-1 Driving Range</span>
                   </div>
-                  <a href="https://golfcarletonsurmer.com/tarifs/#toggle-id-2" target="_blank" rel="noopener" class="gvnb-rate-link">Green Fee Rates <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  <a href="https://golfcarletonsurmer.com/tarifs/#toggle-id-2" target="_blank" rel="noopener" class="gvnb-rate-link" data-i18n="gvnb_link_rates">Green Fee Rates <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
                 <div class="gvnb-card-footer">
                   <div class="gvnb-footer-row">
@@ -1425,15 +1483,15 @@
                 </div>
                 <div class="gvnb-card-body">
                   <div class="gvnb-card-offer">
-                    <span class="gvnb-offer-tag">4× 2-for-1 Green Fees</span>
-                    <span class="gvnb-offer-tag tag-alt">Free Reward Round</span>
+                    <span class="gvnb-offer-tag" data-i18n="gvnb_offer_2for1">4× 2-for-1 Green Fees</span>
+                    <span class="gvnb-offer-tag tag-alt" data-i18n="gvnb_offer_reward">Free Reward Round</span>
                   </div>
                   <div class="gvnb-card-details">
                     <div class="gvnb-detail-row"><i class="fa-regular fa-clock"></i> <span>Valid weekdays any time, holidays &amp; weekends any time (with power cart)</span></div>
                     <div class="gvnb-detail-row"><i class="fa-regular fa-calendar-check"></i> <span>Advance booking: no limit</span></div>
                     <div class="gvnb-detail-row"><i class="fa-solid fa-flag"></i> <span>Valid for 18 holes</span></div>
                   </div>
-                  <a href="https://www.golfrevermont.com/tarifs/" target="_blank" rel="noopener" class="gvnb-rate-link">Green Fee Rates <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  <a href="https://www.golfrevermont.com/tarifs/" target="_blank" rel="noopener" class="gvnb-rate-link" data-i18n="gvnb_link_rates">Green Fee Rates <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
                 <div class="gvnb-card-footer">
                   <div class="gvnb-footer-row">
@@ -1457,9 +1515,9 @@
       <section class="sec-gvnb" style="padding: 3rem 0 5rem;">
         <div class="container">
           <div class="text-center reveal" style="margin-bottom: 2.5rem;">
-            <div class="eyebrow" style="color:#c9a96e;">Bonus Courses</div>
+            <div class="eyebrow" style="color:#c9a96e;" data-i18n="gvnb_bonus_eyebrow">Bonus Courses</div>
             <h2 class="sec-title" style="color:#fff;">Prince Edward Island</h2>
-            <p class="sec-desc" style="color:rgba(255,255,255,0.55); margin: 0.5rem auto 0; max-width:600px;">
+            <p class="sec-desc" style="color:rgba(255,255,255,0.55); margin: 0.5rem auto 0; max-width:600px;" data-i18n="gvnb_bonus_desc_pei">
               GVNB includes bonus access to select PEI courses.
             </p>
           </div>
@@ -1477,15 +1535,15 @@
                 </div>
                 <div class="gvnb-card-body">
                   <div class="gvnb-card-offer">
-                    <span class="gvnb-offer-tag">4× 2-for-1 Green Fees</span>
-                    <span class="gvnb-offer-tag tag-alt">Free Reward Round</span>
+                    <span class="gvnb-offer-tag" data-i18n="gvnb_offer_2for1">4× 2-for-1 Green Fees</span>
+                    <span class="gvnb-offer-tag tag-alt" data-i18n="gvnb_offer_reward">Free Reward Round</span>
                   </div>
                   <div class="gvnb-card-details">
                     <div class="gvnb-detail-row"><i class="fa-regular fa-clock"></i> <span>Valid weekdays after 10am, holidays &amp; weekends after 11am (with power cart)</span></div>
                     <div class="gvnb-detail-row"><i class="fa-regular fa-calendar-check"></i> <span>Advance booking: up to 10 days</span></div>
                     <div class="gvnb-detail-row"><i class="fa-solid fa-flag"></i> <span>Valid for 18 holes</span></div>
                   </div>
-                  <a href="http://www.avondalegolf.com/" target="_blank" rel="noopener" class="gvnb-rate-link">Green Fee Rates <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  <a href="http://www.avondalegolf.com/" target="_blank" rel="noopener" class="gvnb-rate-link" data-i18n="gvnb_link_rates">Green Fee Rates <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
                 <div class="gvnb-card-footer">
                   <div class="gvnb-footer-row">
@@ -1510,8 +1568,8 @@
                 </div>
                 <div class="gvnb-card-body">
                   <div class="gvnb-card-offer">
-                    <span class="gvnb-offer-tag">4× 2-for-1 Green Fees</span>
-                    <span class="gvnb-offer-tag tag-alt">Free Reward Round</span>
+                    <span class="gvnb-offer-tag" data-i18n="gvnb_offer_2for1">4× 2-for-1 Green Fees</span>
+                    <span class="gvnb-offer-tag tag-alt" data-i18n="gvnb_offer_reward">Free Reward Round</span>
                   </div>
                   <div class="gvnb-card-details">
                     <div class="gvnb-detail-row"><i class="fa-regular fa-clock"></i> <span>Valid weekdays any time, holidays &amp; weekends after 11am (cart optional)</span></div>
@@ -1523,7 +1581,7 @@
                     <span class="gvnb-benefit-tag"><i class="fa-solid fa-check"></i> 10% OFF Club Rentals</span>
                     <span class="gvnb-benefit-tag"><i class="fa-solid fa-check"></i> 10% OFF Apparel</span>
                   </div>
-                  <a href="https://belfasthighlandgreens.ca/rates/" target="_blank" rel="noopener" class="gvnb-rate-link">Green Fee Rates <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  <a href="https://belfasthighlandgreens.ca/rates/" target="_blank" rel="noopener" class="gvnb-rate-link" data-i18n="gvnb_link_rates">Green Fee Rates <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
                 <div class="gvnb-card-footer">
                   <div class="gvnb-footer-row">
@@ -1548,8 +1606,8 @@
                 </div>
                 <div class="gvnb-card-body">
                   <div class="gvnb-card-offer">
-                    <span class="gvnb-offer-tag">4× 2-for-1 Green Fees</span>
-                    <span class="gvnb-offer-tag tag-alt">Free Reward Round</span>
+                    <span class="gvnb-offer-tag" data-i18n="gvnb_offer_2for1">4× 2-for-1 Green Fees</span>
+                    <span class="gvnb-offer-tag tag-alt" data-i18n="gvnb_offer_reward">Free Reward Round</span>
                   </div>
                   <div class="gvnb-card-details">
                     <div class="gvnb-detail-row"><i class="fa-regular fa-clock"></i> <span>Valid weekdays any time, holidays &amp; weekends after 11am (with power cart)</span></div>
@@ -1560,7 +1618,7 @@
                   <div class="gvnb-card-benefits">
                     <span class="gvnb-benefit-tag"><i class="fa-solid fa-check"></i> 15% OFF Apparel</span>
                   </div>
-                  <a href="https://clyderivergolf.ca/rates/" target="_blank" rel="noopener" class="gvnb-rate-link">Green Fee Rates <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  <a href="https://clyderivergolf.ca/rates/" target="_blank" rel="noopener" class="gvnb-rate-link" data-i18n="gvnb_link_rates">Green Fee Rates <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
                 <div class="gvnb-card-footer">
                   <div class="gvnb-footer-row">
@@ -1584,16 +1642,16 @@
       <section class="sec-gvnb" style="padding: 2rem 0 5rem;">
         <div class="container">
           <div class="t-cta-card reveal" style="text-align:center;">
-            <div class="eyebrow" style="color:#c9a96e;">Get Started</div>
-            <h2 style="font-family:'Playfair Display',serif; color:#fff; font-size:2rem; font-weight:700; margin:0.5rem 0;">Ready to Play New Brunswick?</h2>
-            <p style="color:rgba(255,255,255,0.65); font-size:0.95rem; max-width:520px; margin:0 auto 1.5rem;">
+            <div class="eyebrow" style="color:#c9a96e;" data-i18n="gvnb_cta_eyebrow">Get Started</div>
+            <h2 style="font-family:'Playfair Display',serif; color:#fff; font-size:2rem; font-weight:700; margin:0.5rem 0;" data-i18n="gvnb_cta_title">Ready to Play New Brunswick?</h2>
+            <p style="color:rgba(255,255,255,0.65); font-size:0.95rem; max-width:520px; margin:0 auto 1.5rem;" data-i18n="gvnb_cta_desc">
               Purchase your GVNB 2027 card and unlock 26+ courses across New Brunswick, plus bonus access to Nova Scotia, Quebec, and PEI.
             </p>
             <div class="d-flex flex-wrap gap-3 justify-content-center">
-              <a href="buy.html" class="btn t-btn-primary">
+              <a href="buy.html" class="btn t-btn-primary" data-i18n="gvnb_cta_buy">
                 <i class="fa-solid fa-crown"></i> Buy GVNB 2027
               </a>
-              <a href="courses.html" class="btn t-btn-primary" style="background:transparent; border:1px solid rgba(255,255,255,0.25);">
+              <a href="courses.html" class="btn t-btn-primary" style="background:transparent; border:1px solid rgba(255,255,255,0.25);" data-i18n="gvnb_cta_map">
                 <i class="fa-solid fa-map"></i> View Course Map
               </a>
             </div>
@@ -1636,6 +1694,7 @@ FOOTER
         <div class="col-6 col-lg-2">
           <p class="f-col-title" data-i18n="footer_company">Company</p>
           <a href="about.html" class="f-link" data-i18n="about">About</a>
+          <a href="mission-statement.html" class="f-link" data-i18n="stmt_nav">Mission</a>
           <a href="careers.html" class="f-link" data-i18n="footer_careers">Careers</a>
           <a href="press.html" class="f-link" data-i18n="footer_press">Press</a>
           <a href="contact.html" class="f-link" data-i18n="contact">Contact</a>
@@ -1645,7 +1704,7 @@ FOOTER
           <p class="f-col-title" data-i18n="footer_support">Support</p>
           <a href="faq.html" class="f-link" data-i18n="footer_faq">FAQ</a>
           <a href="privacy.html" class="f-link" data-i18n="footer_privacy">Privacy</a>
-          <a href="about.html#conditions" class="f-link" data-i18n="footer_terms">Terms</a>
+          <a href="terms-2026.html" class="f-link" data-i18n="footer_terms">Terms</a>
           <a href="accessibility.html" class="f-link" data-i18n="footer_accessibility">Accessibility</a>
         </div>
 
@@ -1667,11 +1726,13 @@ FOOTER
           </div>
           <div class="f-contact-row">
             <i class="fa-regular fa-envelope" style="color:#c9a96e;"></i>
-            <a href="mailto:info@mygv.ca">info@mygv.ca</a>
+            <a href="mailto:info@golfvisa.ca">info@golfvisa.ca</a>
           </div>
           <div class="f-contact-row">
             <i class="fa-solid fa-phone" style="color:#c9a96e;"></i>
-            <a href="tel:+1800555GOLF">+1 (800) 555-GOLF</a>
+            <a href="tel:19027023565">902.702.3565</a> <span style="color:rgba(255,255,255,0.5);font-size:0.8rem;">NS/PEI</span>
+            &nbsp;|&nbsp;
+            <a href="tel:15068044466" style="margin-left:0.25rem;">506.804.4466</a> <span style="color:rgba(255,255,255,0.5);font-size:0.8rem;">NB</span>
           </div>
         </div>
 
