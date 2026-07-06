@@ -269,4 +269,13 @@
 
   applyTranslation(currentLang);
 
+  /* ════════════════════════════════════════
+     COURSE CARD ACCORDION
+  ════════════════════════════════════════ */
+  document.querySelectorAll('.gvnb-card-header').forEach(function (header) {
+    header.addEventListener('click', function () {
+      this.closest('.gvnb-card').classList.toggle('is-open');
+    });
+  });
+
 })();

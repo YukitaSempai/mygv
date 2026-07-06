@@ -2615,6 +2615,257 @@
       }
     }
 
+    /* ─── GVNB Course Cards ─── */
+    .gvnb-card {
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 16px;
+      overflow: hidden;
+      height: 100%;
+      transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gvnb-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(201, 169, 110, 0.2);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(201, 169, 110, 0.04);
+    }
+
+    .gvnb-card-header {
+      padding: 1.25rem 1.25rem 0.75rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .gvnb-card-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0 0 0.2rem;
+      line-height: 1.3;
+    }
+
+    .gvnb-card-location {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.5);
+      display: block;
+    }
+
+    .gvnb-card-location i {
+      color: #c9a96e;
+      width: 1rem;
+      margin-right: 0.2rem;
+    }
+
+    .gvnb-card-note {
+      display: block;
+      font-size: 0.7rem;
+      color: #c9a96e;
+      margin-top: 0.25rem;
+      font-style: italic;
+    }
+
+    .gvnb-card-body {
+      padding: 0.75rem 1.25rem;
+      flex: 1;
+    }
+
+    .gvnb-card-offer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .gvnb-offer-tag {
+      display: inline-block;
+      padding: 0.2rem 0.65rem;
+      border-radius: 50px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: rgba(201, 169, 110, 0.15);
+      color: #c9a96e;
+      border: 1px solid rgba(201, 169, 110, 0.15);
+    }
+
+    .gvnb-offer-tag.tag-alt {
+      background: rgba(27, 107, 58, 0.2);
+      color: #4ade80;
+      border-color: rgba(27, 107, 58, 0.2);
+    }
+
+    .gvnb-offer-tag.tag-featured {
+      background: linear-gradient(135deg, #c9a96e, #dbb97e);
+      color: #0e1b1f;
+      border: none;
+    }
+
+    .gvnb-card-details {
+      margin-bottom: 0.5rem;
+    }
+
+    .gvnb-detail-row {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.6);
+      padding: 0.2rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.4rem;
+      line-height: 1.4;
+    }
+
+    .gvnb-detail-row i {
+      color: #c9a96e;
+      width: 0.9rem;
+      text-align: center;
+      margin-top: 0.15rem;
+      flex-shrink: 0;
+      font-size: 0.7rem;
+    }
+
+    .gvnb-card-benefits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-bottom: 0.5rem;
+      padding: 0.5rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .gvnb-benefit-tag {
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.75);
+      background: rgba(201, 169, 110, 0.06);
+      padding: 0.15rem 0.5rem;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .gvnb-benefit-tag i {
+      color: #4ade80;
+      font-size: 0.6rem;
+    }
+
+    .gvnb-rate-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #c9a96e;
+      text-decoration: none;
+      transition: gap 0.25s ease;
+    }
+
+    .gvnb-rate-link:hover {
+      gap: 0.5rem;
+      color: #dbb97e;
+    }
+
+    .gvnb-card-footer {
+      padding: 0.75rem 1.25rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      background: rgba(0, 0, 0, 0.15);
+    }
+
+    .gvnb-footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .gvnb-footer-row i {
+      color: #c9a96e;
+      margin-right: 0.3rem;
+      font-size: 0.7rem;
+    }
+
+    .gvnb-links {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .gvnb-links a {
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 0.9rem;
+      transition: color 0.25s ease;
+    }
+
+    .gvnb-links a:hover {
+      color: #c9a96e;
+    }
+
+    .gvnb-directions {
+      margin-top: 0.5rem;
+    }
+
+    .gvnb-directions summary {
+      cursor: pointer;
+      font-size: 0.75rem;
+      color: rgba(201, 169, 110, 0.7);
+      transition: color 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .gvnb-directions summary:hover {
+      color: #c9a96e;
+    }
+
+    .gvnb-directions p {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.45);
+      line-height: 1.5;
+      margin: 0.5rem 0 0.25rem;
+      padding-left: 1rem;
+      border-left: 2px solid rgba(201, 169, 110, 0.15);
+    }
+
+    .gvnb-directions p strong {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* ─── GVNB / GVNS Accordion ─── */
+    .gvnb-card-header {
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+      padding-right: 2.5rem;
+    }
+    .gvnb-card-header::after {
+      content: '\f078';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.25);
+      position: absolute;
+      right: 1.25rem;
+      top: 1.35rem;
+      transition: transform 0.3s ease;
+    }
+    .gvnb-card.is-open .gvnb-card-header::after {
+      transform: rotate(180deg);
+    }
+    .gvnb-card-body,
+    .gvnb-card-footer {
+      display: none;
+    }
+    .gvnb-card.is-open .gvnb-card-body,
+    .gvnb-card.is-open .gvnb-card-footer {
+      display: block;
+    }
+
     /* ─── GVNS — Split Image + Content (alternado) ─── */
     body.page-gvns {
       background:
