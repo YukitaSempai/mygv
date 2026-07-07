@@ -3724,6 +3724,28 @@
         url('../img/02.jpg') center 35% / cover no-repeat;
     }
 
+    .corp-hero-img-wrap {
+      position: relative;
+      z-index: 1;
+    }
+
+    .corp-hero-img-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border: 1px solid rgba(201, 169, 110, 0.2);
+      border-radius: 20px;
+      z-index: -1;
+      transform: rotate(-2deg);
+    }
+
+    .corp-hero-img {
+      border-radius: 16px;
+      width: 100%;
+      height: auto;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+
     .corp-tag {
       display: inline-flex;
       align-items: center;
