@@ -22,11 +22,6 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Leaflet (course map only) -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
-
 </head>
 
 <body class="page-brochure">
@@ -176,18 +171,19 @@
   <main>
 
   <!-- ─── Brochure Hero ─── -->
-  <section class="section-block sec-py-lg" id="brochure-hero">
+  <section class="section-block sec-py-lg brochure-hero" id="brochure-hero" aria-labelledby="brochure-hero-title">
+    <div class="brochure-hero-bg"></div>
     <div class="container">
       <div class="row align-items-center g-5">
         <div class="col-lg-7 reveal">
-          <div class="eyebrow" data-i18n="brochure_eyebrow">GV Brochure Personalized</div>
-          <h2 class="sec-title" data-i18n="brochure_hero_title">Trusted by Leading Businesses</h2>
-          <p class="lead text-white-50 mb-4" data-i18n="brochure_hero_sub">
+          <span class="corp-tag" aria-hidden="true"><span class="corp-tag-dot"></span> <span data-i18n="brochure_eyebrow">GV Brochure Personalized</span></span>
+          <h2 class="corp-hero-title" id="brochure-hero-title" data-i18n="brochure_hero_title">Trusted by Leading Businesses</h2>
+          <p class="corp-hero-desc" data-i18n="brochure_hero_sub">
             Companies across the Maritimes choose MYGV personalized business
             cards to strengthen client relationships and build brand loyalty.
           </p>
-          <div class="mt-4">
-            <a href="corporate.html" class="btn-corp-primary">
+          <div class="corp-hero-actions">
+            <a href="corporate.html" class="btn-hp-primary">
               <span data-i18n="brochure_cta_btn">Order Your Personalized Cards</span>
               <i class="fa-solid fa-arrow-right"></i>
             </a>
@@ -195,16 +191,16 @@
         </div>
         <div class="col-lg-5 reveal" data-stagger="0.1">
           <div class="card-glass p-5 text-center">
-            <i class="fa-solid fa-award" style="font-size:3.5rem;color:#c9a96e;margin-bottom:1rem;"></i>
-            <h4 data-i18n="brochure_card_title">Join 70+ Businesses</h4>
-            <p data-i18n="brochure_card_desc">
-              From construction to automotive, hospitality to finance\u2014
+            <i class="fa-solid fa-award brochure-card-icon"></i>
+            <h4 class="corp-card-title" data-i18n="brochure_card_title">Join 70+ Businesses</h4>
+            <p class="corp-card-desc" data-i18n="brochure_card_desc">
+              From construction to automotive, hospitality to finance —
               industry leaders trust MYGV for their client gifting.
             </p>
-            <div class="mt-3" style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
-              <span style="color:#c9a96e;font-family:'Playfair Display',serif;font-size:1.5rem;">NB</span>
-              <span style="color:#c9a96e;font-family:'Playfair Display',serif;font-size:1.5rem;">NS</span>
-              <span style="color:#c9a96e;font-family:'Playfair Display',serif;font-size:1.5rem;">PE</span>
+            <div class="brochure-province-badges">
+              <span class="brochure-province">NB</span>
+              <span class="brochure-province">NS</span>
+              <span class="brochure-province">PE</span>
             </div>
           </div>
         </div>
@@ -213,86 +209,86 @@
   </section>
 
   <!-- ─── Client Showcase ─── -->
-  <section class="section-block sec-py-lg t-row-alt" id="brochure-showcase">
+  <section class="section-block sec-py-lg t-row-alt" id="brochure-showcase" aria-labelledby="showcase-title">
     <div class="container">
-      <div class="sec-hd reveal" style="text-align:center;">
-        <h2 class="sec-title" data-i18n="brochure_showcase_title">Our Clients</h2>
+      <div class="sec-hd reveal">
+        <h2 class="sec-title" id="showcase-title" data-i18n="brochure_showcase_title">Our Clients</h2>
         <p class="sec-desc" data-i18n="brochure_showcase_desc">
           Businesses that use personalized MYGV business cards to grow relationships.
         </p>
       </div>
-      <div class="brochure-client-grid reveal" data-stagger="0.05">
-        <div class="brochure-client-item">Global Window and Doors</div>
-        <div class="brochure-client-item">Gerald Mitchell Contracting Ltd.</div>
-        <div class="brochure-client-item">United Mortgage Alliance - Justin Hillier</div>
-        <div class="brochure-client-item">Lockheed Martin - Dartmouth</div>
-        <div class="brochure-client-item">Inflector Environmental New Brunswick</div>
-        <div class="brochure-client-item">Inflector Environmental Nova Scotia</div>
-        <div class="brochure-client-item">Fundy Pros Specialty Construction</div>
-        <div class="brochure-client-item">Paul Davis Halifax</div>
-        <div class="brochure-client-item">Adventure Motors Marine RV</div>
-        <div class="brochure-client-item">Bowlacade - Bible Hill NS</div>
-        <div class="brochure-client-item">ConAir Ventilation</div>
-        <div class="brochure-client-item">Paul Davis Fredericton - Southern NB - North West NB</div>
-        <div class="brochure-client-item">Cut-Rite Lawncare &amp; Landscaping</div>
-        <div class="brochure-client-item">Watts Leasing</div>
-        <div class="brochure-client-item">Atlantic Hockey Group GVNB</div>
-        <div class="brochure-client-item">Atlantic Hockey Group GVNS</div>
-        <div class="brochure-client-item">Fredericton Toyota</div>
-        <div class="brochure-client-item">Carmichael</div>
-        <div class="brochure-client-item">Inglis Jewellers</div>
-        <div class="brochure-client-item">WELDPRO</div>
-        <div class="brochure-client-item">LeBlanc Sprinklers Ltd.</div>
-        <div class="brochure-client-item">Paul Davis Central Nova Scotia</div>
-        <div class="brochure-client-item">Pleasant Timber Mart</div>
-        <div class="brochure-client-item">C &amp; J Brothers Plumbing</div>
-        <div class="brochure-client-item">Wall Construction</div>
-        <div class="brochure-client-item">Brault Roofing</div>
-        <div class="brochure-client-item">Boyd Equipment Ltd.</div>
-        <div class="brochure-client-item">Central Equipment Inc.</div>
-        <div class="brochure-client-item">LIBCAN</div>
-        <div class="brochure-client-item">Ritchie's Carpet Warehouse</div>
-        <div class="brochure-client-item">PMC Energy Performance</div>
-        <div class="brochure-client-item">Eddy Group</div>
-        <div class="brochure-client-item">Trabero AI</div>
-        <div class="brochure-client-item">Steele Chevrolet Buick GMC</div>
-        <div class="brochure-client-item">FIREDRIVE Indoor Golf &amp; Lounge</div>
-        <div class="brochure-client-item">Nita's Bar &amp; Grill / Old Fashion Meat Market Moncton</div>
-        <div class="brochure-client-item">Mallard Transerv Inc.</div>
-        <div class="brochure-client-item">Fraser's Pro Home Centre</div>
-        <div class="brochure-client-item">Paul Davis Southern New Brunswick</div>
-        <div class="brochure-client-item">Remco Construction</div>
-        <div class="brochure-client-item">Duct Headz Heat Pump Cleaning / Sackville Knights Junior C</div>
-        <div class="brochure-client-item">Maple Leaf Tractors &amp; Equipment Inc.</div>
-        <div class="brochure-client-item">Superline Fuels</div>
-        <div class="brochure-client-item">West Nova Fuels</div>
-        <div class="brochure-client-item">Pro Design Cresting</div>
-        <div class="brochure-client-item">Caledonia Forest Products</div>
-        <div class="brochure-client-item">Anchor Toyota New Glasgow</div>
-        <div class="brochure-client-item">Speedy Glass - Pubnico</div>
-        <div class="brochure-client-item">United Mortgage Alliance</div>
-        <div class="brochure-client-item">Sunpoke</div>
-        <div class="brochure-client-item">Truro Toyota</div>
-        <div class="brochure-client-item">Scammell Auto Sales / Bible Hill Automotive &amp; Powersports</div>
-        <div class="brochure-client-item">Simpson Building Contractors</div>
-        <div class="brochure-client-item">Stuart Kia - Truro, NS</div>
-        <div class="brochure-client-item">PYE Chevrolet Buick GMC</div>
-        <div class="brochure-client-item">Kathy Harpell Group</div>
+      <div class="client-grid reveal" data-stagger="0.05">
+        <div class="client-card">Global Window and Doors</div>
+        <div class="client-card">Gerald Mitchell Contracting Ltd.</div>
+        <div class="client-card">United Mortgage Alliance - Justin Hillier</div>
+        <div class="client-card">Lockheed Martin - Dartmouth</div>
+        <div class="client-card">Inflector Environmental New Brunswick</div>
+        <div class="client-card">Inflector Environmental Nova Scotia</div>
+        <div class="client-card">Fundy Pros Specialty Construction</div>
+        <div class="client-card">Paul Davis Halifax</div>
+        <div class="client-card">Adventure Motors Marine RV</div>
+        <div class="client-card">Bowlacade - Bible Hill NS</div>
+        <div class="client-card">ConAir Ventilation</div>
+        <div class="client-card">Paul Davis Fredericton - Southern NB - North West NB</div>
+        <div class="client-card">Cut-Rite Lawncare &amp; Landscaping</div>
+        <div class="client-card">Watts Leasing</div>
+        <div class="client-card">Atlantic Hockey Group GVNB</div>
+        <div class="client-card">Atlantic Hockey Group GVNS</div>
+        <div class="client-card">Fredericton Toyota</div>
+        <div class="client-card">Carmichael</div>
+        <div class="client-card">Inglis Jewellers</div>
+        <div class="client-card">WELDPRO</div>
+        <div class="client-card">LeBlanc Sprinklers Ltd.</div>
+        <div class="client-card">Paul Davis Central Nova Scotia</div>
+        <div class="client-card">Pleasant Timber Mart</div>
+        <div class="client-card">C &amp; J Brothers Plumbing</div>
+        <div class="client-card">Wall Construction</div>
+        <div class="client-card">Brault Roofing</div>
+        <div class="client-card">Boyd Equipment Ltd.</div>
+        <div class="client-card">Central Equipment Inc.</div>
+        <div class="client-card">LIBCAN</div>
+        <div class="client-card">Ritchie's Carpet Warehouse</div>
+        <div class="client-card">PMC Energy Performance</div>
+        <div class="client-card">Eddy Group</div>
+        <div class="client-card">Trabero AI</div>
+        <div class="client-card">Steele Chevrolet Buick GMC</div>
+        <div class="client-card">FIREDRIVE Indoor Golf &amp; Lounge</div>
+        <div class="client-card">Nita's Bar &amp; Grill / Old Fashion Meat Market Moncton</div>
+        <div class="client-card">Mallard Transerv Inc.</div>
+        <div class="client-card">Fraser's Pro Home Centre</div>
+        <div class="client-card">Paul Davis Southern New Brunswick</div>
+        <div class="client-card">Remco Construction</div>
+        <div class="client-card">Duct Headz Heat Pump Cleaning / Sackville Knights Junior C</div>
+        <div class="client-card">Maple Leaf Tractors &amp; Equipment Inc.</div>
+        <div class="client-card">Superline Fuels</div>
+        <div class="client-card">West Nova Fuels</div>
+        <div class="client-card">Pro Design Cresting</div>
+        <div class="client-card">Caledonia Forest Products</div>
+        <div class="client-card">Anchor Toyota New Glasgow</div>
+        <div class="client-card">Speedy Glass - Pubnico</div>
+        <div class="client-card">United Mortgage Alliance</div>
+        <div class="client-card">Sunpoke</div>
+        <div class="client-card">Truro Toyota</div>
+        <div class="client-card">Scammell Auto Sales / Bible Hill Automotive &amp; Powersports</div>
+        <div class="client-card">Simpson Building Contractors</div>
+        <div class="client-card">Stuart Kia - Truro, NS</div>
+        <div class="client-card">PYE Chevrolet Buick GMC</div>
+        <div class="client-card">Kathy Harpell Group</div>
       </div>
     </div>
   </section>
 
   <!-- ─── Brochure CTA ─── -->
-  <section class="section-block sec-py-lg" id="brochure-cta">
+  <section class="section-block sec-py-lg" id="brochure-cta" aria-labelledby="cta-title">
     <div class="container">
-      <div class="card-glass p-5 text-center reveal">
-        <h2 class="sec-title mb-3" data-i18n="brochure_cta_title">Be Our Next Featured Client</h2>
-        <p class="sec-desc" data-i18n="brochure_cta_desc">
+      <div class="corp-cta-card reveal">
+        <h2 class="sec-title mb-3" id="cta-title" data-i18n="brochure_cta_title">Be Our Next Featured Client</h2>
+        <p class="sec-desc corp-cta-desc" data-i18n="brochure_cta_desc">
           Order your personalized MYGV business cards today and join these
           trusted businesses.
         </p>
-        <div class="mt-4">
-          <a href="corporate.html" class="btn-corp-primary">
+        <div class="corp-cta-actions">
+          <a href="corporate.html" class="btn-hp-primary">
             <span data-i18n="brochure_cta_btn">View Packages &amp; Order</span>
             <i class="fa-solid fa-arrow-right"></i>
           </a>
@@ -385,18 +381,10 @@ FOOTER
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
   </script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
-  </script>
-  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js">
-  </script>
   <script src="js/i18n.js">
   </script>
   <script src="js/main.js">
   </script>
-  <script src="js/map.js">
-  </script>
-
-
 
 </body>
 </html>

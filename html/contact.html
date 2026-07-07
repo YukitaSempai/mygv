@@ -22,11 +22,6 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Leaflet (course map only) -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
-
 </head>
 
 <body class="page-contact">
@@ -176,53 +171,54 @@
   <main>
 
   <!-- ─── Contact Hero ─── -->
-  <section class="section-block sec-py-lg" id="contact-hero">
+  <section class="section-block sec-py-lg contact-hero" id="contact-hero" aria-labelledby="contact-title">
+    <div class="contact-hero-bg"></div>
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center reveal">
           <div class="eyebrow" data-i18n="contact_eyebrow">Get in Touch</div>
-          <h2 class="sec-title" data-i18n="contact_title">Contact Us</h2>
-          <div class="mission-divider"></div>
+          <h2 class="sec-title" id="contact-title" data-i18n="contact_title">Contact Us</h2>
+          <div class="mission-divider" role="presentation"></div>
         </div>
       </div>
       <div class="row g-4 mt-3 justify-content-center" data-stagger="0.1">
         <div class="col-md-4 reveal">
           <div class="card-glass p-4 text-center h-100">
-            <i class="fa-solid fa-phone" style="font-size:2rem;color:#c9a96e;margin-bottom:0.75rem;"></i>
+            <i class="fa-solid fa-phone contact-card-icon"></i>
             <h5 data-i18n="contact_ns_pei">Nova Scotia &amp; PEI</h5>
-            <p class="contact-phone"><a href="tel:19027023565" style="color:#fff;text-decoration:none;">902.702.3565</a></p>
+            <p class="contact-phone"><a href="tel:19027023565" class="contact-link">902.702.3565</a></p>
           </div>
         </div>
         <div class="col-md-4 reveal">
           <div class="card-glass p-4 text-center h-100">
-            <i class="fa-solid fa-phone" style="font-size:2rem;color:#c9a96e;margin-bottom:0.75rem;"></i>
+            <i class="fa-solid fa-phone contact-card-icon"></i>
             <h5 data-i18n="contact_nb">New Brunswick</h5>
-            <p class="contact-phone"><a href="tel:15068044466" style="color:#fff;text-decoration:none;">506.804.4466</a></p>
+            <p class="contact-phone"><a href="tel:15068044466" class="contact-link">506.804.4466</a></p>
           </div>
         </div>
         <div class="col-md-4 reveal">
           <div class="card-glass p-4 text-center h-100">
-            <i class="fa-solid fa-envelope" style="font-size:2rem;color:#c9a96e;margin-bottom:0.75rem;"></i>
+            <i class="fa-solid fa-envelope contact-card-icon"></i>
             <h5 data-i18n="contact_email_label">Email</h5>
-            <p class="contact-phone"><a href="mailto:info@golfvisa.ca" style="color:#fff;text-decoration:none;">info@golfvisa.ca</a></p>
+            <p class="contact-phone"><a href="mailto:info@golfvisa.ca" class="contact-link">info@golfvisa.ca</a></p>
           </div>
         </div>
       </div>
       <div class="text-center mt-4 reveal">
-        <p class="small text-white-50" data-i18n="contact_text_note">
-          <i class="fa-solid fa-mobile-screen" style="color:#c9a96e;margin-right:6px;"></i>
-          TEXT FOR FASTEST RESPONSE
+        <p class="contact-fast">
+          <i class="fa-solid fa-mobile-screen contact-fast-icon"></i>
+          <span data-i18n="contact_text_note">TEXT FOR FASTEST RESPONSE</span>
         </p>
       </div>
     </div>
   </section>
 
   <!-- ─── Company Info ─── -->
-  <section class="section-block sec-py-lg t-row-alt" id="contact-company">
+  <section class="section-block sec-py-lg t-row-alt" id="contact-company" aria-labelledby="company-title">
     <div class="container">
       <div class="card-glass p-5 text-center reveal">
-        <i class="fa-brands fa-canadian-maple-leaf" style="font-size:2.5rem;color:#c9a96e;margin-bottom:1rem;"></i>
-        <p class="small text-white-50" data-i18n="contact_hst">
+        <i class="fa-brands fa-canadian-maple-leaf contact-company-icon"></i>
+        <p class="contact-hst" data-i18n="contact_hst">
           2775570 Alberta Ltd. o/a MYGV/GOLF VISA &nbsp;|&nbsp; HST # 713882363RT0001
         </p>
       </div>
@@ -313,18 +309,10 @@ FOOTER
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
   </script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
-  </script>
-  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js">
-  </script>
   <script src="js/i18n.js">
   </script>
   <script src="js/main.js">
   </script>
-  <script src="js/map.js">
-  </script>
-
-
 
 </body>
 </html>

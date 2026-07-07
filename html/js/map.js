@@ -298,15 +298,7 @@
 
     darkToggle.addEventListener('click', toggleTheme);
 
-    if (window.innerWidth < 768) {
-      const toggleBtn = document.querySelector('.map-filters-toggle');
-      const panel = document.querySelector('.map-filter-panel');
-      if (toggleBtn && panel) {
-        toggleBtn.addEventListener('click', function () {
-          panel.classList.toggle('open');
-        });
-      }
-    }
+    /* mobile filter toggle handled by responsive CSS stacking */
   }
 
   /* ─── public: reapply map translations ─── */
