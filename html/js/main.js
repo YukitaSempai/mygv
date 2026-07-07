@@ -242,13 +242,13 @@
       }
     });
 
-    var flagMap = { en: '<img src="https://flagcdn.com/w20/ca.png" alt="EN" class="flag-img">', fr: '<img src="https://flagcdn.com/w20/fr.png" alt="FR" class="flag-img">', es: '<img src="https://flagcdn.com/w20/es.png" alt="ES" class="flag-img">' };
+    var flagMap = { en: '<img src="https://flagcdn.com/w20/ca.png" alt="' + (dict['lang_en'] || 'English') + '" class="flag-img">', fr: '<img src="https://flagcdn.com/w20/fr.png" alt="' + (dict['lang_fr'] || 'Fran\u00e7ais') + '" class="flag-img">', es: '<img src="https://flagcdn.com/w20/es.png" alt="' + (dict['lang_es'] || 'Espa\u00f1ol') + '" class="flag-img">' };
     var codeMap = { en: 'EN', fr: 'FR', es: 'ES' };
 
     var flagEl = document.getElementById('currentFlag');
     var codeEl = document.getElementById('currentLang');
     if (flagEl) flagEl.innerHTML = flagMap[lang] || flagMap.en;
-    if (codeEl) codeEl.textContent = codeMap[lang] || 'EN';
+    if (codeEl) codeEl.textContent = dict['lang_' + lang] || codeMap[lang] || 'EN';
 
     document.querySelectorAll('.lang-dropdown .dropdown-item').forEach(function (item) {
       item.classList.toggle('active-lang', item.dataset.lang === lang);
