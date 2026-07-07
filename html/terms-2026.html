@@ -21,6 +21,12 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Leaflet (course map only) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+
 </head>
 
 <body class="page-terms">
@@ -122,6 +128,10 @@
                   <span class="dd-label" data-i18n="contact">Contact</span>
                   <span class="dd-sub" data-i18n="nav_sub_contact">Get in touch</span>
                 </a></li>
+              <li><a class="dropdown-item" href="multimedia.html">
+                  <span class="dd-label">Multimedia</span>
+                  <span class="dd-sub">Gallery &amp; videos</span>
+                </a></li>
               <li><a class="dropdown-item" href="terms-2026.html">
                   <span class="dd-label" data-i18n="terms_nav">Terms</span>
                   <span class="dd-sub" data-i18n="nav_sub_terms">Terms &amp; conditions</span>
@@ -169,33 +179,40 @@
 <div class="page-wrap">
   <main>
 
-  <!-- ─── Terms Section ─── -->
-  <section class="section-block sec-py-lg" id="terms-hero" aria-labelledby="terms-title">
+  <!-- ─── Terms Hero ─── -->
+  <section class="section-block sec-py-lg" id="terms-hero">
     <div class="container">
-      <div class="sec-hd reveal">
-        <div class="eyebrow" data-i18n="terms_eyebrow">Legal</div>
-        <h2 class="sec-title" id="terms-title" data-i18n="terms_title">2026 Golf Visa &mdash; Terms and Conditions</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-10 reveal">
+          <div class="eyebrow" data-i18n="terms_eyebrow">Legal</div>
+          <h2 class="sec-title" data-i18n="terms_title">2026 Golf Visa &mdash; Terms and Conditions</h2>
+          <div class="mission-divider"></div>
+        </div>
       </div>
-      <div class="terms-grid reveal">
-        <div class="terms-card" data-i18n="terms_item1">Each card includes four 2-for-1 green fees at each participating course. 2-for-1 offers also apply at participating indoor golf facilities &mdash; see the MYGV app for details.</div>
-        <div class="terms-card" data-i18n="terms_item2">After redeeming all four at a course, receive one free green fee (single player) with power cart rental at that course. At each Indoor Golf: after redeeming all of your 2-for-1 simulator plays, receive one free 1-hour simulator play. One reward per card, per course and indoor golf facility.</div>
-        <div class="terms-card" data-i18n="terms_item3">Valid until the end of each participating course&rsquo;s 2026 season. End-of-season dates vary by course. For indoor simulators, valid until December 31, 2026.</div>
-        <div class="terms-card" data-i18n="terms_item4">Not valid for tournaments or organized events of any kind. Indoor golf: not valid for multi-bay bookings or large parties &mdash; refer to the MYGV app for further details.</div>
-        <div class="terms-card" data-i18n="terms_item5">May not apply to twilight rates at some courses; courses may base the 2-for-1 on rack rates. Visit course details in the MYGV app and click the green fee rates link.</div>
-        <div class="terms-card" data-i18n="terms_item6">GOLF VISA can&rsquo;t be combined with other discount promotions. If you&rsquo;re a member at one of these courses you cannot use your GVNS card as one of the 2 players in order to get a free for the second player in your twosome at your home course.</div>
-        <div class="terms-card" data-i18n="terms_item7">Please mention you are using your GOLF VISA when booking and present your card to the pro shop attendant at check in.</div>
-        <div class="terms-card" data-i18n="terms_item8">Maximum two 2-for-1 redemptions (four players) per card, per booking. If a course requires two cards per foursome; it will be mentioned on the course&rsquo;s details page in the MYGV app or on the GV website.</div>
-        <div class="terms-card" data-i18n="terms_item9">Tee times subject to availability. The times from which you can book are listed on each course&rsquo;s details page in the MYGV app or on the GV website.</div>
-        <div class="terms-card" data-i18n="terms_item10">You can share your GVNB card.</div>
+      <div class="row justify-content-center">
+        <div class="col-lg-10 reveal" data-stagger="0.08">
+          <ul class="terms-list">
+            <li data-i18n="terms_item1">Each card includes four 2-for-1 green fees at each participating course. 2-for-1 offers also apply at participating indoor golf facilities &mdash; see the MYGV app for details.</li>
+            <li data-i18n="terms_item2">After redeeming all four at a course, receive one free green fee (single player) with power cart rental at that course. At each Indoor Golf: after redeeming all of your 2-for-1 simulator plays, receive one free 1-hour simulator play. One reward per card, per course and indoor golf facility.</li>
+            <li data-i18n="terms_item3">Valid until the end of each participating course&rsquo;s 2026 season. End-of-season dates vary by course. For indoor simulators, valid until December 31, 2026.</li>
+            <li data-i18n="terms_item4">Not valid for tournaments or organized events of any kind. Indoor golf: not valid for multi-bay bookings or large parties &mdash; refer to the MYGV app for further details.</li>
+            <li data-i18n="terms_item5">May not apply to twilight rates at some courses; courses may base the 2-for-1 on rack rates. Visit course details in the MYGV app and click the green fee rates link.</li>
+            <li data-i18n="terms_item6">GOLF VISA can&rsquo;t be combined with other discount promotions. If you&rsquo;re a member at one of these courses you cannot use your GVNS card as one of the 2 players in order to get a free for the second player in your twosome at your home course.</li>
+            <li data-i18n="terms_item7">Please mention you are using your GOLF VISA when booking and present your card to the pro shop attendant at check in.</li>
+            <li data-i18n="terms_item8">Maximum two 2-for-1 redemptions (four players) per card, per booking. If a course requires two cards per foursome; it will be mentioned on the course&rsquo;s details page in the MYGV app or on the GV website.</li>
+            <li data-i18n="terms_item9">Tee times subject to availability. The times from which you can book are listed on each course&rsquo;s details page in the MYGV app or on the GV website.</li>
+            <li data-i18n="terms_item10">You can share your GVNB card.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ─── Company Info ─── -->
-  <section class="section-block sec-py-lg" id="terms-company" aria-labelledby="company-title">
+  <section class="section-block sec-py-lg t-row-alt" id="terms-company">
     <div class="container">
       <div class="card-glass p-5 text-center reveal">
-        <i class="fa-brands fa-canadian-maple-leaf terms-company-icon"></i>
+        <i class="fa-brands fa-canadian-maple-leaf" style="font-size:2.5rem;color:#c9a96e;margin-bottom:1rem;"></i>
         <p class="small text-white-50" data-i18n="terms_hst">
           2775570 Alberta Ltd. o/a MYGV/GOLF VISA &nbsp;|&nbsp; HST # 713882363RT0001
         </p>
@@ -238,6 +255,7 @@ FOOTER
           <a href="mission-statement.html" class="f-link" data-i18n="stmt_nav">Mission</a>
           <a href="careers.html" class="f-link" data-i18n="footer_careers">Careers</a>
           <a href="press.html" class="f-link" data-i18n="footer_press">Press</a>
+          <a href="multimedia.html" class="f-link">Multimedia</a>
           <a href="contact.html" class="f-link" data-i18n="contact">Contact</a>
         </div>
 
@@ -266,31 +284,39 @@ FOOTER
             </a>
           </div>
           <div class="f-contact-row">
-            <i class="fa-regular fa-envelope f-contact-icon"></i>
+            <i class="fa-regular fa-envelope" style="color:#c9a96e;"></i>
             <a href="mailto:info@golfvisa.ca">info@golfvisa.ca</a>
           </div>
           <div class="f-contact-row">
-            <i class="fa-solid fa-phone f-contact-icon"></i>
-            <a href="tel:19027023565">902.702.3565</a> <span class="f-region">NS/PEI</span>
+            <i class="fa-solid fa-phone" style="color:#c9a96e;"></i>
+            <a href="tel:19027023565">902.702.3565</a> <span style="color:rgba(255,255,255,0.5);font-size:0.8rem;">NS/PEI</span>
             &nbsp;|&nbsp;
-            <a href="tel:15068044466" class="f-phone-nb">506.804.4466</a> <span class="f-region">NB</span>
+            <a href="tel:15068044466" style="margin-left:0.25rem;">506.804.4466</a> <span style="color:rgba(255,255,255,0.5);font-size:0.8rem;">NB</span>
           </div>
         </div>
 
       </div>
 
       <div class="f-bottom" data-i18n="footer_copyright">
-        &copy; 2027 MYGV &mdash; Golf Visa. All rights reserved.
+        &copy; 2027 MYGV — Golf Visa. All rights reserved.
       </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
   </script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+  </script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js">
+  </script>
   <script src="js/i18n.js">
   </script>
   <script src="js/main.js">
   </script>
+  <script src="js/map.js">
+  </script>
+
+
 
 </body>
 </html>

@@ -22,6 +22,11 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 
+  <!-- Leaflet (course map only) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+
 </head>
 
 <body class="page-about">
@@ -123,6 +128,10 @@
                   <span class="dd-label" data-i18n="contact">Contact</span>
                   <span class="dd-sub" data-i18n="nav_sub_contact">Get in touch</span>
                 </a></li>
+              <li><a class="dropdown-item" href="multimedia.html">
+                  <span class="dd-label">Multimedia</span>
+                  <span class="dd-sub">Gallery &amp; videos</span>
+                </a></li>
               <li><a class="dropdown-item" href="terms-2026.html">
                   <span class="dd-label" data-i18n="terms_nav">Terms</span>
                   <span class="dd-sub" data-i18n="nav_sub_terms">Terms &amp; conditions</span>
@@ -171,19 +180,18 @@
   <main>
 
   <!-- ─── About Hero ─── -->
-  <section class="section-block sec-py-lg sec-about" id="about" aria-labelledby="about-title">
-    <div class="about-hero-bg"></div>
+  <section class="section-block sec-about" id="about">
     <div class="container">
       <div class="row g-5 align-items-center">
         <div class="col-lg-5 reveal">
-          <div class="eyebrow" data-i18n="mission_eyebrow">About</div>
-          <h2 class="sec-title sec-title-left" id="about-title" data-i18n="mission">Mission Statement</h2>
-          <p class="about-desc" data-i18n="mission_desc">
+          <div class="eyebrow" style="color:#c9a96e;" data-i18n="mission_eyebrow">About</div>
+          <h2 class="sec-title" style="color:#fff; text-align:left;" data-i18n="mission">Mission Statement</h2>
+          <p class="sec-desc" style="color:rgba(255,255,255,0.75); text-align:left; margin-top:0.75rem;" data-i18n="mission_desc">
             To connect discerning golfers with Canada's most extraordinary
             courses through a seamless, premium membership experience.
           </p>
           <div class="about-quote">
-            <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
+            <i class="fa-solid fa-quote-left"></i>
             <p data-i18n="mission_text">MYGV was founded with a single purpose: to elevate the golf experience by removing barriers, curating excellence, and building a community of passionate players.</p>
           </div>
         </div>
@@ -197,14 +205,14 @@
   </section>
 
   <!-- ─── Values ─── -->
-  <section class="section-block sec-py-lg" id="values" aria-labelledby="values-title">
+  <section class="section-block sec-about-values" id="values">
     <div class="container">
-      <div class="sec-hd reveal">
-        <div class="eyebrow" data-i18n="mission_eyebrow">About</div>
-        <h2 class="sec-title" id="values-title" data-i18n="mission_values">Our Values</h2>
+      <div class="sec-hd reveal" style="text-align:center;">
+        <div class="eyebrow" style="color:#c9a96e;" data-i18n="mission_eyebrow">About</div>
+        <h2 class="sec-title" style="color:#fff;" data-i18n="mission_values">Our Values</h2>
       </div>
       <div class="row g-4 reveal" data-stagger="0.12">
-        <div class="col-md-3 col-6">
+        <div class="col-md-3">
           <div class="about-value-card">
             <div class="about-value-icon">
               <i class="fa-solid fa-shield-halved"></i>
@@ -212,7 +220,7 @@
             <h5 data-i18n="about_value_integrity">Integrity</h5>
           </div>
         </div>
-        <div class="col-md-3 col-6">
+        <div class="col-md-3">
           <div class="about-value-card">
             <div class="about-value-icon">
               <i class="fa-solid fa-star"></i>
@@ -220,7 +228,7 @@
             <h5 data-i18n="about_value_excellence">Excellence</h5>
           </div>
         </div>
-        <div class="col-md-3 col-6">
+        <div class="col-md-3">
           <div class="about-value-card">
             <div class="about-value-icon">
               <i class="fa-solid fa-handshake"></i>
@@ -228,7 +236,7 @@
             <h5 data-i18n="about_value_community">Community</h5>
           </div>
         </div>
-        <div class="col-md-3 col-6">
+        <div class="col-md-3">
           <div class="about-value-card">
             <div class="about-value-icon">
               <i class="fa-solid fa-tree"></i>
@@ -241,22 +249,22 @@
   </section>
 
   <!-- ─── CEO ─── -->
-  <section class="section-block sec-py-lg t-row-alt" id="ceo" aria-labelledby="ceo-title">
+  <section class="section-block sec-about-ceo" id="ceo">
     <div class="container">
       <div class="row justify-content-center reveal">
         <div class="col-lg-8">
-          <div class="sec-hd">
-            <div class="eyebrow" data-i18n="ceo_eyebrow">Leadership</div>
-            <h2 class="sec-title" id="ceo-title" data-i18n="ceo_name">Jesús Carreño</h2>
-            <p class="about-ceo-title" data-i18n="ceo_title">Founder & CEO</p>
+          <div class="sec-hd" style="text-align:center;">
+            <div class="eyebrow" style="color:#c9a96e;">Leadership</div>
+            <h2 class="sec-title" style="color:#fff;" data-i18n="ceo_name">Jesús Carreño</h2>
+            <p class="sec-desc" style="color:#c9a96e; font-weight:600; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em;" data-i18n="ceo_title">Founder & CEO</p>
           </div>
-          <p class="about-ceo-desc" data-i18n="ceo_desc">
+          <p class="sec-desc" style="color:rgba(255,255,255,0.75); text-align:center; margin:0.75rem auto 0; max-width:600px;" data-i18n="ceo_desc">
             A lifelong golfer with a passion for making world-class golf accessible.
             Jesús built MYGV from the fairways of New Brunswick, driven by the belief
             that every golfer deserves extraordinary experiences.
           </p>
-          <div class="about-quote about-ceo-quote">
-            <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
+          <div class="about-quote" style="max-width:600px; margin:1.25rem auto 0;">
+            <i class="fa-solid fa-quote-left"></i>
             <p data-i18n="ceo_quote">Golf is more than a game — it's a journey. MYGV is my way of sharing Canada's finest courses with those who truly appreciate them.</p>
           </div>
         </div>
@@ -265,14 +273,14 @@
   </section>
 
   <!-- ─── Terms ─── -->
-  <section class="section-block sec-py-lg" id="conditions" aria-labelledby="conditions-title">
+  <section class="section-block sec-about-legal" id="conditions">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-10">
-          <div class="sec-hd reveal">
-            <div class="eyebrow" data-i18n="conditions_eyebrow">Legal</div>
-            <h2 class="sec-title" id="conditions-title" data-i18n="conditions_title">Terms & Conditions</h2>
-            <p class="about-conditions-desc" data-i18n="conditions_desc">Important information about your Golf Visa membership.</p>
+          <div class="sec-hd reveal" style="text-align:center;">
+            <div class="eyebrow" style="color:#c9a96e;" data-i18n="conditions_eyebrow">Legal</div>
+            <h2 class="sec-title" style="color:#fff;" data-i18n="conditions_title">Terms & Conditions</h2>
+            <p class="sec-desc" style="color:rgba(255,255,255,0.7); text-align:center;" data-i18n="conditions_desc">Important information about your Golf Visa membership.</p>
           </div>
           <div class="about-legal-grid reveal" data-stagger="0.08">
             <div class="about-legal-item">
@@ -344,6 +352,7 @@ FOOTER
           <a href="mission-statement.html" class="f-link" data-i18n="stmt_nav">Mission</a>
           <a href="careers.html" class="f-link" data-i18n="footer_careers">Careers</a>
           <a href="press.html" class="f-link" data-i18n="footer_press">Press</a>
+          <a href="multimedia.html" class="f-link">Multimedia</a>
           <a href="contact.html" class="f-link" data-i18n="contact">Contact</a>
         </div>
 
@@ -393,10 +402,18 @@ FOOTER
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
   </script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+  </script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js">
+  </script>
   <script src="js/i18n.js">
   </script>
   <script src="js/main.js">
   </script>
+  <script src="js/map.js">
+  </script>
+
+
 
 </body>
 </html>

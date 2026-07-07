@@ -22,6 +22,11 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 
+  <!-- Leaflet (course map only) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+
 </head>
 
 <body class="page-mission">
@@ -123,6 +128,10 @@
                   <span class="dd-label" data-i18n="contact">Contact</span>
                   <span class="dd-sub" data-i18n="nav_sub_contact">Get in touch</span>
                 </a></li>
+              <li><a class="dropdown-item" href="multimedia.html">
+                  <span class="dd-label">Multimedia</span>
+                  <span class="dd-sub">Gallery &amp; videos</span>
+                </a></li>
               <li><a class="dropdown-item" href="terms-2026.html">
                   <span class="dd-label" data-i18n="terms_nav">Terms</span>
                   <span class="dd-sub" data-i18n="nav_sub_terms">Terms &amp; conditions</span>
@@ -171,20 +180,19 @@
   <main>
 
   <!-- ─── Mission Hero ─── -->
-  <section class="section-block sec-py-lg mission-hero" id="mission-hero" aria-labelledby="mission-title">
-    <div class="mission-hero-bg"></div>
+  <section class="section-block sec-py-lg" id="mission-hero">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center reveal">
           <div class="eyebrow" data-i18n="stmt_eyebrow">Our Mission</div>
-          <h2 class="sec-title" id="mission-title" data-i18n="stmt_title">Our Mission at MYGV</h2>
-          <div class="mission-divider" role="presentation"></div>
+          <h2 class="sec-title" data-i18n="stmt_title">Our Mission at MYGV</h2>
+          <div class="mission-divider"></div>
           <p class="mission-text lead" data-i18n="stmt_text">
             Our mission is to connect golfers and courses through a platform
             that delivers lasting value, meaningful experiences, and measurable
             results. Through innovation and trusted partnerships, we enhance
             accessibility, deepen engagement, and help the game of golf continue
-            to grow — both on and off the course.
+            to grow\u2014both on and off the course.
           </p>
         </div>
       </div>
@@ -192,32 +200,32 @@
   </section>
 
   <!-- ─── Values ─── -->
-  <section class="section-block sec-py-lg t-row-alt" id="mission-values" aria-labelledby="values-title">
+  <section class="section-block sec-py-lg t-row-alt" id="mission-values">
     <div class="container">
       <div class="row g-4" data-stagger="0.1">
         <div class="col-md-4 reveal">
           <div class="card-glass p-4 text-center h-100">
-            <i class="fa-solid fa-handshake mission-value-icon"></i>
+            <i class="fa-solid fa-handshake" style="font-size:2.5rem;color:#c9a96e;margin-bottom:1rem;"></i>
             <h5 data-i18n="stmt_value1_title">Trusted Partnerships</h5>
-            <p class="mission-value-desc" data-i18n="stmt_value1_desc">
+            <p class="small text-white-50" data-i18n="stmt_value1_desc">
               Building strong relationships with courses and golfers across the Maritimes.
             </p>
           </div>
         </div>
         <div class="col-md-4 reveal">
           <div class="card-glass p-4 text-center h-100">
-            <i class="fa-solid fa-lightbulb mission-value-icon"></i>
+            <i class="fa-solid fa-lightbulb" style="font-size:2.5rem;color:#c9a96e;margin-bottom:1rem;"></i>
             <h5 data-i18n="stmt_value2_title">Innovation</h5>
-            <p class="mission-value-desc" data-i18n="stmt_value2_desc">
+            <p class="small text-white-50" data-i18n="stmt_value2_desc">
               Continuously improving our platform to deliver measurable value for everyone.
             </p>
           </div>
         </div>
         <div class="col-md-4 reveal">
           <div class="card-glass p-4 text-center h-100">
-            <i class="fa-solid fa-tree mission-value-icon"></i>
+            <i class="fa-solid fa-tree" style="font-size:2.5rem;color:#c9a96e;margin-bottom:1rem;"></i>
             <h5 data-i18n="stmt_value3_title">Growing the Game</h5>
-            <p class="mission-value-desc" data-i18n="stmt_value3_desc">
+            <p class="small text-white-50" data-i18n="stmt_value3_desc">
               Making golf more accessible and enjoyable for players of all levels.
             </p>
           </div>
@@ -227,11 +235,11 @@
   </section>
 
   <!-- ─── Company Info ─── -->
-  <section class="section-block sec-py-lg" id="mission-company" aria-labelledby="company-title">
+  <section class="section-block sec-py-lg" id="mission-company">
     <div class="container">
       <div class="card-glass p-5 text-center reveal">
-        <i class="fa-brands fa-canadian-maple-leaf mission-mv-icon"></i>
-        <p class="mission-hst" data-i18n="stmt_hst">
+        <i class="fa-brands fa-canadian-maple-leaf" style="font-size:2.5rem;color:#c9a96e;margin-bottom:1rem;"></i>
+        <p class="small text-white-50" data-i18n="stmt_hst">
           2775570 Alberta Ltd. o/a MYGV/GOLF VISA &nbsp;|&nbsp; HST # 713882363RT0001
         </p>
       </div>
@@ -273,6 +281,7 @@ FOOTER
           <a href="mission-statement.html" class="f-link" data-i18n="stmt_nav">Mission</a>
           <a href="careers.html" class="f-link" data-i18n="footer_careers">Careers</a>
           <a href="press.html" class="f-link" data-i18n="footer_press">Press</a>
+          <a href="multimedia.html" class="f-link">Multimedia</a>
           <a href="contact.html" class="f-link" data-i18n="contact">Contact</a>
         </div>
 
@@ -322,10 +331,18 @@ FOOTER
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
   </script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+  </script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js">
+  </script>
   <script src="js/i18n.js">
   </script>
   <script src="js/main.js">
   </script>
+  <script src="js/map.js">
+  </script>
+
+
 
 </body>
 </html>
