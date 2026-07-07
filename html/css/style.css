@@ -244,7 +244,7 @@
     .lang-switcher .lang-code {
       font-size: 0.75rem;
       font-weight: 600;
-      color: #0e1b1f;
+      color: #fff;
     }
 
     .lang-switcher .lang-caret {
@@ -5706,7 +5706,8 @@
       .hp-mb-label {
         color: var(--text-secondary);
         font-size: 0.8rem;
-        white-space: nowrap;
+        overflow-wrap: break-word;
+        word-break: break-word;
       }
       .hp-mb-link {
         color: var(--gold);
