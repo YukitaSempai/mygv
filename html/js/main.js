@@ -18,6 +18,13 @@
   ════════════════════════════════════════ */
   const navCollapse = document.getElementById('navMain');
   if (navCollapse) {
+    // Lock body scroll when mobile nav opens
+    navCollapse.addEventListener('shown.bs.collapse', function () {
+      document.body.classList.add('nav-open');
+    });
+    navCollapse.addEventListener('hidden.bs.collapse', function () {
+      document.body.classList.remove('nav-open');
+    });
     // Close menu when a direct nav link (not dropdown toggle) is clicked
     navCollapse.querySelectorAll('.nav-link:not(.dropdown-toggle)').forEach(function (link) {
       link.addEventListener('click', function () {
@@ -171,7 +178,7 @@
         var px = (x * 100 + 50);
         var py = (y * 100 + 50);
         glow.style.background =
-          'radial-gradient(ellipse at ' + px + '% ' + py + '%, rgba(201,169,110,0.25), transparent 70%)';
+          'radial-gradient(ellipse at ' + px + '% ' + py + '%, rgba(51,153,255,0.25), transparent 70%)';
       }
     });
     card.addEventListener('mouseleave', function () {

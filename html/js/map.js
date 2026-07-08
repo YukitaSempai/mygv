@@ -109,7 +109,7 @@
   function createIcon() {
     return L.divIcon({
       className: 'gv-marker',
-      html: '<svg viewBox="0 0 32 32" width="28" height="28"><circle cx="16" cy="16" r="14" fill="#1B6B3A" stroke="#fff" stroke-width="2"/><text x="16" y="20" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">⛳</text></svg>',
+      html: '<svg viewBox="0 0 32 32" width="28" height="28"><circle cx="16" cy="16" r="14" fill="#99CC00" stroke="#fff" stroke-width="2"/><text x="16" y="20" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">⛳</text></svg>',
       iconSize: [28, 28],
       iconAnchor: [14, 14],
       popupAnchor: [0, -16]
@@ -219,8 +219,8 @@
         map.setView(latlng, 12);
         L.circleMarker(latlng, {
           radius: 8,
-          color: '#c9a96e',
-          fillColor: '#c9a96e',
+          color: '#3399FF',
+          fillColor: '#3399FF',
           fillOpacity: 0.8,
           weight: 2
         }).addTo(map);
