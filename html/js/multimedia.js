@@ -36,10 +36,13 @@
 
   var galleryItems = [];
   var currentIndex = -1;
+  var currentGroup = '';
 
-  function buildGallery() {
+  function buildGallery(group) {
     galleryItems = [];
-    document.querySelectorAll('.mm-btn-expand').forEach(function (btn) {
+    currentGroup = group || '';
+    var selector = group ? '.mm-btn-expand[data-group="' + group + '"]' : '.mm-btn-expand';
+    document.querySelectorAll(selector).forEach(function (btn) {
       galleryItems.push({
         src: btn.getAttribute('data-src'),
         isVideo: btn.classList.contains('mm-btn-video')
@@ -87,12 +90,17 @@
   // Init
   buildGallery();
 
-  // Click handlers for expand buttons
-  document.querySelectorAll('.mm-btn-expand').forEach(function (btn, idx) {
-    btn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      openLightbox(idx);
+  // Event delegation for expand buttons (handles dynamically added)
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.mm-btn-expand');
+    if (!btn) return;
+    e.stopPropagation();
+    var group = btn.getAttribute('data-group') || '';
+    buildGallery(group);
+    var idx = galleryItems.findIndex(function (item) {
+      return item.src === btn.getAttribute('data-src');
     });
+    if (idx >= 0) openLightbox(idx);
   });
 
   // Lightbox controls

@@ -19,6 +19,59 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .mm-client-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .mm-client-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 1.75rem 1.5rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .mm-client-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(51,153,255,0.3);
+    }
+    .mm-client-img-wrap {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.03);
+    }
+    .mm-client-img-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .mm-client-name {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      text-align: center;
+      line-height: 1.35;
+      word-break: break-word;
+    }
+    @media (max-width: 991.98px) {
+      .mm-client-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    }
+    @media (max-width: 575.98px) {
+      .mm-client-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .mm-client-card { padding: 1rem; }
+      .mm-client-name { font-size: 0.8rem; }
+    }
+  </style>
 </head>
 
 <body class="page-multimedia">
@@ -62,7 +115,6 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="corporate.html"><span class="dd-label" data-i18n="corporate">Personalized GV</span><span class="dd-sub" data-i18n="nav_sub_corp">Business &amp; team packages</span></a></li>
-              <li><a class="dropdown-item" href="brochure-personalized.html"><span class="dd-label" data-i18n="brochure_nav">GV Brochure</span><span class="dd-sub" data-i18n="nav_sub_brochure">Client showcase</span></a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -120,18 +172,22 @@
     </section>
 
     <!-- ════════════════════════════════════════
-         Filter Tabs
+         Trípticos
     ════════════════════════════════════════ -->
-    <section class="section-block sec-py-md" id="mm-gallery">
+    <section class="section-block sec-py-lg" id="mm-gallery">
       <div class="container">
+        <div class="sec-hd reveal" style="text-align:center;">
+          <h2 class="sec-title">Trípticos</h2>
+          <p class="sec-desc">Golf course highlights captured across the Maritimes.</p>
+        </div>
         <div class="mm-grid reveal" id="mmGrid">
 
           <div class="mm-item mm-photo" data-category="photo">
             <div class="mm-card">
-              <img src="img/08.jpeg" alt="Golf photo 1" loading="lazy" class="mm-thumb">
+              <img src="img/08.jpeg" alt="Golf photo 1" class="mm-thumb">
               <div class="mm-overlay">
                 <div class="mm-actions">
-                  <button class="mm-btn-expand" data-src="img/08.jpeg" aria-label="View full size"><i class="fa-solid fa-expand"></i></button>
+                  <button class="mm-btn-expand" data-group="triptych" data-src="img/08.jpeg" aria-label="View full size"><i class="fa-solid fa-expand"></i></button>
                 </div>
               </div>
             </div>
@@ -139,10 +195,10 @@
 
           <div class="mm-item mm-photo" data-category="photo">
             <div class="mm-card">
-              <img src="img/09.jpeg" alt="Golf photo 2" loading="lazy" class="mm-thumb">
+              <img src="img/09.jpeg" alt="Golf photo 2" class="mm-thumb">
               <div class="mm-overlay">
                 <div class="mm-actions">
-                  <button class="mm-btn-expand" data-src="img/09.jpeg" aria-label="View full size"><i class="fa-solid fa-expand"></i></button>
+                  <button class="mm-btn-expand" data-group="triptych" data-src="img/09.jpeg" aria-label="View full size"><i class="fa-solid fa-expand"></i></button>
                 </div>
               </div>
             </div>
@@ -150,15 +206,368 @@
 
           <div class="mm-item mm-photo" data-category="photo">
             <div class="mm-card">
-              <img src="img/10.jpeg" alt="Golf photo 3" loading="lazy" class="mm-thumb">
+              <img src="img/10.jpeg" alt="Golf photo 3" class="mm-thumb">
               <div class="mm-overlay">
                 <div class="mm-actions">
-                  <button class="mm-btn-expand" data-src="img/10.jpeg" aria-label="View full size"><i class="fa-solid fa-expand"></i></button>
+                  <button class="mm-btn-expand" data-group="triptych" data-src="img/10.jpeg" aria-label="View full size"><i class="fa-solid fa-expand"></i></button>
                 </div>
               </div>
             </div>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         Trusted Clients
+    ════════════════════════════════════════ -->
+    <section class="section-block sec-py-lg t-row-alt" id="trusted-clients">
+      <div class="container">
+        <div class="sec-hd reveal" style="text-align:center;">
+          <h2 class="sec-title" data-i18n="pgv_clients_title">Our Valued Clients</h2>
+          <p class="sec-desc" data-i18n="pgv_clients_cta_desc">
+            View the full gallery of businesses that trust MYGV for their
+            personalized golf visa gifting.
+          </p>
+        </div>
+        <div class="mm-client-grid reveal" data-stagger="0.05">
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/11.png" alt="Global Window and Doors">
+            </div>
+            <span class="mm-client-name">Global Window and Doors</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/12.png" alt="Gerald Mitchell Contracting Ltd.">
+            </div>
+            <span class="mm-client-name">Gerald Mitchell Contracting Ltd.</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/13.png" alt="United Mortgage Alliance - Justin Hillier">
+            </div>
+            <span class="mm-client-name">United Mortgage Alliance - Justin Hillier</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/14.png" alt="Lockheed Martin - Dartmouth">
+            </div>
+            <span class="mm-client-name">Lockheed Martin - Dartmouth</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/11.png" alt="Inflector Environmental New Brunswick">
+            </div>
+            <span class="mm-client-name">Inflector Environmental New Brunswick</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/12.png" alt="Inflector Environmental Nova Scotia">
+            </div>
+            <span class="mm-client-name">Inflector Environmental Nova Scotia</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/13.png" alt="Fundy Pros Specialty Construction">
+            </div>
+            <span class="mm-client-name">Fundy Pros Specialty Construction</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/14.png" alt="Paul Davis Halifax">
+            </div>
+            <span class="mm-client-name">Paul Davis Halifax</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/11.png" alt="Adventure Motors Marine RV">
+            </div>
+            <span class="mm-client-name">Adventure Motors Marine RV</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/12.png" alt="Bowlacade - Bible Hill NS">
+            </div>
+            <span class="mm-client-name">Bowlacade - Bible Hill NS</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/13.png" alt="ConAir Ventilation">
+            </div>
+            <span class="mm-client-name">ConAir Ventilation</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/14.png" alt="Paul Davis Fredericton - Southern NB - North West NB">
+            </div>
+            <span class="mm-client-name">Paul Davis Fredericton - Southern NB - North West NB</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/11.png" alt="Cut-Rite Lawncare &amp; Landscaping">
+            </div>
+            <span class="mm-client-name">Cut-Rite Lawncare &amp; Landscaping</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/12.png" alt="Watts Leasing">
+            </div>
+            <span class="mm-client-name">Watts Leasing</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/13.png" alt="Atlantic Hockey Group GVNB">
+            </div>
+            <span class="mm-client-name">Atlantic Hockey Group GVNB</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/14.png" alt="Atlantic Hockey Group GVNS">
+            </div>
+            <span class="mm-client-name">Atlantic Hockey Group GVNS</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/11.png" alt="Fredericton Toyota">
+            </div>
+            <span class="mm-client-name">Fredericton Toyota</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/12.png" alt="Carmichael">
+            </div>
+            <span class="mm-client-name">Carmichael</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/13.png" alt="Inglis Jewellers">
+            </div>
+            <span class="mm-client-name">Inglis Jewellers</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/14.png" alt="WELDPRO">
+            </div>
+            <span class="mm-client-name">WELDPRO</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/11.png" alt="LeBlanc Sprinklers Ltd.">
+            </div>
+            <span class="mm-client-name">LeBlanc Sprinklers Ltd.</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/12.png" alt="Paul Davis Central Nova Scotia">
+            </div>
+            <span class="mm-client-name">Paul Davis Central Nova Scotia</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/13.png" alt="Pleasant Timber Mart">
+            </div>
+            <span class="mm-client-name">Pleasant Timber Mart</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/14.png" alt="C &amp; J Brothers Plumbing">
+            </div>
+            <span class="mm-client-name">C &amp; J Brothers Plumbing</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/11.png" alt="Wall Construction">
+            </div>
+            <span class="mm-client-name">Wall Construction</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/12.png" alt="Brault Roofing">
+            </div>
+            <span class="mm-client-name">Brault Roofing</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/13.png" alt="Boyd Equipment Ltd.">
+            </div>
+            <span class="mm-client-name">Boyd Equipment Ltd.</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/14.png" alt="Central Equipment Inc.">
+            </div>
+            <span class="mm-client-name">Central Equipment Inc.</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/11.png" alt="LIBCAN">
+            </div>
+            <span class="mm-client-name">LIBCAN</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/12.png" alt="Ritchie's Carpet Warehouse">
+            </div>
+            <span class="mm-client-name">Ritchie's Carpet Warehouse</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/13.png" alt="PMC Energy Performance">
+            </div>
+            <span class="mm-client-name">PMC Energy Performance</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/14.png" alt="Eddy Group">
+            </div>
+            <span class="mm-client-name">Eddy Group</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/11.png" alt="Trabero AI">
+            </div>
+            <span class="mm-client-name">Trabero AI</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/12.png" alt="Steele Chevrolet Buick GMC">
+            </div>
+            <span class="mm-client-name">Steele Chevrolet Buick GMC</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/13.png" alt="FIREDRIVE Indoor Golf &amp; Lounge">
+            </div>
+            <span class="mm-client-name">FIREDRIVE Indoor Golf &amp; Lounge</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/14.png" alt="Nita's Bar &amp; Grill / Old Fashion Meat Market Moncton">
+            </div>
+            <span class="mm-client-name">Nita's Bar &amp; Grill / Old Fashion Meat Market Moncton</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/11.png" alt="Mallard Transerv Inc.">
+            </div>
+            <span class="mm-client-name">Mallard Transerv Inc.</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/12.png" alt="Fraser's Pro Home Centre">
+            </div>
+            <span class="mm-client-name">Fraser's Pro Home Centre</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/13.png" alt="Paul Davis Southern New Brunswick">
+            </div>
+            <span class="mm-client-name">Paul Davis Southern New Brunswick</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/14.png" alt="Remco Construction">
+            </div>
+            <span class="mm-client-name">Remco Construction</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/11.png" alt="Duct Headz Heat Pump Cleaning / Sackville Knights Junior C">
+            </div>
+            <span class="mm-client-name">Duct Headz Heat Pump Cleaning / Sackville Knights Junior C</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/12.png" alt="Maple Leaf Tractors &amp; Equipment Inc.">
+            </div>
+            <span class="mm-client-name">Maple Leaf Tractors &amp; Equipment Inc.</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/13.png" alt="Superline Fuels">
+            </div>
+            <span class="mm-client-name">Superline Fuels</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/14.png" alt="West Nova Fuels">
+            </div>
+            <span class="mm-client-name">West Nova Fuels</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/11.png" alt="Pro Design Cresting">
+            </div>
+            <span class="mm-client-name">Pro Design Cresting</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/12.png" alt="Caledonia Forest Products">
+            </div>
+            <span class="mm-client-name">Caledonia Forest Products</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/13.png" alt="Anchor Toyota New Glasgow">
+            </div>
+            <span class="mm-client-name">Anchor Toyota New Glasgow</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/14.png" alt="Speedy Glass - Pubnico">
+            </div>
+            <span class="mm-client-name">Speedy Glass - Pubnico</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/11.png" alt="United Mortgage Alliance">
+            </div>
+            <span class="mm-client-name">United Mortgage Alliance</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/12.png" alt="Sunpoke">
+            </div>
+            <span class="mm-client-name">Sunpoke</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/13.png" alt="Truro Toyota">
+            </div>
+            <span class="mm-client-name">Truro Toyota</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/14.png" alt="Scammell Auto Sales / Bible Hill Automotive &amp; Powersports">
+            </div>
+            <span class="mm-client-name">Scammell Auto Sales / Bible Hill Automotive &amp; Powersports</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/11.png" alt="Simpson Building Contractors">
+            </div>
+            <span class="mm-client-name">Simpson Building Contractors</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/12.png" alt="Stuart Kia - Truro, NS">
+            </div>
+            <span class="mm-client-name">Stuart Kia - Truro, NS</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/13.png" alt="PYE Chevrolet Buick GMC">
+            </div>
+            <span class="mm-client-name">PYE Chevrolet Buick GMC</span>
+          </div>
+          <div class="mm-client-card">
+            <div class="mm-client-img-wrap">
+              <img src="img/14.png" alt="Kathy Harpell Group">
+            </div>
+            <span class="mm-client-name">Kathy Harpell Group</span>
+          </div>
         </div>
       </div>
     </section>
@@ -231,5 +640,42 @@
   <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
   <script src="js/multimedia.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var target = document.getElementById('trusted-clients');
+
+      var clientStyle = document.createElement('style');
+      clientStyle.textContent =
+        '.mm-client-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.4);opacity:0;display:flex;align-items:center;justify-content:center;transition:opacity 0.3s ease;border-radius:12px;}' +
+        '.mm-client-img-wrap:hover .mm-client-overlay{opacity:1;}' +
+        '.mm-client-img-wrap .mm-btn-expand{width:44px;height:44px;border-radius:50%;border:2px solid rgba(255,255,255,0.6);background:rgba(0,0,0,0.4);color:#fff;font-size:1rem;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s ease;backdrop-filter:blur(4px);}' +
+        '.mm-client-img-wrap .mm-btn-expand:hover{background:#3399FF;border-color:#3399FF;color:#193366;transform:scale(1.1);}';
+      document.head.appendChild(clientStyle);
+
+      function addClientOverlays() {
+        document.querySelectorAll('.mm-client-card .mm-client-img-wrap').forEach(function(wrap) {
+          if (wrap.querySelector('.mm-client-overlay')) return;
+          var img = wrap.querySelector('img');
+          if (!img) return;
+          var src = img.getAttribute('src');
+          wrap.style.position = 'relative';
+          var overlay = document.createElement('div');
+          overlay.className = 'mm-client-overlay';
+          overlay.innerHTML = '<button class="mm-btn-expand" data-group="clients" data-src="' + src + '" aria-label="View full size"><i class="fa-solid fa-expand"></i></button>';
+          wrap.appendChild(overlay);
+        });
+      }
+
+      addClientOverlays();
+
+      if (window.location.hash === '#trusted-clients' && target) {
+        setTimeout(function() {
+          target.querySelectorAll('.reveal').forEach(function(el) {
+            el.classList.add('in');
+          });
+        }, 100);
+      }
+    });
+  </script>
 </body>
 </html>

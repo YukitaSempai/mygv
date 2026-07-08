@@ -1,66 +1,56 @@
 const fs = require('fs');
 const path = require('path');
 
-const ROOT = __dirname;
-const HTML_DIR = path.join(ROOT, 'html');
+const HTML_DIR = path.join(__dirname, 'html');
 const SECTIONS_DIR = path.join(HTML_DIR, 'sections');
+
+const PAGES = [
+  'index.html', 'gvnb.html', 'gvns.html', 'packages.html',
+  'course-map.html', 'tournament.html', 'corporate.html',
+ 'mission-statement.html',
+  'terms-2026.html', 'about.html', 'contact.html', 'etransfer.html',
+  'buy.html', 'careers.html', 'press.html', 'faq.html',
+  'privacy.html', 'accessibility.html', 'registro.html'
+];
+
+const SHARED = ['navbar', 'footer', 'scripts', 'body-close'];
 
 function readSection(name) {
   const file = path.join(SECTIONS_DIR, name + '.html');
   try {
-    return fs.readFileSync(file, 'utf8').replace(/\s+$/, '');
+    return fs.readFileSync(file, 'utf8').trimEnd();
   } catch (e) {
-    console.error('Missing section: ' + name + '.html');
-    return '<!-- MISSING SECTION: ' + name + ' -->';
+    console.error('  MISSING section: ' + name);
+    return '';
   }
 }
 
-function buildPage(templateFile, contentSection, bodyClass) {
-  const templatePath = path.join(HTML_DIR, templateFile);
-  let template = fs.readFileSync(templatePath, 'utf8');
+function replaceBetween(content, name, newContent) {
+  const open = `<!--${name}-->`;
+  const close = `<!--/${name}-->`;
+  const start = content.indexOf(open);
+  const end = content.indexOf(close);
+  if (start === -1 || end === -1) {
+    console.error(`  MISSING markers: ${name}`);
+    return content;
+  }
+  const before = content.slice(0, start + open.length);
+  const after = content.slice(end);
+  return before + '\n' + newContent + '\n' + after;
+}
 
-  // Replace BODY-CLASS marker
-  template = template.replace('<!--BODY-CLASS-->', bodyClass || '');
+PAGES.forEach(file => {
+  const filePath = path.join(HTML_DIR, file);
+  console.log('Built: ' + file);
+  let content = fs.readFileSync(filePath, 'utf8');
 
-  // Replace SECTION markers (navbar, footer, scripts, body-close, etc.)
-  template = template.replace(/<!--SECTION:([\w-]+)-->/g, function (_, name) {
-    return readSection(name);
+  SHARED.forEach(s => {
+    content = replaceBetween(content, s.toUpperCase(), readSection(s));
   });
 
-  // Replace PAGE-CONTENT marker (for subpages)
-  if (contentSection) {
-    template = template.replace('<!--PAGE-CONTENT-->', readSection(contentSection));
+  if (file === 'index.html') {
+    content = replaceBetween(content, 'HERO', readSection('hero'));
   }
 
-  return template;
-}
-
-const PAGES = [
-  { template: '_template.html',       output: 'index.html',       bodyClass: 'page-home' },
-  { template: '_template-page.html',  content: 'gvnb',              bodyClass: 'page-gvnb',  output: 'gvnb.html' },
-  { template: '_template-page.html',  content: 'gvns',              bodyClass: 'page-gvns',  output: 'gvns.html' },
-  { template: '_template-page.html',  content: 'packages',          bodyClass: 'page-packages',  output: 'packages.html' },
-  { template: '_template-page.html',  content: 'course-map',        bodyClass: 'page-course-map',  output: 'course-map.html' },
-  { template: '_template-page.html',  content: 'tournament',        bodyClass: 'page-tournament',  output: 'tournament.html' },
-  { template: '_template-page.html',  content: 'corporate',         bodyClass: 'page-corporate',  output: 'corporate.html' },
-  { template: '_template-page.html',  content: 'brochure-personalized', bodyClass: 'page-brochure', output: 'brochure-personalized.html' },
-  { template: '_template-page.html',  content: 'mission-statement',   bodyClass: 'page-mission', output: 'mission-statement.html' },
-  { template: '_template-page.html',  content: 'terms-2026',          bodyClass: 'page-terms', output: 'terms-2026.html' },
-  { template: '_template-page.html',  content: 'about',            bodyClass: 'page-about',  output: 'about.html' },
-  { template: '_template-page.html',  content: 'contact',           bodyClass: 'page-contact', output: 'contact.html' },
-  { template: '_template-page.html',  content: 'etransfer',          bodyClass: 'page-etransfer', output: 'etransfer.html' },
-  { template: '_template-page.html',  content: 'page-buy',          output: 'buy.html' },
-  { template: '_template-page.html',  content: 'page-careers',      output: 'careers.html' },
-  { template: '_template-page.html',  content: 'page-press',        output: 'press.html' },
-  { template: '_template-page.html',  content: 'page-faq',          output: 'faq.html' },
-  { template: '_template-page.html',  content: 'page-privacy',      output: 'privacy.html' },
-  { template: '_template-page.html',  content: 'page-accessibility', output: 'accessibility.html' },
-  { template: '_template-page.html',  content: 'page-registro',     output: 'registro.html' },
-];
-
-PAGES.forEach(function (page) {
-  const result = buildPage(page.template, page.content, page.bodyClass);
-  const outputPath = path.join(HTML_DIR, page.output);
-  fs.writeFileSync(outputPath, result, 'utf8');
-  console.log('Built: ' + page.output);
+  fs.writeFileSync(filePath, content, 'utf8');
 });
