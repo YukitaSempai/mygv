@@ -219,8 +219,8 @@
         map.setView(latlng, 12);
         L.circleMarker(latlng, {
           radius: 8,
-          color: '#3399FF',
-          fillColor: '#3399FF',
+          color: '#D4AF37',
+          fillColor: '#D4AF37',
           fillOpacity: 0.8,
           weight: 2
         }).addTo(map);

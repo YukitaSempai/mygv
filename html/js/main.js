@@ -178,7 +178,7 @@
         var px = (x * 100 + 50);
         var py = (y * 100 + 50);
         glow.style.background =
-          'radial-gradient(ellipse at ' + px + '% ' + py + '%, rgba(51,153,255,0.25), transparent 70%)';
+          'radial-gradient(ellipse at ' + px + '% ' + py + '%, rgba(212,175,55,0.2), transparent 70%)';
       }
     });
     card.addEventListener('mouseleave', function () {
