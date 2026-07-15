@@ -554,7 +554,6 @@
       margin: 0 auto;
       line-height: 1.6;
     }
-
     /* --- premium card grid --- */
     .home-cards {
       display: grid;
@@ -5835,6 +5834,117 @@ body.page-course-map .eyebrow {
         font-size: 0.85rem;
         margin: 0;
         line-height: 1.5;
+      }
+
+      /* ----------------------------------------
+         Experience — Premium Benefits
+      ---------------------------------------- */
+      .sec-experience {
+        position: relative;
+      }
+      .exp-eyebrow {
+        display: inline-block;
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+      }
+      .exp-title {
+        font-family: var(--font-serif);
+        font-size: 1.75rem;
+        line-height: 1.25;
+        margin-bottom: 1rem;
+      }
+      .exp-title span {
+        display: block;
+        color: #fff;
+      }
+      .exp-title strong {
+        display: block;
+        color: var(--accent);
+        font-weight: 700;
+      }
+      .exp-desc {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        max-width: 480px;
+      }
+      .exp-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+      .exp-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+      }
+      .exp-grid-card {
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: var(--radius-sm);
+        padding: 1.5rem 1rem;
+        text-align: center;
+        transition: background var(--transition), border-color var(--transition), transform var(--transition);
+      }
+      .exp-grid-card:hover {
+        background: rgba(255, 255, 255, 0.07);
+        border-color: rgba(212,175,55, 0.2);
+        transform: translateY(-2px);
+      }
+      .exp-grid-icon {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 0.5rem;
+        border-radius: 50%;
+        background: linear-gradient(135deg, rgba(212,175,55, 0.12), rgba(212,175,55, 0.05));
+        border: 1px solid rgba(212,175,55, 0.12);
+      }
+      .exp-grid-icon i {
+        font-size: 1.1rem;
+        color: var(--accent);
+      }
+      .exp-grid-label {
+        display: block;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--text-primary);
+      }
+      @media (max-width: 767.98px) {
+        .exp-title {
+          font-size: 1.4rem;
+        }
+        .exp-grid {
+          gap: 0.5rem;
+        }
+        .exp-grid-card {
+          padding: 1rem 0.75rem;
+        }
+        .exp-grid-icon {
+          width: 40px;
+          height: 40px;
+        }
+        .exp-grid-icon i {
+          font-size: 0.95rem;
+        }
+      }
+      @media (max-width: 575.98px) {
+        .exp-actions {
+          flex-direction: column;
+        }
+        .exp-actions .btn-hp-primary,
+        .exp-actions .btn-hp-ghost {
+          width: 100%;
+          justify-content: center;
+        }
       }
 
       /* ----------------------------------------
