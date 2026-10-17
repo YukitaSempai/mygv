@@ -1,6 +1,0 @@
-{
-  "buildCommand": "node build.js",
-  "outputDirectory": "html",
-  "installCommand": null,
-  "devCommand": null
-}
