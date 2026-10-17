@@ -36,10 +36,10 @@
   }
 
   /* ─── colorful tiles ─── */
-  const tileLight = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
-  const tileDark  = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
+  const tileLight = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+  const tileDark  = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
   const tileUrl = () => isDark ? tileDark : tileLight;
-  const tileAttr = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>';
+  const tileAttr = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>';
 
   let tileLayer;
 
